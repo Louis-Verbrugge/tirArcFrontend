@@ -16,7 +16,7 @@ let tailleCase = largeurPlateau / nbCaseX;
 
 
 //plateau de jeu:
-let plateau = [[2, 4, 2, 2], [4, 4, 0, 16], [2, 0, 0, 0], [2, 8, 0, 2]];
+let plateau = [[2, 4, 2, 2], [4, 4, 2, 16], [2, 2, 2, 2], [2, 8, 0, 2]];
 let couleurCase = {
     0: "darkgrey",
     2: "orange",
@@ -49,7 +49,12 @@ function game() {
     context.fillRect(100, 100, 100, 100)
     affichePlateau()
 
-    requestAnimationFrame(game)
+    if (!finGame()) {
+        console.log("GOOO !!")
+        requestAnimationFrame(game)
+    } else {
+        console.log("FIn !!")
+    }
 }
 
 function pressKey(event) {
@@ -64,6 +69,21 @@ function pressKey(event) {
     }
 }
 
+
+function finGame() {
+    nbCaseVide = 0
+
+    plateau.forEach(function (element) {
+
+        element.forEach(function (elem) {
+
+            if (elem == 0) {
+                nbCaseVide++
+            }
+        });
+    });
+    return nbCaseVide <= 0
+}
 
 
 function affichePlateau() {
@@ -94,6 +114,12 @@ function affichePlateau() {
 }
 
 
+function ajouterNouvelleCase() {
+    // nombre aleatoire entre 1-4, si c'est 1 je fais apparaitre une case 4
+    // sinon je fais apparaiter une case 2
+}
+
+
 //fonction de déplacement:
 function deplacement(direction) {
     // déplacement vers le haut:
@@ -114,7 +140,6 @@ function deplacement(direction) {
                 if (plateau[y][x] != 0) {
                     arrayModif[x].push(plateau[y][x]);
                 } else {
-                    console.log(x, y)
                     arrayModif[x].unshift(0);
                 }
 
@@ -150,10 +175,6 @@ function deplacement(direction) {
         }
     }
 
-    console.log("ETAPE 1:");
-    arrayModif.forEach(element => {
-        console.log(element)
-    });
 
     //Etape 2:
     for (let y = 0; y < arrayModif.length; y++) {
@@ -166,10 +187,7 @@ function deplacement(direction) {
             }
         }
     }
-    console.log("ETAPE 2:");
-    arrayModif.forEach(element => {
-        console.log(element)
-    });
+
 
     // Etape 3 replacer dans le grille du plateau:
     if (direction == "haut") {
@@ -204,12 +222,14 @@ function deplacement(direction) {
 
 }
 
+
 //// test:
-/*
-gsap.set("#board", { opacity: 0, x: 500, y: 50 })
-gsap.to("#board", {
-    opacity: 1, y: 600, x: -800, rotation: 360, duration: 3, ease: "bounce", onComplete: function () {
-        gsap.to("#board", { opacity: 0.2, x: 500, y: 50, duration: 3, rotation: -360, ease: "bounce" }); // Retour à la position initiale
-    }
-});
-*/
+function testMouvementPlateau() {
+    gsap.set("#board", { opacity: 0, x: 500, y: 50 })
+    gsap.to("#board", {
+        opacity: 1, y: 600, x: -800, rotation: 360, duration: 3, ease: "bounce", onComplete: function () {
+            gsap.to("#board", { opacity: 0.2, x: 500, y: 50, duration: 3, rotation: -360, ease: "bounce" }); // Retour à la position initiale
+        }
+    });
+}
+
