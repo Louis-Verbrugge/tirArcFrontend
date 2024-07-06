@@ -1,16 +1,30 @@
 {
-  "name": "mon-app",
+  "name": "tirarc",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@coreui/react": "^5.1.0",
+    "@supabase/supabase-js": "^2.44.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "ag-grid-react": "^32.0.0",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "path-browserify": "^1.0.1",
+    "punycode": "^2.3.1",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0",
     "react-scripts": "5.0.1",
+    "rsuite": "^5.65.0",
+    "stream-browserify": "^3.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,8 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "typescript": "^5.5.3"
   }
 }
