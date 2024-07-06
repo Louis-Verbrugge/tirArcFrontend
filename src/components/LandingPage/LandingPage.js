@@ -26,7 +26,7 @@ function LandingPage() {
 
   function sendMaill(data) {
     alert("okokk");
-    let testtt = "j 'ai envie de voyager avec toi ! <3 mail numero 222 ";
+    let testtt = "test louis :) :) :) :) :)";
     fetch(`http://localhost:5000/sendEmail?text=${testtt}`, {
       method: 'POST',
     })
