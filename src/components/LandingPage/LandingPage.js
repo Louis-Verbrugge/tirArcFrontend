@@ -1,7 +1,7 @@
 
 
 import SideImage from "./SideImage"
-
+ // dsqds
 import styles from "./LandingPage.css"
 
 import image1 from '../../image/Plan.png'
