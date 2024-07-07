@@ -21,10 +21,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: rgb(1, 38, 38);}
+    background-color: rgb(1, 38, 38);
+}
+
 
 .form > * {
     background-color: rgb(1, 38, 38);
+}
+
+.iconTarget{
+    width: 10%;
+    height: 15%;
+    justify-content: start;
+
 }
 
 .inputName{
@@ -37,7 +46,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.inputName .labelInput{
+    display: flex;
+    flex-direction: column;
     width: 45%;
+    
 }
 
 

@@ -18,26 +18,10 @@ function LandingPage() {
   const navagate = useNavigate();
 
   function handleClick(annee) {
-    //sendMail(annee);
-    //sendMaill(annee);
-    navagate(`/competition/`);
+    navagate(`/${annee}/`);
   }
 
 
-  function sendMaill(data) {
-    alert("okokk");
-    let testtt = "test louis :) :) :) :) :)";
-    fetch(`http://localhost:5000/sendEmail?text=${testtt}`, {
-      method: 'POST',
-    })
-      .then(response => response.text())
-      .then(data => {
-        console.log("Succès" + data);
-      })
-      .catch((error) => {
-        console.error('Erreur:', error);
-      });
-    }
 
 
   return (
@@ -50,10 +34,10 @@ function LandingPage() {
           />
         </div>
 
-        <div onClick={() => handleClick("Inscriptions") }>
+        <div onClick={() => handleClick("inscription") }>
           <SideImage 
           image = {image1}
-          title = {"Inscriptions"}
+          title = {"inscription"}
           />
         </div>
 

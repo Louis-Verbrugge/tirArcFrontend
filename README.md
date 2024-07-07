@@ -1,7 +1,7 @@
 
 
-
-node .\src\api\apiCompetition.js        // api resultat competition
+// lancement API:
+node .\src\api\apiCompetition.js        
 npm start
 
 

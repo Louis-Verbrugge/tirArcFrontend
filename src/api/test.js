@@ -10,13 +10,22 @@ apiInstance.setApiKey(brevo.TransactionalEmailsApiApiKeys.apiKey, apiKey);
 // Function to send an email
 
 module.exports = {
-    sendEmailT: function(name) {
+    sendEmailT: function(firstName, lastName, age, email) {
         try {
             // Create a new SendSmtpEmail object
             const smtpEmail = new brevo.SendSmtpEmail();
             smtpEmail.subject = "Test Email";
             smtpEmail.to = [{ email: "louvbg@gmail.com", name: "Louis" }];
-            smtpEmail.htmlContent = `<html><body><h1>Hello Louis! 22 22 45567 88 </h1><br><h2>${name}</h2></body></html>`;
+            smtpEmail.htmlContent = `<html><body><h1>Hello Louis! 22 22 45567 88 </h1><br>
+            <h2>firstName: ${firstName}</h2>
+            
+            <h2>lastName: ${lastName}</h2>
+       
+            <h2>age: ${age}</h2>
+
+            <h2>email: ${email}</h2>
+
+            </body></html>`;
             smtpEmail.sender = { name: "Inscription Tir a l'arc", email: "tirarc506@outlook.com" };
 
             // Send the email using the API
