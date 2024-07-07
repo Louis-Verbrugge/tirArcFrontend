@@ -1,6 +1,61 @@
 
 
-.LandingPage{
+.navigation{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+.navigation > * {
+    padding: 10px;
+    border-left: solid red;
+    border-top: solid red;
+    border-bottom: solid red;
+}
+
+.navigation > *:first-child{
+    border-radius: 10px 0 0 10px;
+}
+
+.navigation > *:last-child{
+    border-right: solid red;
+    border-radius: 0 10px 10px 0;
+}
+
+.header h1{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+
+.LandingPage > * {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+.LandingPage img{
+    border-radius: 50%;
+}
+
+.blockBleu{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+}
+
+.blockRouge{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 255);
+}
+
+.blockJaune{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(56, 56, 56);
 }

@@ -22,48 +22,43 @@ function LandingPage() {
   }
 
 
+  function blockSite() {
+
+  }
+
+
 
 
   return (
     <div className="LandingPage">
+
       
-        <div onClick={() => handleClick("competition") }>
-          <SideImage 
-          image = {image1}
-          title = {"Competitions"}
-          />
-        </div>
+      <div className="  ">
 
-        <div onClick={() => handleClick("inscription") }>
-          <SideImage 
-          image = {image1}
-          title = {"inscription"}
-          />
+        <h1>Club St Sébastien</h1>
+        <div className="navigation">
+          <a href="inscription">Inscription</a>
+          <a href="competition">Competition</a>
+          <a>qui somme nous ?</a>
+          <a>Photo/video</a>
+          <a>Evenement</a>
         </div>
-
-        <div onClick={() => handleClick("competition") }>
-          <SideImage 
-          image = {image1}
-          title = {"Competitions"}
-          />
-        </div>
-        
-        <div onClick={() => handleClick("competition") }>
-
-          <SideImage 
-          image = {image1}
-          title = {"hello Image 3"}
-          />
-        </div>
+      </div>
 
 
-        <div onClick={() => handleClick("competition") }>
-        
-          <SideImage 
-          image = {image1}
-          title = {"hello Image 3"}
-          />
-        </div>
+      <div className="blockBleu">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        </p>
+        <img src={image1}></img>
+
+      </div>
+      <div className="blockJaune"></div>
+      <div className="blockRouge"></div>
+
+
+
+
 
     </div>
   );
@@ -71,12 +66,3 @@ function LandingPage() {
 
 export default LandingPage;
 
-
-
-/*
-resolve: {
-  fallback: {
-    "path": require.resolve("path-browserify")
-  }
-}
-  */
