@@ -1,0 +1,65 @@
+
+
+.inscription{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.blockInscription{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(1, 38, 38);
+
+}
+
+.form{
+    width: 70%;
+    height: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(1, 38, 38);}
+
+.form > * {
+    background-color: rgb(1, 38, 38);
+}
+
+.inputName{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputName input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+}
+
+
+
+input{
+    background-color: rgb(1, 38, 38);
+    margin-bottom: 40px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    outline: none; 
+}
+
+.btnSubmit{
+    
+    width: 20%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: rgb(4, 128, 128);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}

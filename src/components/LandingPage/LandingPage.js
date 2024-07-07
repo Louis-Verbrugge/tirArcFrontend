@@ -19,7 +19,7 @@ function LandingPage() {
 
   function handleClick(annee) {
     //sendMail(annee);
-    sendMaill(annee);
+    //sendMaill(annee);
     navagate(`/competition/`);
   }
 

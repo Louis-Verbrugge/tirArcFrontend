@@ -51,13 +51,13 @@ app.get('/api/competition/villeDinct', async (req, res) => {
 
 
 // api pour envoyer un mail:
-const { sendMail } = require('./envoieMail');
+const { sendEmailT } = require('./test');
 
 app.post('/sendEmail/', async (req, res) => {
     console.log("sendEmail 11 ");
     console.log(req);
     console.log(req.query.text);
-    sendMail(req.query.text);
+    sendEmailT(req.query.text);
     res.send('Email envoyé');
 });
 
