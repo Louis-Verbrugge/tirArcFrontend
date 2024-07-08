@@ -11,8 +11,10 @@
 .blockInscription{
     width: 50%;
     height: 100%;
+    
     background-color: var(--blueClub);
 }
+
 
 
 
@@ -84,10 +86,11 @@ input{
 
 
 .blockMoreInfo{
-    background-color: var(--orangeClub);
     width: 50%;
     height: 100%;
     margin: auto;
+    background: linear-gradient(275deg, var(--orangeClub), 20% , var(--blueClub));
+    border-left: solid 1px white;
 }
 
 .moreInfo{

@@ -1,6 +1,10 @@
 
-import styles from './competition.module.css';
+
 import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+
+import styles from './competition.module.css';
+
 
 function Competition() {
 
@@ -10,8 +14,9 @@ function Competition() {
     navagate(`/competition/${annee}`);
   }
 
+
   return (
-    <div>
+    <div className={styles.competition}>
 
       <h1 className={styles.title}>Nos Competitions:</h1>
 

@@ -1,6 +1,4 @@
 
-
-import  SideImage from "./SideImage"
 import logoTirArcCysoing from "../../image/logoTirArcCysoing.jpg"
 import styles from "./LandingPage.css"
 
@@ -39,7 +37,7 @@ function LandingPage() {
       href: "inscription"
     },
     {
-      titleInscription: "inscription 4",
+      titleInscription: "Qui sommes nous ?",
       description: "test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
       image: image1,
       background: "red",
@@ -104,18 +102,17 @@ function LandingPage() {
   return (
     <div className="LandingPage">
 
+
+
       <a href="../" >
         <img id="returnLobby" src={logoTirArcCysoing}></img>
       </a>
     
+      <img className="backGroundImage" src={image2}></img>
 
       <div className="">
-
         <h1>Club St Sébastien</h1>
-
         {blockNavigation()}
-
-
       </div>
 
 

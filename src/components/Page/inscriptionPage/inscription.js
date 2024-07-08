@@ -24,7 +24,7 @@ function Inscription() {
       .catch((error) => {
         console.error('Erreur:', error);
       });
-  }
+  };
 
 
 
@@ -65,7 +65,7 @@ function Inscription() {
           </div>
 
           <div className={styles.labelInput}>
-            <label>Phone number</label>
+            <label>Phone number *</label>
             <input type="text"></input>
           </div>
 
