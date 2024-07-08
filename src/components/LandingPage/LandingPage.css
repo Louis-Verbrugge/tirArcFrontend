@@ -1,5 +1,13 @@
 
 
+#returnLobby{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: auto;
+}
+
 .navigation{
     display: flex;
     flex-direction: row;
@@ -8,19 +16,15 @@
 
 .navigation > * {
     padding: 10px;
-    border-left: solid red;
-    border-top: solid red;
-    border-bottom: solid red;
+    border-bottom: 0 solid var(--orangeClub);
+
+    transition: border-bottom 0.1s ease-out
 }
 
-.navigation > *:first-child{
-    border-radius: 10px 0 0 10px;
+.navigation > *:hover{
+    border-bottom: 2px solid var(--orangeClub);
 }
 
-.navigation > *:last-child{
-    border-right: solid red;
-    border-radius: 0 10px 10px 0;
-}
 
 .header h1{
     position: absolute;
@@ -36,26 +40,31 @@
 
 
 
-.LandingPage img{
+.blockSite img{
     border-radius: 50%;
+    width: 30%;
+    height: auto;
+
+    transition: transform 0.2s
+
 }
 
-.blockBleu{
+.LandingPage img:hover{
+    transform: scale(1.05);
+}
+
+.blockSite{
     height: 100vh;
-    width: 100vw;
-    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.blockRouge{
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(0, 0, 255);
-}
-
-.blockJaune{
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(56, 56, 56);
+.blockTexte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
 }

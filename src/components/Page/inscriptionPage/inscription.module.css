@@ -3,15 +3,18 @@
 .inscription{
     width: 100vw;
     height: 100vh;
+    color: white;
+    display: flex;
 }
 
 
 .blockInscription{
     width: 50%;
     height: 100%;
-    background-color: rgb(1, 38, 38);
-
+    background-color: var(--blueClub);
 }
+
+
 
 .form{
     width: 70%;
@@ -21,12 +24,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: rgb(1, 38, 38);
+    background-color: var(--blueClub);
 }
 
 
 .form > * {
-    background-color: rgb(1, 38, 38);
+    background-color: var(--blueClub);
 }
 
 .iconTarget{
@@ -58,23 +61,55 @@
 
 
 input{
-    background-color: rgb(1, 38, 38);
+    background-color: var(--blueClub);
     margin-bottom: 40px;
     width: 100%;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     padding-bottom: 10px;
     outline: none; 
 }
 
 .btnSubmit{
-    
     width: 20%;
     height: 40px;
     margin: 0 auto;
-    background-color: rgb(4, 128, 128);
-    color: white;
+    background-color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 20px;
     cursor: pointer;
 }
+
+
+
+.blockMoreInfo{
+    background-color: var(--orangeClub);
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.moreInfo{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.moreInfo h3{
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+ul{
+    padding-left: 15px;
+}
+
+li{
+    padding-bottom: 10px;
+}
+
