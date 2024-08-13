@@ -1,8 +1,8 @@
 
-import styles from "./inscription.module.css"
-import logoTirArcCysoing from "../../../image/logoTirArcCysoing.jpg"
+import styles from "./Inscription.module.css"
+import logoTirArcCysoing from "../../../../image/logoTirArcCysoing.jpg"
 
-import iconTarget from "../../../image/iconTarget.svg"
+import iconTarget from "../../../../image/iconTarget.svg"
 
 function Inscription() {
 

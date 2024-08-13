@@ -3,7 +3,7 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
-import styles from './competition.module.css';
+import styles from './Competition.module.css';
 
 
 function Competition() {

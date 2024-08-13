@@ -1,12 +1,14 @@
 
-import logoTirArcCysoing from "../../image/logoTirArcCysoing.jpg"
+import logoTirArcCysoing from "../../../image/logoTirArcCysoing.jpg"
+import Cookies from 'js-cookie';
+
 import styles from "./LandingPage.css"
 
-import image1 from '../../image/Plan.png'
-import image2 from '../../image/Plan.png'
-import image3 from '../../image/Plan.png'
-import image4 from '../../image/Plan.png'
-import image5 from '../../image/Plan.png'
+import image1 from '../../../image/Plan.png'
+import image2 from '../../../image/Plan.png'
+import image3 from '../../../image/Plan.png'
+import image4 from '../../../image/Plan.png'
+import image5 from '../../../image/Plan.png'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react"
 import { ButtonToolbar } from "react-bootstrap"
@@ -97,16 +99,37 @@ function LandingPage() {
   }
 
 
+  function Logindisconnection() {
+
+    if(Cookies.get('adminToken') !== undefined) {
+      Cookies.remove('adminToken');
+      alert('Vous êtes déconnecté');
+    } else {
+      alert('Vous n\'êtes pas connecté');
+    }
+  }
+
 
 
   return (
-    <div className="LandingPage">
+    <div className="landingPage">
 
 
 
       <a href="../" >
         <img id="returnLobby" src={logoTirArcCysoing}></img>
       </a>
+
+      <div className="blockLogin">
+
+        <img id="loginAdmin" src={logoTirArcCysoing}></img>
+
+        <div className="navBarLogin">
+          <a href="/login">Admin</a>
+          <p onClick={Logindisconnection}>Deconnection</p>
+        </div>
+      </div>
+
     
       <img className="backGroundImage" src={image2}></img>
 

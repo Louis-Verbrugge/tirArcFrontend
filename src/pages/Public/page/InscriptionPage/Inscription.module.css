@@ -3,7 +3,7 @@
 .inscription{
     width: 100vw;
     height: 100vh;
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .iconTarget{
-    width: 10%;
+    width: 15%;
     height: 15%;
     justify-content: start;
 

@@ -1,0 +1,11 @@
+
+
+Dans la page Admin:
+
+    -bar nav avec (new new, new scors arc, ... )
+
+        -dans chaque onglet il est possible d'add ou d'edit ou de delete des info.
+
+
+-Crée page pour les visiteurs pour mettre leur nom et une pp qui serra affiché en haut a droite
+
