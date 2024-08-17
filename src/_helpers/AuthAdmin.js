@@ -3,19 +3,17 @@ import { Navigate } from "react-router-dom"
 import axios from 'axios'
 import Cookies from 'js-cookie';
 import React, { useState, useEffect } from 'react';
-import { addMinutes } from "rsuite/esm/internals/utils/date";
+import Loading from "../components/Loading/Loading";
 
 const AuthAdmin = ({children}) => {
 
 
-    
-    console.log(children)
-
-    const [isLoading, setIsLoading] = useState(true);
-    const [isAuthenticated, setIsAuthenticated] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 
-    useEffect(() => {
+    useEffect(() => {            
+
 
         axios({
             method: 'post',
@@ -30,7 +28,6 @@ const AuthAdmin = ({children}) => {
                 console.log("okokkkkkkkkkkkkkkkkk")
                 console.log(children)
                 setIsAuthenticated(true);
-                return children
 
             } else {
                 console.log("no okkkkkkkkkkkkkkkkkk")
@@ -43,21 +40,29 @@ const AuthAdmin = ({children}) => {
                 console.log("no okkkkkkkkkkkkkkkkkk")
             //return <Navigate to="/" />
             setIsAuthenticated(false);
+            })
+
+
+            .finally(function () {
+
+                setTimeout(() => {
+                    setLoading(false);
+                }, 1000)
 
             })
 
-            .finally(() => {
-                setIsLoading(false);
-            });
+
 
     }, []);
 
-    if (isLoading) {
-        return <div>Loading...</div>; // Affiche un indicateur de chargement
-    }
 
+    if (loading) {
+        return <Loading size={100}/>
+    }
+    
     if (isAuthenticated) {
         return children
+
     } else {
         return <Navigate to="/" />
     }

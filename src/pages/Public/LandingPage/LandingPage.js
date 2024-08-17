@@ -1,4 +1,7 @@
 
+import { useNavigate } from 'react-router-dom';
+
+
 import logoTirArcCysoing from "../../../image/logoTirArcCysoing.jpg"
 import Cookies from 'js-cookie';
 
@@ -9,12 +12,18 @@ import image2 from '../../../image/Plan.png'
 import image3 from '../../../image/Plan.png'
 import image4 from '../../../image/Plan.png'
 import image5 from '../../../image/Plan.png'
-import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react"
 import { ButtonToolbar } from "react-bootstrap"
 
+import UseIsAdmin from "../../../_helpers/IsAdmin";
+
 
 function LandingPage() {
+
+  const navigate = useNavigate();
+
+  const isAdmin = UseIsAdmin();
+
 
   let InfoLandingPage = [
     {
@@ -99,22 +108,26 @@ function LandingPage() {
   }
 
 
-  function Logindisconnection() {
+  function loginAdmin() {
 
-    if(Cookies.get('adminToken') !== undefined) {
-      Cookies.remove('adminToken');
-      alert('Vous êtes déconnecté');
-    } else {
-      alert('Vous n\'êtes pas connecté');
+
+    if (isAdmin) {
+      navigate('/admin');
+    }
+
+    else {
+      navigate('/login');
     }
   }
 
+  function deconnection() {
+    Cookies.remove('adminToken');
+    window.location.reload();
+  }
 
 
   return (
     <div className="landingPage">
-
-
 
       <a href="../" >
         <img id="returnLobby" src={logoTirArcCysoing}></img>
@@ -125,10 +138,13 @@ function LandingPage() {
         <img id="loginAdmin" src={logoTirArcCysoing}></img>
 
         <div className="navBarLogin">
-          <a href="/login">Admin</a>
-          <p onClick={Logindisconnection}>Deconnection</p>
+          <p onClick={loginAdmin}href="/login">Admin</p>
+
+          { isAdmin ? <p onClick={deconnection}>Deconnection</p> : null }
+
         </div>
       </div>
+
 
     
       <img className="backGroundImage" src={image2}></img>
