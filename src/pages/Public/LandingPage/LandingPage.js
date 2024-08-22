@@ -1,5 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 
 import logoTirArcCysoing from "../../../image/logoTirArcCysoing.jpg"
@@ -12,17 +13,32 @@ import image2 from '../../../image/Plan.png'
 import image3 from '../../../image/Plan.png'
 import image4 from '../../../image/Plan.png'
 import image5 from '../../../image/Plan.png'
-import { useEffect } from "react"
 import { ButtonToolbar } from "react-bootstrap"
 
-import UseIsAdmin from "../../../_helpers/IsAdmin";
+import UseIsAdmin from "../../../_helpers/UseIsAdmin";
+import axios from 'axios';
+
+
+import GetDataUser from '../../../_helpers/GetDataUser';
+
+  
 
 
 function LandingPage() {
 
   const navigate = useNavigate();
 
-  const isAdmin = UseIsAdmin();
+  const { isAdmin, login } = UseIsAdmin();
+
+
+  const { user } = GetDataUser();
+
+  useEffect(() => {
+    console.log(user);
+    console.log("user.profilePicture 99999999999999999999999999999999 : ");
+    console.log(user);
+  }, [user])
+
 
 
   let InfoLandingPage = [
@@ -66,10 +82,8 @@ function LandingPage() {
     },
   ]
 
-  const navagate = useNavigate();
-
   function handleClick(annee) {
-    navagate(`/${annee}/`);
+    navigate(`/${annee}/`);
   }
 
 
@@ -85,6 +99,19 @@ function LandingPage() {
       </div>
 
     )
+  }
+
+  function checkStatus() {
+
+    if (login && isAdmin) {
+      navigate('/admin');
+    } else if (login && !isAdmin) {
+      //alert("monCompte");
+      navigate('/account/myAccount');
+    } else {
+      navigate('/account/login');
+    }
+    
   }
 
   function blockSite() {
@@ -108,18 +135,6 @@ function LandingPage() {
   }
 
 
-  function loginAdmin() {
-
-
-    if (isAdmin) {
-      navigate('/admin');
-    }
-
-    else {
-      navigate('/login');
-    }
-  }
-
   function deconnection() {
     Cookies.remove('adminToken');
     window.location.reload();
@@ -133,14 +148,22 @@ function LandingPage() {
         <img id="returnLobby" src={logoTirArcCysoing}></img>
       </a>
 
+
       <div className="blockLogin">
 
-        <img id="loginAdmin" src={logoTirArcCysoing}></img>
+        {
+          user.profilePicture ? 
+          <img onClick={checkStatus} id="loginAdmin" 
+            src={`data:image/png;base64,${user.profilePicture}`} 
+            alt="Profile" 
+          />:
+            <img onClick={checkStatus} id="loginAdmin" src={logoTirArcCysoing}></img>
+        }
+        
 
         <div className="navBarLogin">
-          <p onClick={loginAdmin}href="/login">Admin</p>
+          
 
-          { isAdmin ? <p onClick={deconnection}>Deconnection</p> : null }
 
         </div>
       </div>
@@ -156,11 +179,6 @@ function LandingPage() {
 
 
       {blockSite()}
-
-
-
-
-
 
     </div>
   );

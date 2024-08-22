@@ -13,7 +13,7 @@ function Inscription() {
     let age = document.getElementById("age").value;
     let email = document.getElementById("email").value;
 
-    alert(firstName);
+    //alert(firstName);
     fetch(`http://localhost:5000/sendEmail?firstName=${firstName}&lastName=${lastName}&age=${age}&email=${email}`, {
       method: 'POST',
     })

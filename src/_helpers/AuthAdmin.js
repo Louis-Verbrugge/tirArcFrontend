@@ -7,7 +7,6 @@ import Loading from "../components/Loading/Loading";
 
 const AuthAdmin = ({children}) => {
 
-
     const [loading, setLoading] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 

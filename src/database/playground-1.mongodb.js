@@ -11,27 +11,21 @@
 
 // Select the database to use.
 
-//db = db.getSiblingDB('mongodbVSCodePlaygroundDB');
 
-function createCollection() {
-  db.createCollection('sales');
-}
-
-
-// Create a collection named 'databaseUsers'.
-
-function addData() {
-  db.getCollection('sales').insertMany([
-    { 'name': 'abc1111uuuuuuuuuuuuuuuuuuuuuu', 'email': "lought" },
-    { 'name': 'abc1111uuuuuuuuuuuuuuuuuuuu', 'email': "lougdsqht", 'age': 19 },
-    { 'name': 'abc1111uuuuuuuuuuuuuuuuuuuuuuuu', 'email': "loughtlought", 'age': 10 },
-    { 'name': 'abc1111uuuuuuuuuuuuuuuuuu', 'email': "loughtdsq", 'age': 20 }
-  ]);
-};
+////////////////////////////////////////////////
+// db.getSiblingDB('mongodbVSCodePlaygroundDB');
+// db.createCollection('sales');
 
 
-function getData() {
-  return db.getCollection('sales').find({});
-}
+// // Create a collection named 'databaseUsers'.
+// db.getCollection('sales').insertMany([
+//   { 'name': 'abc1111uuuuuuuuuuuuuuuuuuuuuu', 'email': "lought" },
+//   { 'name': 'abc1111uuuuuuuuuuuuuuuuuuuu', 'email': "lougdsqht", 'age': 19 },
+//   { 'name': 'abc1111uuuuuuuuuuuuuuuuuuuuuuuu', 'email': "loughtlought", 'age': 10 },
+//   { 'name': 'abc1111uuuuuuuuuuuuuuuuuu', 'email': "loughtdsq", 'age': 20 }
+// ]);
 
-//console.log(testt)
+// db.getCollection('sales').find({});
+////////////////////////////////////////////////
+
+

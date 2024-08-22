@@ -42,7 +42,7 @@ module.exports = {
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const plainTextPassword = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjM1NjQ4NDQsImV4cCI6MTcyNDE2OTY0NH0.LuHREO2B2cI-g3v-RGGInOait5ct55gRV8xAQicnAfw';
+const plainTextPassword = 'Azerty0000';
 
 bcrypt.hash(plainTextPassword, saltRounds, function(err, hash) {
     // Stockez ce hash dans process.env.ADMIN_PASSWORD
