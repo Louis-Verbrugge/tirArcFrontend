@@ -7,7 +7,6 @@ import { Buffer } from 'buffer';
 
 function GetDataUser() {    
 
-
     const [user, setUser] = useState({
         firstName: "",
         lastName:"",
@@ -15,9 +14,6 @@ function GetDataUser() {
         email: "",
         profilePicture: ""
     })
-
-
-
 
     const [lastNameuser, setLastNameUser] = useState("");
     const [firtNameUser, setFirtNameUser] = useState("");
@@ -38,32 +34,9 @@ function GetDataUser() {
 
             .then(function (response) {
                 
-            console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
             const dataUser = response.data.user;
-            console.log(response.data.user);
             setLastNameUser(response.data.user.lastName);
             setFirtNameUser(response.data.user.firstName);
-
-            // let image = undefined;
-            
-            // if (dataUser.profilePicture !== "") {
-
-            //     alert("dataUser.profilePicturokkkkkkkkkkk ")
-
-            //     console.log("dataUser.profilePicture LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-
-            //     console.log(dataUser.profilePicture)
-
-            //     const base64 = Buffer.from(dataUser.profilePicture, 'binary').toString('base64');
-
-
-            //     // console.log("base64")
-            //     // console.log(base64)
-            //     image = base64;
-            // } else {
-            //     alert("pas okkkkkkkkkkkkkk")
-            // }
-
 
             setUser({
                 firstName: dataUser.firstName,

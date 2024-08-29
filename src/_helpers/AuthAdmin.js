@@ -24,26 +24,20 @@ const AuthAdmin = ({children}) => {
             .then(function (response) {
             console.log("is Admin dsqdsqdsqd? : " );
             if (response.data.adminAcces) {
-                console.log("okokkkkkkkkkkkkkkkkk")
-                console.log(children)
                 setIsAuthenticated(true);
 
             } else {
-                console.log("no okkkkkkkkkkkkkkkkkk")
-                //return <Navigate to="/" />
                 setIsAuthenticated(false);
             }
 
             })
             .catch(function (error) {
                 console.log("no okkkkkkkkkkkkkkkkkk")
-            //return <Navigate to="/" />
-            setIsAuthenticated(false);
+                setIsAuthenticated(false);
             })
 
 
             .finally(function () {
-
                 setTimeout(() => {
                     setLoading(false);
                 }, 1000)

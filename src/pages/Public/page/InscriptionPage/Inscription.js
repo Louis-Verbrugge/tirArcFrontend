@@ -101,10 +101,33 @@ function Inscription() {
               <li>Location de palette obligatoire (dès 18m) 13€</li>
 
             </ul>
-          </div>
-        
+          </div>     
         
         </div>
+
+        <div className={styles.moreInfo}>
+
+          <h3>
+            Nos horraires: 
+          </h3> 
+
+
+          <div>
+            <ul>
+
+              <li>Lundi 18H-19h30 pour les tireurs confirmé</li>
+              <li>Mercredi 17h00-18h00 pour les tireurs debutants</li>
+              <li>Mercredi 18h00-19h00 pour les tireurs confirmé</li>
+              <li>Vendredi 19h00-22h00 pour les tireurs confirmé</li>
+
+            </ul>
+          </div>     
+
+        </div>
+
+
+
+
           
       </div>
 
