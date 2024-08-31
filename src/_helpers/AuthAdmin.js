@@ -5,6 +5,8 @@ import Cookies from 'js-cookie';
 import React, { useState, useEffect } from 'react';
 import Loading from "../components/Loading/Loading";
 
+import pathApiAxios from "../_helpers/PathApiAxios";
+
 const AuthAdmin = ({children}) => {
 
     const [loading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ const AuthAdmin = ({children}) => {
 
         axios({
             method: 'post',
-            url: 'http://localhost:5000/checkAdmin',
+            url: pathApiAxios('checkAdmin'),
             data: {
                 tokenAdmin: Cookies.get('adminToken')
             }

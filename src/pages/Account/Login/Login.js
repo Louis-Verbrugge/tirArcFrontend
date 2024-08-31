@@ -6,7 +6,10 @@ import Cookies from 'js-cookie';
 
 import { useNavigate } from 'react-router-dom';
 
+import pathApiAxios from "../../../_helpers/PathApiAxios";
+
   
+
 function Login() {
 
     
@@ -32,7 +35,7 @@ function Login() {
 
         axios({
             method: 'post',
-            url: 'http://localhost:5000/api/login', 
+            url: pathApiAxios('api/login'), 
             data: {
                 credentials
             }

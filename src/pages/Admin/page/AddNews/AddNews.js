@@ -1,9 +1,10 @@
 
 
 import React, { useState, useEffect } from 'react';
-
-import { getData } from '../../../../database/playground-1.mongodb';
 import axios from 'axios';
+
+
+import pathApiAxios from "../../../../_helpers/PathApiAxios";
 
 
 function AddNews() {
@@ -14,7 +15,7 @@ function AddNews() {
 
         axios({
             method: 'get',
-            url: 'http://localhost:5000/api/database',
+            url: pathApiAxios('api/database'),
         })
             .then(function (response) {
                 console.log(response.data);

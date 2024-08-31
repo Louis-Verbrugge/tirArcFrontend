@@ -16,8 +16,6 @@ import image5 from '../../../image/Plan.png'
 import { ButtonToolbar } from "react-bootstrap"
 
 import UseIsAdmin from "../../../_helpers/UseIsAdmin";
-import axios from 'axios';
-
 
 import GetDataUser from '../../../_helpers/GetDataUser';
 
@@ -90,7 +88,9 @@ function LandingPage() {
   function blockNavigation() {
 
     const listeBlockNavigation = InfoLandingPage.map((item, index) =>
-        <a href={"#"+item.titleInscription}>{item.titleInscription}</a>
+     
+     <a href={"#"+item.titleInscription}>{item.titleInscription}</a>
+
     )
 
     return (
@@ -173,7 +173,7 @@ function LandingPage() {
       <img className="backGroundImage" src={image2}></img>
 
       <div className="">
-        <h1>Club St Sébastien</h1>
+
         {blockNavigation()}
       </div>
 

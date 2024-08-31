@@ -38,7 +38,7 @@ function ResultatCompetition() {
     const [villeDifferentes, setVilleDifferentes] = useState([]);
 
 
-
+    /*
     useEffect(() => {
         let url = `http://localhost:5000/api/competition?startDate=${startDate}&endDate=${endDate}`;
         fetch(url) // API pour recuperer les resultats des competitions
@@ -75,6 +75,7 @@ function ResultatCompetition() {
 
 
     }, []);
+    */
 
 
     function dataResultatCompetition(lieu) {

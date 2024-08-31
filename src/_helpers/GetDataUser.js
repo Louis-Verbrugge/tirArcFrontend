@@ -3,7 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import Cookies from 'js-cookie';
-import { Buffer } from 'buffer';
+
+import pathApiAxios from "../_helpers/PathApiAxios";
+
 
 function GetDataUser() {    
 
@@ -24,12 +26,12 @@ function GetDataUser() {
     }, [lastNameuser, firtNameUser]);
 
     useEffect(() => {
+
+
         axios({
             method: 'post',
-            url: 'http://localhost:5000/api/user',
-            data: {
-                tokenUser: Cookies.get('tokenUser')
-            }
+            url: pathApiAxios('api/user'),
+            
         })
 
             .then(function (response) {

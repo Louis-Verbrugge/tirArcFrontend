@@ -3,6 +3,7 @@ import styles from "./Inscription.module.css"
 import logoTirArcCysoing from "../../../../image/logoTirArcCysoing.jpg"
 
 import iconTarget from "../../../../image/iconTarget.svg"
+import pathApiAxios from "../../../../_helpers/PathApiAxios";
 
 function Inscription() {
 
@@ -14,7 +15,7 @@ function Inscription() {
     let email = document.getElementById("email").value;
 
     //alert(firstName);
-    fetch(`http://localhost:5000/sendEmail?firstName=${firstName}&lastName=${lastName}&age=${age}&email=${email}`, {
+    fetch( pathApiAxios(`sendEmail?firstName=${firstName}&lastName=${lastName}&age=${age}&email=${email}`), {
       method: 'POST',
     })
       .then(response => response.text())

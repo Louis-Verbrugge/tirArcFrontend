@@ -8,6 +8,8 @@ import { Buffer } from 'buffer';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
+import pathApiAxios from '../../../_helpers/PathApiAxios';
+
 function MyAccount() {
     
     const navigate = useNavigate();
@@ -26,7 +28,7 @@ function MyAccount() {
         
         axios({
             method: 'post',
-            url: 'http://localhost:5000/api/addProfilePicture', 
+            url: pathApiAxios('api/addProfilePicture'), 
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -56,6 +58,7 @@ function MyAccount() {
             <p>Nom: {user.lastName}</p>
             <p>Âge: {user.years}</p>
             <p>Email: {user.email}</p>
+
 
             <input type="file" id="testtest" accept="image/png, image/jpeg" />
 

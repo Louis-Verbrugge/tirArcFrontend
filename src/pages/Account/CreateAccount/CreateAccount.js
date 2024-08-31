@@ -2,6 +2,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
+import pathApiAxios from "../../../_helpers/PathApiAxios";
+
 
 function CreateAccount() {
 
@@ -32,7 +34,7 @@ function CreateAccount() {
 
             axios({
                 method: 'post',
-                url: 'http://localhost:5000/api/addAccount',
+                url: pathApiAxios('api/addAccount'),
                 data: {
                     credentials
                 }
