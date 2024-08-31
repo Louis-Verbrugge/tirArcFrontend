@@ -20,8 +20,6 @@ const UseIsAdmin = () => {
 
   useEffect(() => {   
     
-    alert(pathApiAxios('api/auth'))
-
 
     axios({
         method: 'post',
