@@ -1,0 +1,91 @@
+
+
+
+:root{
+    --cardMainWidth: 90%;
+}
+
+.pageProjects{
+    padding-top: 100px;
+
+    .blockProject {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+        width: var(--widthPage); 
+        margin: 0 auto;
+
+        .cardProject{
+
+            position: relative;
+
+            background-color: var(--colorGrey); 
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 25px; /* coins arrondis */   
+            height: 500px;
+
+            img{
+                width: 100%;
+                height: 200px;
+                border-radius: 25px 25px 0 0;
+            }
+
+            .cardMain{
+
+                width: var(--cardMainWidth);
+                margin: auto;
+                padding-top: 10px;
+
+                .cardTitle{
+                    height: 50px;
+                    text-align: justify;
+                }
+    
+                .cardDescription{
+                    text-align: justify;  
+                    height: 150px;
+                }
+
+                .cardTechno{
+                    text-align: justify;
+                }
+
+
+
+
+                .cardPreview{
+                    position: absolute;
+                    bottom: 0;
+                    width: var(--cardMainWidth);
+                    height: 50px;
+                    background-color: var(--colorPrimary);
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    cursor: pointer;
+
+                    a{
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                    a:hover{
+                        cursor: pointer;
+                        text-decoration: underline;
+                        text-underline-offset: 10px;
+                    }
+                }
+
+
+            }
+
+
+
+
+
+
+        }
+    }
+}
+

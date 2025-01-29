@@ -1,0 +1,20 @@
+
+
+h1 {
+    position: absolute;
+    height: 100vh;
+    overflow: hidden;
+  
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, rgb(195 102 232), rgb(139 161 242));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+  }
+  
+  #chart-container {
+    width: 200px;
+    height: 200px;
+  }
+  
