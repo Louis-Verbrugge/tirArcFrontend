@@ -2,11 +2,13 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
+import {NavBar} from "../../../components/NavBar/NavBar.js";
+
 
 import logoTirArcCysoing from "../../../image/logoTirArcCysoing.jpg"
 import Cookies from 'js-cookie';
 
-import styles from "./LandingPage.css"
+import "./LandingPage.css"
 
 import image1 from '../../../image/Plan.png'
 import image2 from '../../../image/Plan.png'
@@ -19,8 +21,11 @@ import UseIsAdmin from "../../../_helpers/UseIsAdmin";
 
 import GetDataUser from '../../../_helpers/GetDataUser';
 
-  
+import { NumberCount } from '../../../components/NumberCount/NumberCount';
 
+import styles from "./LandingPage.module.scss"
+
+import { Footer } from '../../../components/Footer/Footer.js';
 
 function LandingPage() {
 
@@ -135,50 +140,53 @@ function LandingPage() {
   }
 
 
-  function deconnection() {
-    Cookies.remove('adminToken');
-    window.location.reload();
-  }
-
 
   return (
     <div className="landingPage">
 
-      <a href="../" >
-        <img id="returnLobby" src={logoTirArcCysoing}></img>
-      </a>
 
 
-      <div className="blockLogin">
-
-        {
-          user.profilePicture ? 
-          <img onClick={checkStatus} id="loginAdmin" 
-            src={`data:image/png;base64,${user.profilePicture}`} 
-            alt="Profile" 
-          />:
-            <img onClick={checkStatus} id="loginAdmin" src={logoTirArcCysoing}></img>
-        }
-        
-
-        <div className="navBarLogin">
-          
 
 
-        </div>
-      </div>
 
+      {/* <div>
+        <img className="backGroundImage" src={image2}></img>
+
+      </div> */}
 
     
-      <img className="backGroundImage" src={image2}></img>
-
-      <div className="">
-
-        {blockNavigation()}
-      </div>
 
 
       {blockSite()}
+
+      <NumberCount />
+
+      <div className={styles.infoNumberCount}>
+
+        <h2>Quelques chiffres</h2>
+
+        <div className={styles.content}>
+
+
+          <div className={styles.block}>
+            <h1>Nombre de licenciés</h1>
+            <p>100</p>
+          </div>
+
+          <div className={styles.block}>
+            <h1>Nombre de competiteurs</h1>
+            <p>100</p>
+          </div>
+
+          <div className={styles.block}>
+            <h1>Age du Club</h1>
+            <p>100 ans</p>
+          </div>
+  
+        </div>
+      </div>
+
+      <Footer />
 
     </div>
   );

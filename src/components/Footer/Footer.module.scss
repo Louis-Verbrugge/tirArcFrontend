@@ -1,0 +1,100 @@
+
+
+.footer{
+
+    position: relative;
+    
+
+    .top{
+
+        
+        background-color: var(--blueClub);
+
+        border-radius: 50% 50% 0 0; /* Arrondi en bas */
+        position: absolute;
+
+        top:-80px;
+        width: calc(100% + 100px);    
+        height: 80px;
+        left: -50px;
+        z-index: -1;
+
+    }
+
+    background-color: var(--blueClub);
+
+
+
+    .content{
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+
+        .left{
+
+            button{
+                background-color: rgb(255, 255, 255);
+                
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+                padding: 10px 20px;
+                border-radius: 20px;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover{
+                    background-color: var(--orangeClub);
+                    color: white;
+                }
+            }
+        }
+
+
+        .right{
+
+            position: relative; /* Nécessaire pour positionner l'image par rapport à ce conteneur */
+
+            .imageFirstCircle {
+                background-color: rgb(46, 159, 74);
+                position: relative;
+                width: 430px;
+                height: 430px;
+                
+                border-radius: 50%;
+                top: -70%; /* Déplace le premier cercle vers le haut */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: -3; /* Les cercles sont derrière l'image */
+            }
+        
+            .imageSecondCircle {
+                background-color: rgb(126, 19, 226);
+                width: 90%;
+                height: 90%;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: -3; /* Les cercles sont derrière l'image */
+            }
+        
+            img {
+                position: absolute; /* Positionner l'image par rapport au parent .right */
+                top: -20%; /* Centrer l'image verticalement */
+                left: 50%; /* Centrer l'image horizontalement */
+                transform: translate(-50%, -50%); /* Ajuste l'image pour la centrer */
+                width: calc(430px - 19%);
+                height: calc(430px - 19%);
+                border-radius: 50%;
+                z-index: 2; /* L'image est au-dessus des cercles */
+            }
+        }
+
+    }
+}
