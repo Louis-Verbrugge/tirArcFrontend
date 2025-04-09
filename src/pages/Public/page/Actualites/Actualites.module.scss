@@ -1,0 +1,80 @@
+
+
+
+.actualites{
+    width: 100%;
+    margin-top: var(--padding_top_new_page);
+    margin-bottom: var(--padding_top_new_page);
+
+    // annimation au start:
+    animation: fadeInUp var(--time_annimation_fadeInUp) ease-in-out; /* Appliquer l'animation de fondu */
+
+
+    .title{
+        text-align: center;
+        margin: 30px;
+    }
+
+
+    .blockActualites {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        width: var(--blockCategoryWidth);
+        margin: auto;
+        
+    
+    }
+
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Optionnel : ajoute un léger déplacement vers le bas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media screen and (min-width: 2500px)  {
+    :root{
+        --blockCategoryWidth: 90%;
+    }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2499px) {
+    :root{
+        --blockCategoryWidth: 90%;
+    }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 1999px) {
+    :root{
+        --blockCategoryWidth: 95%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1499px) {
+    :root{
+        --blockCategoryWidth: 95%;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    :root{
+        --blockCategoryWidth: 100%;
+    }
+}
+
+
+
+

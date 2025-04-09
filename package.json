@@ -41,6 +41,7 @@
     "sass": "^1.85.1",
     "sib-api-v3-sdk": "^8.5.0",
     "stream-browserify": "^3.0.0",
+    "swiper": "^11.2.6",
     "url": "^0.11.4",
     "web-vitals": "^2.1.4"
   },

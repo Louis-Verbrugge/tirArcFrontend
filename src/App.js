@@ -11,6 +11,9 @@ import AdminRoute from './pages/Admin/AdminRoute';
 import AccountRoute from './pages/Account/AccountRoute';
 import { NavBar } from './components/NavBar/NavBar';
 
+import Actualite from './pages/Public/page/Actualites/Actualites';
+import ActualitesDetails from './pages/Public/page/Actualites/ActualitesDetails/ActualitesDetails';
+
 import { BrowserRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -33,6 +36,13 @@ function App() {
         <Route path='/competition' element={<Competition />} />
         <Route path='/competition/:annee' element={<ResultatCompetition />} />
         <Route path='/inscription' element={<Inscription />} />
+
+
+
+        <Route path='/news' element={<Actualite/>} />
+        <Route path='/news/:titleActualites' element={<ActualitesDetails />} />
+
+
       </Routes>
     </BrowserRouter>
   );

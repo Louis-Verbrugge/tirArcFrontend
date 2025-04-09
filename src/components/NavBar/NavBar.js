@@ -19,7 +19,7 @@ export function NavBar() {
       <nav className="content">
         <p>Tir à l'arc Cysoing</p>
         <div className="nav-icon">
-          <a href="#">
+          <a href="/news">
             <p>News</p>
           </a>
           <a href="#">

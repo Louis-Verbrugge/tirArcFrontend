@@ -25,7 +25,7 @@
 
 
 
-    .content{
+    .main{
         display: flex;
         justify-content: space-around;
         padding: 20px;
@@ -46,10 +46,13 @@
                 border: none;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
+                transition: transform .5s ease;
 
                 &:hover{
                     background-color: var(--orangeClub);
                     color: white;
+                    transform: rotate(-5deg) scale(1.1);  
+                    transition: transform .5s ease;
                 }
             }
         }
@@ -57,7 +60,7 @@
 
         .right{
 
-            position: relative; /* Nécessaire pour positionner l'image par rapport à ce conteneur */
+            position: relative;
 
             .imageFirstCircle {
                 background-color: #F2F8FF;
@@ -66,11 +69,11 @@
                 height: 430px;
                 
                 border-radius: 50%;
-                top: -70%; /* Déplace le premier cercle vers le haut */
+                top: -70%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                z-index: -3; /* Les cercles sont derrière l'image */
+                z-index: -3;
             }
         
             .imageSecondCircle {
@@ -81,20 +84,75 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                z-index: -3; /* Les cercles sont derrière l'image */
+                z-index: -3;
             }
         
             img {
-                position: absolute; /* Positionner l'image par rapport au parent .right */
-                top: -20%; /* Centrer l'image verticalement */
-                left: 50%; /* Centrer l'image horizontalement */
-                transform: translate(-50%, -50%); /* Ajuste l'image pour la centrer */
+                position: absolute;
+                top: -20%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 width: calc(430px - 19%);
                 height: calc(430px - 19%);
                 border-radius: 50%;
-                z-index: 2; /* L'image est au-dessus des cercles */
+                transition: transform .5s ease;
+
+
+            }
+
+            img:hover{
+                // agrandir l'image
+
+                transform: translate(-50%, -50%) rotate(-10deg) scale(1.1);
+                transition: transform .5s ease;
+
+                
             }
         }
 
+    }
+
+    .bottom{
+        display: flex;
+        justify-content: space-around;
+        margin-top: -200px;
+        padding-bottom: 150px;
+
+        .contact{ 
+            display: flex;
+
+            p{
+                color: white;
+            }
+
+            .socialMedia{
+                margin: auto;
+                padding-left: 20px;
+
+                img{
+                    width: 50px;
+                }
+            }
+        
+        }
+
+        img{
+            height: 100px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+
+            
+        }
+    }
+}
+
+
+/* annimation */
+@keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
 }
