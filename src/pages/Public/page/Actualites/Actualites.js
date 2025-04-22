@@ -8,6 +8,8 @@ import Actualite from './Actualite/Actualite';
 
 import axios from 'axios';
 
+import { listeActualite } from '../../../../data/news/news.js'
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,54 +24,7 @@ import 'swiper/css/pagination';
 function Actualites() {
 
 
-  
-  let listeActualite = [
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-    {
-      picture: "/image/logoTirArcCysoing.jpg",
-      title: "TITRE 1",
-      description: "description 1"
-    },
-  ]
+
 
 
 

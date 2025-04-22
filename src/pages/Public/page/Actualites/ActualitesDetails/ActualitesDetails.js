@@ -16,6 +16,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import React, { useState, useEffect } from 'react';
 
+import { listeActualite } from '../../../../../data/news/news.js'
+
 
 
 function ActualitesDetails( { pathImage }) {
@@ -35,81 +37,52 @@ function ActualitesDetails( { pathImage }) {
 
   function convertUrlToTitle(url) {
     return url
-        .replace(/-/g, '%20')                // Remplace les tirets par des espaces
-        .replace(/_/g, '-');                 // Remplace les underscores par des espaces
+        .replace(/-/g, ' ')                // Remplace les tirets par des espaces
   }
-
-
 
 
   return (
 
     <div className={styles.actualitesDetails}> 
 
-      <>
 
-          <div className={styles.container}> 
-            <h1><span>{titleActualite}</span></h1>
-            <h4>{descriptionActualite}</h4>
+
+      <div className={styles.container}> 
+        
+        <p>← Retour aux annonces</p>
+        <div className={styles.blockTitle}>
+          <h1>{convertUrlToTitle(props.titleActualites)}</h1>
+          <p>Publié le {listeActualite.find(({ title }) => title === convertUrlToTitle(props.titleActualites)).date}</p>
+        </div>
+
+        <div className={styles.lineSplit} />
+
+        <div className={styles.blockDescription}>
+
+          <h2>Description:</h2>
+          <p>{listeActualite.find(({ title }) => title === convertUrlToTitle(props.titleActualites)).description}</p>
+
+        </div>  
+
+
+        <div className={styles.blockImage}>
+          {listeActualite.find(({ title }) => title === convertUrlToTitle(props.titleActualites)).allPircure.map((item, index) => {
             
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1> 
-
-          </div>
-
-
-          <div className={styles.pictureActualites}> 
             
-            <Swiper
-              slidesPerView={3}
-              spaceBetween={20}
-              freeMode={true}
-
-              pagination={{
-                clickable: true,
-              }}
-              breakpoints={{
-                // when window width is >= 1500px
-                1500: {
-                  slidesPerView: 3,
-                  spaceBetween: 5
-                },
-                // when window width is >= 900px and < 1500px
-                900: {
-                  slidesPerView: 2,
-                  spaceBetween: 0
-                },
-                // when window width is < 900px
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 0
-                },
-              }}
-              modules={[FreeMode, Pagination]}
-              className={styles.swiper}
-            >
-      
-            {
-              listImage.map((item, index) => {
-                return (
-                  <SwiperSlide className={styles.swiperSlide} key={index}>
-                    <a href={pathImage} >
-                        <img src={pathImage} alt="img" className={styles.img1} />
-                    </a>
-                      
-                  </SwiperSlide>
-                )
-              })
-            }
+            return (
+              <img src={item} alt="img" className={styles.img1} key={index} />
+            )
             
-            </Swiper>
-          </div>
-        </>
 
-  </div>
+          })}
+        </div>
+          
+        
+        
+
+      </div>
+
+    </div>
   );
 
 }
