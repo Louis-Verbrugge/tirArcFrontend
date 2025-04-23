@@ -12,7 +12,27 @@
 
     .container{
         width: 95%;
-        margin: 0 auto;
+        margin: 30px;
+        padding: 30px;
+
+        .returnToNews {
+
+            a{ 
+                display: inline-block; // Stabilise l'élément
+                color: var(--blueClub);
+                transition: background-color 0.3s ease;
+                transition: transform .5s ease;
+            }
+
+
+            a:hover{
+                color: var(--orangeClub);
+                transform: rotate(-5deg) scale(1.3);  
+                transition: transform .5s ease;
+            }
+
+        }
+
 
         .blockTitle{
             
@@ -23,7 +43,7 @@
         }
 
         .lineSplit{
-            border: solid .5px rgb(0, 0, 243);
+            border: solid .5px var(--blueClub);
         }
 
         .blockDescription{

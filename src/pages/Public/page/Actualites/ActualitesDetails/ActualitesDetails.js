@@ -49,7 +49,8 @@ function ActualitesDetails( { pathImage }) {
 
       <div className={styles.container}> 
         
-        <p>← Retour aux annonces</p>
+        <div className={styles.returnToNews}><a href='/'>← Retour aux annonces</a></div>
+
         <div className={styles.blockTitle}>
           <h1>{convertUrlToTitle(props.titleActualites)}</h1>
           <p>Publié le {listeActualite.find(({ title }) => title === convertUrlToTitle(props.titleActualites)).date}</p>
