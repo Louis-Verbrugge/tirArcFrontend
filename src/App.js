@@ -1,7 +1,6 @@
 import styles from './App.css';
 import axios from 'axios';
 import LandingPage from './pages/Public/LandingPage/LandingPage';
-import Annonce from './pages/Public/page/AnnoncePage/Annonce';
 import Competition from './pages/Public/page/CompetitionPage/Competition';
 import ResultatCompetition from './pages/Public/page/CompetitionPage/ResultatCompetition';
 import Inscription from './pages/Public/page/InscriptionPage/Inscription';
@@ -13,6 +12,8 @@ import { NavBar } from './components/NavBar/NavBar';
 
 import Actualite from './pages/Public/page/Actualites/Actualites';
 import ActualitesDetails from './pages/Public/page/Actualites/ActualitesDetails/ActualitesDetails';
+
+import Prensetation from './pages/Public/page/Presentation/Presentation';
 
 import { BrowserRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -32,12 +33,11 @@ function App() {
         <Route path='/account/*' element={<AccountRoute />} />
 
         <Route path='/' element={<LandingPage />} />
-        <Route path='/annonce' element={<Annonce />} />
+        <Route path='/Qui-sommes-nous' element={<Prensetation />} />
+
         <Route path='/competition' element={<Competition />} />
         <Route path='/competition/:annee' element={<ResultatCompetition />} />
         <Route path='/inscription' element={<Inscription />} />
-
-
 
         <Route path='/news' element={<Actualite/>} />
         <Route path='/news/:titleActualites' element={<ActualitesDetails />} />

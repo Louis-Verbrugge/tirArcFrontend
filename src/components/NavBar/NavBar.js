@@ -22,7 +22,7 @@ export function NavBar() {
           <a href="/news">
             <p>News</p>
           </a>
-          <a href="#">
+          <a href="/Qui-sommes-nous">
           <p>Qui sommes-nous ?</p>
           </a>
           <a href="#">

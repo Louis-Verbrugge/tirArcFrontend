@@ -1,0 +1,19 @@
+
+
+.presentation{
+
+    .blockTarget, .blockTeams{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .target, .teams{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
+}
