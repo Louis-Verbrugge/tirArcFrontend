@@ -2,11 +2,12 @@
 :root {
     --orangeClub: #f1870f;
     --blueClub: #0f82d7;
-    --colorBackGround: #F2F2F2;
+    --colorBackGround: #e8e8e8;
   }
 
 html, body {
     background-color: var(--colorBackGround);
+    z-index: -50;
     padding: 0;
     margin: 0;
     width: 100%;

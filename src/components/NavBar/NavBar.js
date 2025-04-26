@@ -1,11 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import './NavBar.css';  // Importation du fichier CSS
+import { gsap } from 'gsap';
+import styles from './NavBar.module.scss';
+
+import { useRef } from "react";
+import { getWidth } from "rsuite/esm/DOMHelper";
 
 export function NavBar() {
   const [openNav, setOpenNav] = useState(false);
 
   const handleWindowResize = () => window.innerWidth >= 960 && setOpenNav(false);
+
+  const navBarRef = useRef(null);
+
+  function changePage() {
+    gsap.to(
+      navBarRef.current,
+      { width: "44px", duration: 1, onComplete: () => {
+
+        gsap.to(
+          navBarRef.current,
+          { x: "-100px", duration: 1}
+        )
+
+      } },
+    ); 
+  }
+
+
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
@@ -15,24 +36,27 @@ export function NavBar() {
   }, []);
 
   return (
-    <div className="navbar">
-      <nav className="content">
-        <p>Tir à l'arc Cysoing</p>
-        <div className="nav-icon">
-          <a href="/news">
-            <p>News</p>
-          </a>
-          <a href="/Qui-sommes-nous">
-          <p>Qui sommes-nous ?</p>
-          </a>
-          <a href="#">
-          <p>Photos</p>
-          </a>
-          <a href="#">
-          <p>Contact</p> 
-          </a>
+      <nav className={styles.navBar} >
+        <div className={styles.content} ref={navBarRef} id="navBar">
+          <p>Tir à l'arc Cysoing</p>
+          <div className={styles.nav_icon}>
+
+            <p onClick={() => changePage()}>News</p>
+
+            <p>Qui sommes-nous ?</p>
+            
+            <p>Photos</p>
+            
+            <p>Contact</p> 
+
+
+            {console.log("sddddddddddddddddddddddddddddddddddddddddddddddddddddddd 11")}
+            {console.log(document.getElementById("navBar"))}
+            {console.log("sddddddddddddddddddddddddddddddddddddddddddddddddddddddd 22")}
+
+          </div>
         </div>
       </nav>
-    </div>
+    
   );
 }

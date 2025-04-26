@@ -3,7 +3,9 @@
 .footer{
 
     position: relative;
-    
+    background-color: var(--blueClub);
+    z-index: 220;
+    margin-top: 20%;
 
     .top{
 
@@ -17,13 +19,8 @@
         width: calc(100% + 100px);    
         height: 80px;
         left: -50px;
-        z-index: -1;
-
+        z-index: 1;
     }
-
-    background-color: var(--blueClub);
-
-
 
     .main{
         display: flex;
@@ -63,28 +60,26 @@
             position: relative;
 
             .imageFirstCircle {
-                background-color: #F2F8FF;
+                background: linear-gradient(to bottom,#F2F8FF 50%, rgba(255, 0, 0, 0) 50%);
                 position: relative;
                 width: 430px;
                 height: 430px;
-                
                 border-radius: 50%;
                 top: -70%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                z-index: -3;
             }
+            
         
             .imageSecondCircle {
-                background-color: #E6F1FF;
+                background: linear-gradient(to bottom,#E6F1FF 50%, rgba(255, 0, 0, 0) 50%);
                 width: 90%;
                 height: 90%;
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                z-index: -3;
             }
         
             img {
@@ -96,6 +91,7 @@
                 height: calc(430px - 19%);
                 border-radius: 50%;
                 transition: transform .5s ease;
+                z-index: 5;
 
 
             }

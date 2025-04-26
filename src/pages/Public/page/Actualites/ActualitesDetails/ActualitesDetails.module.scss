@@ -59,7 +59,6 @@
         }
 
         h2{
-
             color: var(--orangeClub);
         }
 
@@ -70,8 +69,9 @@
 
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 50px;
+            gap: 35px;
             justify-items: center;
+            padding-top: 30px;
             
 
             img{

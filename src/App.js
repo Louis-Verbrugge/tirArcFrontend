@@ -17,6 +17,8 @@ import Prensetation from './pages/Public/page/Presentation/Presentation';
 
 import { BrowserRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 
+import { Footer } from './components/Footer/Footer';
+
 function App() {
 
   return (
@@ -44,6 +46,8 @@ function App() {
 
 
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }
