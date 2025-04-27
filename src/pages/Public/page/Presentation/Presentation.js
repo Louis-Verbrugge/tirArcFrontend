@@ -33,30 +33,38 @@ function Presentation() {
 
         <div className={styles.blockTeams}>
             <h2>Notre équipe</h2>
-            <div className={styles.team}>
 
-                <img src='/icons/icons8-bouclier-50.png' alt='icon' className={styles.icon}/>
-                <p>Président</p>
-            </div>
-            <div className={styles.team}>
-                <img src='/icons/icons8-bouclier-50.png' alt='icon' className={styles.icon}/>
-                <p>Président</p>
-            </div>
-            <div>
-                <img src='/icons/icons8-bouclier-50.png' alt='icon' className={styles.icon}/>
-                <p>Président</p>
-            </div>
-            <div className={styles.team}>
-                <img src='/icons/icons8-bouclier-50.png' alt='icon' className={styles.icon}/>
-                <p>Président</p>
-            </div>
-            <div className={styles.team}>
-                <img src='/icons/icons8-bouclier-50.png' alt='icon' className={styles.icon}/>
-                <p>Président</p>
-            </div>
-            <div className={styles.team}>
-                <img src='/icons/icons8-bouclier-50.png' alt='icon' className={styles.icon}/>
-                <p>Président</p>
+            <div className={styles.teams}>
+                <div className={styles.team}>
+                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <h4>John Doe</h4>
+                    <p>Président</p>
+                </div>
+                <div className={styles.team}>
+                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <h4>John Doe</h4>
+                    <p>Président</p>
+                </div>
+                <div className={styles.team}>
+                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <h4>John Doe</h4>
+                    <p>Président</p>
+                </div>
+                <div className={styles.team}>
+                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <h4>John Doe</h4>
+                    <p>Président</p>
+                </div>
+                <div className={styles.team}>
+                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <h4>John Doe</h4>
+                    <p>Président</p>
+                </div>
+                <div className={styles.team}>
+                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <h4>John Doe</h4>
+                    <p>Président</p>
+                </div>
             </div>
         </div>
 

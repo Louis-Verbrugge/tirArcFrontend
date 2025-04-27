@@ -1,12 +1,10 @@
 
-:root{
-    --borderRadius: 15px;
-}
+
 
 .actualitesDetails {
     width: 90%;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--colorWhite);
     border-radius: var(--borderRadius);
 
 
