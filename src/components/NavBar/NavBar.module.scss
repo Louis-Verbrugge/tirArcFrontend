@@ -1,45 +1,63 @@
 
-.navBar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    z-index: 1000;
+.blockNavBar{
 
-    .content{
-        
-        overflow: hidden;
-        background-color: rgb(137, 137, 137);
-        padding: 20px;
-        margin: auto;  
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    
-        border-radius: 50px;
-        margin: 20px 30px;
+    margin-bottom: var(--paddingNewPageTop);
 
 
-        .nav_icon{
+    .navBar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        z-index: 1000;
 
+        .content{
+            
+            overflow: hidden;
+            background-color: var(--secondBlueClub);
+            border: 3px solid var(--blueClub);
+            padding: 20px;
+            margin: auto;  
             display: flex;
-            flex-direction: row;  
-            margin: auto 0;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            border-radius: 50px;
+            margin: 20px 30px;
+
 
             p{
-                color: rgb(0, 0, 0);
+                color: var(--blueClub);
                 margin: auto 10px;
+                transition: color 0.3s ease-in-out;
+                transition: transform 0.3s ease-in-out;
+                
             }
 
             p:hover{
                 cursor: pointer;
+                color: var(--orangeClub);
+                transform: scale(1.2);
             }
 
+
+            .nav_icon{
+
+                display: flex;
+                flex-direction: row;  
+                margin: auto 0;
+
+
+                p:hover{
+                    cursor: pointer;
+                }
+
+
+            }
 
         }
 
     }
 
 }
-

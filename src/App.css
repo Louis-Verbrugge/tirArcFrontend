@@ -2,10 +2,12 @@
 :root {
     --orangeClub: #f1870f;
     --blueClub: #0f82d7;
+    --secondBlueClub: #afdcff;
     --colorBackGround: #e8e8e8;
     --colorWhite: rgb(255, 255, 255);
 
     --borderRadius: 15px;
+    --paddingNewPageTop: 200px;
   }
 
 html, body {

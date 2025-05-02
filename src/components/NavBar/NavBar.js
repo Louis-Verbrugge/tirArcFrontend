@@ -142,6 +142,7 @@ export function NavBar() {
 
 
   return (
+    <div className={styles.blockNavBar}>
       <nav className={styles.navBar}>
         <div className={styles.content} ref={navBarRef} id="navBar">
           <p>Tir à l'arc Cysoing</p>
@@ -155,12 +156,11 @@ export function NavBar() {
             
             <p>Contact</p> 
 
-        
-
 
           </div>
         </div>
       </nav>
+    </div>
     
   );
 }
