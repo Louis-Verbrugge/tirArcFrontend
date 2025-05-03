@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import {NavBar} from "../../../components/NavBar/NavBar.js";
 
@@ -27,7 +27,15 @@ import styles from "./LandingPage.module.scss"
 
 import { Footer } from '../../../components/Footer/Footer.js';
 
-function LandingPage() {
+function LandingPage( {setRefPage}) {
+
+  const refPage = useRef(null);
+  useEffect(() => {
+      if (refPage.current) {
+          setRefPage(refPage.current);
+      }
+  }, []);
+  
 
   const navigate = useNavigate();
 
@@ -142,19 +150,7 @@ function LandingPage() {
 
 
   return (
-    <div className="landingPage">
-
-
-
-
-
-
-      {/* <div>
-        <img className="backGroundImage" src={image2}></img>
-
-      </div> */}
-
-    
+    <div className="landingPage" ref={refPage}>
 
 
       {blockSite()}

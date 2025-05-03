@@ -19,29 +19,34 @@ import { BrowserRouter as BrowserRouter, Route, Routes } from "react-router-dom"
 
 import { Footer } from './components/Footer/Footer';
 
+import { useEffect, useState } from 'react';
+
 function App() {
+
+  
+  const [refPage, setRefPage] = useState(null);
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar refPage={refPage} />
 
       <Routes>
         <Route path='/admin/*' element={
           <AuthAdmin>
             <AdminRoute />
           </AuthAdmin>
-        }/>
+        }/> 
 
         <Route path='/account/*' element={<AccountRoute />} />
 
-        <Route path='/' element={<LandingPage />} />
-        <Route path='/Qui-sommes-nous' element={<Prensetation />} />
+        <Route path='/' element={<LandingPage setRefPage={setRefPage} />} />
+        <Route path='/Qui-sommes-nous' element={<Prensetation setRefPage={setRefPage} />} />
 
         <Route path='/competition' element={<Competition />} />
         <Route path='/competition/:annee' element={<ResultatCompetition />} />
-        <Route path='/inscription' element={<Inscription />} />
+        <Route path='/inscription' element={<Inscription setRefPage={setRefPage} />} />
 
-        <Route path='/news' element={<Actualite/>} />
+        <Route path='/news' element={<Actualite setRefPage={setRefPage} />} />
         <Route path='/news/:titleActualites' element={<ActualitesDetails />} />
 
 

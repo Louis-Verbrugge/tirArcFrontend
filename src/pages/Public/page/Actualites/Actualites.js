@@ -2,7 +2,7 @@
 
 import styles from './Actualites.module.scss';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Actualite from './Actualite/Actualite';
 
@@ -21,9 +21,14 @@ import 'swiper/css/pagination';
 
 
 
-function Actualites() {
+function Actualites( {setRefPage} ) {
 
-
+  const refPage = useRef(null);
+  useEffect(() => {
+      if (refPage.current) {
+          setRefPage(refPage.current);
+      }
+  }, []);
 
 
 
@@ -51,7 +56,7 @@ function Actualites() {
 
   
   return (
-    <div className={styles.actualites}> 
+    <div className={styles.actualites} ref={refPage}> 
 
       <h1 className={styles.title}>{structData.titre_de_la_page} <span>{structData.mot_bleu_titre_de_la_page}</span></h1>
           

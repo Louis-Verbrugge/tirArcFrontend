@@ -1,11 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
+
 import { gsap } from 'gsap';
+
+import { endPage } from "../../_helpers/annim/endPage";
+import { startPage } from "../../_helpers/annim/startPage";
+
 import styles from './NavBar.module.scss';
+import { useNavigate } from "react-router-dom";
 
 
-export function NavBar() {
+
+export function NavBar( {refPage} ) {
 
   const navBarRef = useRef(null);
+  const navigate = useNavigate();
+  
   
   //const [annimNavBar, annimNavBar] = useState(null);
 
@@ -15,20 +24,26 @@ export function NavBar() {
   let annimNavBar = null;
   let annimOpenEtape = null; // 0 = Etape 0, 1 = Etape 1, 2 = Etape 2
   let annimCloseEtape = null; // 0 = Etape0 , 1 = Etape 1, 2 = Etape 2
-  let whereIsScroll = 0;
+  let whereIsScroll = 1;
 
   let annimOpenId = null;
   let annimCloseId = null;
-
-
-  let blockNavBarHeight = 0;
-
-
-  let test = 0;
+  let blockNavBarHeight;
 
 
   useEffect(() => {
-    blockNavBarHeight = navBarRef.current.getBoundingClientRect().height
+    if (navBarRef.current) {
+      const rect = navBarRef.current.getBoundingClientRect();
+      const styles = getComputedStyle(navBarRef.current);
+  
+      const height = rect.height 
+        - parseFloat(styles.paddingTop) 
+        - parseFloat(styles.paddingBottom) 
+        - parseFloat(styles.borderTopWidth) 
+        - parseFloat(styles.borderBottomWidth);
+  
+      blockNavBarHeight = height + "px";
+    }
   }, []);
 
   useEffect(() => {
@@ -36,6 +51,7 @@ export function NavBar() {
   
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
+       
         closeNavBar();
       } else {
         openNavBar();
@@ -68,7 +84,7 @@ export function NavBar() {
         annimCloseEtape = 1
         annimNavBar = gsap.to(
           navBarRef.current,
-          { width: "44px", height: "44px", duration: timeSecondPartAnnim, onComplete: () => {
+          { width: blockNavBarHeight, height: blockNavBarHeight, duration: timeSecondPartAnnim, onComplete: () => {
 
             if (annimCloseId == animationId && annimCloseId >= annimOpenId) {
               annimCloseEtape = 2
@@ -110,7 +126,7 @@ export function NavBar() {
         annimOpenEtape = 1
         annimNavBar = gsap.fromTo(
           navBarRef.current,
-          { x: "-200px", width: "44px", height: "44px"},
+          { x: "-200px", width: blockNavBarHeight, height: blockNavBarHeight},
           { x: "0px", duration: timeFirstPartAnnim, onComplete: () => {
 
             if (annimOpenId == animationId && annimOpenId >= annimCloseId) {
@@ -136,26 +152,32 @@ export function NavBar() {
     }
   }
 
+  // useEffect(() => {
+  //   openNavBar()
+  // }, []);
+
   useEffect(() => {
-    openNavBar()
-  }, []);
+    startPage(refPage);
+    console.log("refPageçççççççç______________________________________ : ");
+  }, [refPage]);
 
 
   return (
     <div className={styles.blockNavBar}>
       <nav className={styles.navBar}>
         <div className={styles.content} ref={navBarRef} id="navBar">
-          <p>Tir à l'arc Cysoing</p>
+          <p onClick={() => endPage(navigate, refPage, '/')}>Tir à l'arc Cysoing</p>
           <div className={styles.nav_icon}>
 
-            <p>News</p>
-
-            <p>Qui sommes-nous ?</p>
             
-            <p>Photos</p>
-            
-            <p>Contact</p> 
 
+            <p onClick={() => endPage(navigate, refPage, '/news')} >News</p>
+
+            <p onClick={() => endPage(navigate, refPage, '/Qui-sommes-nous')}>Qui sommes-nous ?</p>
+            
+            <p onClick={() => endPage(navigate, refPage, '/')}>Photos</p>
+            
+            <p onClick={() => endPage(navigate, refPage, '/inscription')}>inscription</p> 
 
           </div>
         </div>

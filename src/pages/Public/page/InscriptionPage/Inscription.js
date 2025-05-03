@@ -2,10 +2,20 @@
 import styles from "./Inscription.module.css"
 import logoTirArcCysoing from "../../../../image/logoTirArcCysoing.jpg"
 
+import React, { useEffect, useRef } from "react"
+
 import iconTarget from "../../../../image/iconTarget.svg"
 import pathApiAxios from "../../../../_helpers/PathApiAxios";
 
-function Inscription() {
+function Inscription( {setRefPage} ) {
+
+    const refPage = useRef(null);
+    useEffect(() => {
+        if (refPage.current) {
+            setRefPage(refPage.current);
+        }
+    }, []);
+
 
   function sendMail() {
     
@@ -30,7 +40,7 @@ function Inscription() {
 
 
   return (
-    <div className={styles.inscription}>
+    <div className={styles.inscription} ref={refPage}>
 
       <a href="../" >
         <img id="returnLobby" src={logoTirArcCysoing}></img>
