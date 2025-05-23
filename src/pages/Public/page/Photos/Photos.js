@@ -1,10 +1,23 @@
+
+import React, { useEffect, useRef } from "react";
+
 import styles from "./Photos.module.scss";
 
-function Photos() {
+
+function Photos( { setRefPage } ) {
+
+  const refPage = useRef(null);
+  useEffect(() => {
+      if (refPage.current) {
+          setRefPage(refPage.current);
+      }
+  }, []);
+
+
   const photos = Array.from({ length: 150 }, () => "/image/landingPage.jpg");
 
   return (
-    <div className={styles.gallery}>
+    <div className={styles.gallery} ref={refPage}>
       {photos.map((src, index) => {
         let cardClass = styles.photoCard;
 

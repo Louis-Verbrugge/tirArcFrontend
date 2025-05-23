@@ -4,6 +4,7 @@
 .actualitesDetails {
     width: 90%;
     max-width: var(--maxWidth);
+    
     margin: 0 auto;
     background-color: var(--colorWhite);
     border-radius: var(--borderRadius);
@@ -16,20 +17,18 @@
 
         .returnToNews {
 
-            a{ 
+            p{ 
                 display: inline-block; // Stabilise l'élément
                 color: var(--blueClub);
                 transition: background-color 0.3s ease;
                 transition: transform .5s ease;
+
+                &:hover{
+                    color: var(--orangeClub);
+                    transform: rotate(-5deg) scale(1.3);  
+                    transition: transform .5s ease;
+                }
             }
-
-
-            a:hover{
-                color: var(--orangeClub);
-                transform: rotate(-5deg) scale(1.3);  
-                transition: transform .5s ease;
-            }
-
         }
 
 

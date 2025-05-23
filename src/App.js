@@ -28,9 +28,11 @@ function App() {
   const [refPage, setRefPage] = useState(null);
   const [annimChangePage, setAnnimChangePage] = useState(false);
 
+  const [changeMemePage, setChangeMemePage] = useState(false);
+
   return (
     <BrowserRouter>
-      <NavBar refPage={refPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} />
+      <NavBar refPage={refPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} changeMemePage={changeMemePage} setChangeMemePage={setChangeMemePage} />
 
       <Routes>
         <Route path='/admin/*' element={
@@ -48,10 +50,10 @@ function App() {
         <Route path='/competition/:annee' element={<ResultatCompetition />} />
         <Route path='/inscription' element={<Inscription setRefPage={setRefPage} />} />
 
-        <Route path='/news' element={<Actualite setRefPage={setRefPage} />} />
-        <Route path='/news/:titleActualites' element={<ActualitesDetails />} />
+        <Route path='/news' element={<Actualite setRefPage={setRefPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} setChangeMemePage={setChangeMemePage} />} />
+        <Route path='/news/:titleActualites' element={<ActualitesDetails setRefPage={setRefPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} setChangeMemePage={setChangeMemePage} />} />
 
-        <Route path='/photos' element={<Photos />} />
+        <Route path='/photos' element={<Photos setRefPage={setRefPage} />} />
 
 
       </Routes>

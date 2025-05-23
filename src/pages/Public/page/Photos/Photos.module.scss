@@ -6,6 +6,7 @@
   width: 90%;
   max-width: var(--maxWidth);
   margin: 0 auto;
+  opacity: 0;
 
   @media (min-width: 480px) {
     padding: 24px;

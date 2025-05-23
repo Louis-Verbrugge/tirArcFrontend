@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export function NavBar( { refPage, annimChangePage, setAnnimChangePage} ) {
+export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMemePage, setChangeMemePage} ) {
 
   const navBarRef = useRef(null);
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage} ) {
   let annimCloseId = null;
   let blockNavBarHeight;
 
-  const [changeMemPage, setChangeMemPage] = useState(false);
+  
 
 
   useEffect(() => {
@@ -154,36 +154,32 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage} ) {
     }
   }
 
-  // useEffect(() => {
-  //   openNavBar()
-  // }, []);
-
   useEffect(() => {
-    if (changeMemPage) {
-      setChangeMemPage(false);
+    if (changeMemePage) {
+      setChangeMemePage(false);
       
     } else {
       startPage(refPage, annimChangePage, setAnnimChangePage);
     }
-  }, [refPage, changeMemPage]);
+  }, [refPage, changeMemePage]);
 
 
   return (
     <div className={styles.blockNavBar}>
       <nav className={styles.navBar}>
         <div className={styles.content} ref={navBarRef} id="navBar">
-          <p onClick={() => endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemPage)}>Tir à l'arc Cysoing</p>
+          <p onClick={() => endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Tir à l'arc Cysoing</p>
           <div className={styles.nav_icon}>
 
             
 
-            <p onClick={() => endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemPage)} >News</p>
+            <p onClick={() => endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage)} >News</p>
 
-            <p onClick={() => endPage(navigate, refPage, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemPage)}>Qui sommes-nous ?</p>
+            <p onClick={() => endPage(navigate, refPage, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Qui sommes-nous ?</p>
             
-            <p onClick={() => endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemPage)}>Photos</p>
+            <p onClick={() => endPage(navigate, refPage, '/photos', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Photos</p>
             
-            <p onClick={() => endPage(navigate, refPage, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemPage)}>inscription</p> 
+            <p onClick={() => endPage(navigate, refPage, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemePage)}>inscription</p> 
 
           </div>
         </div>

@@ -14,26 +14,25 @@ import 'swiper/css/pagination';
 import { FreeMode, Pagination } from 'swiper/modules';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { listeActualite } from '../../../../../data/news/news.js'
 
 
+import { endPage } from '../../../../../_helpers/annim/endPage';
 
-function ActualitesDetails( { pathImage }) {
+function ActualitesDetails( { setRefPage, annimChangePage, setAnnimChangePage, setChangeMemePage }) {
+
+  const navigate = useNavigate();
+
+  const refPage = useRef(null);
+  useEffect(() => {
+      if (refPage.current) {
+          setRefPage(refPage.current);
+      }
+  }, []);
 
   const props = useParams();
-
-  const [loading, setLoading] = useState(true);
-
-
-  const [titleActualite, setTitleActualite] = useState("")
-  const [descriptionActualite, setDescriptionActualite] = useState("");
-
-
-  const [listImage, setListImage] = useState([]);
-  const [listImageLarge, setListImageLarge] = useState([]);
-
 
   function convertUrlToTitle(url) {
     return url
@@ -43,13 +42,15 @@ function ActualitesDetails( { pathImage }) {
 
   return (
 
-    <div className={styles.actualitesDetails}> 
+    <div className={styles.actualitesDetails} ref={refPage}> 
 
 
 
       <div className={styles.container}> 
         
-        <div className={styles.returnToNews}><a href='/news'><p>← Retour aux annonces</p></a></div>
+        <div className={styles.returnToNews}><p onClick={() => {
+          endPage(navigate, refPage.current, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage);
+        }}>← Retour aux annonces</p></div>
 
         <div className={styles.blockTitle}>
           <h1>{convertUrlToTitle(props.titleActualites)}</h1>

@@ -21,7 +21,7 @@ import 'swiper/css/pagination';
 
 
 
-function Actualites( {setRefPage} ) {
+function Actualites( {setRefPage, annimChangePage, setAnnimChangePage, setChangeMemePage} ) {
 
   const refPage = useRef(null);
   useEffect(() => {
@@ -30,15 +30,13 @@ function Actualites( {setRefPage} ) {
       }
   }, []);
 
-
-
-
   const [structData, setStructData] = useState({});
   const [loadingStructData, setLoadingStructData] = useState(true);
-  
-
 
   function displayActualites() {
+
+    console.log("displayActualites");
+    console.log(refPage);
 
     return listeActualite.map((item, index) => {
        return (
@@ -46,7 +44,11 @@ function Actualites( {setRefPage} ) {
                   key={index} 
                   picture={item.picture} 
                   title={item.title} 
-                  description={item.petite_description} 
+                  pageRef={refPage.current}
+                  annimChangePage={annimChangePage}
+                  setAnnimChangePage={setAnnimChangePage}
+                  setChangeMemePage={setChangeMemePage}
+                  
               />
           );
   });
