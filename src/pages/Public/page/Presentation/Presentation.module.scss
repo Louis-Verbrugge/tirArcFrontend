@@ -12,7 +12,7 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 50px 0;
-        
+        height: 300px;
 
 
         .blockTarget{
@@ -21,7 +21,12 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 40%;
+            width: 38%;
+            height: 100%;
+            background-color: var(--colorWhite);
+            padding: 20px 0;
+            
+            
 
             .targets {
                 display: flex;
@@ -29,6 +34,8 @@
                 align-items: center;
                 flex-direction: row;
                 flex-wrap: wrap;
+
+                
 
                 .target {
                     display: flex;
@@ -53,12 +60,13 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 60%;
+            width: 58%;
             height: 100%;
             padding: 20px;
             border-radius: var(--borderRadius);
             background-color: var(--colorWhite);
             color: var(--colotBlack);
+            padding: 20px 0;
 
      
             .blockLocation{

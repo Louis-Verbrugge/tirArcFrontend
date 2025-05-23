@@ -44,11 +44,6 @@ function LandingPage( {setRefPage}) {
 
   const { user } = GetDataUser();
 
-  useEffect(() => {
-    console.log(user);
-    console.log("user.profilePicture 99999999999999999999999999999999 : ");
-    console.log(user);
-  }, [user])
 
 
 

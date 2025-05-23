@@ -21,8 +21,6 @@ function GetDataUser() {
     const [firtNameUser, setFirtNameUser] = useState("");
 
     useEffect(() => {
-        console.log("lastNameuser : " + lastNameuser);
-        console.log("firtNameUser : " + firtNameUser);
     }, [lastNameuser, firtNameUser]);
 
     useEffect(() => {
@@ -55,9 +53,6 @@ function GetDataUser() {
         });
 
     }, []);
-
-    console.log("user : ");
-    console.log(user);
 
     return { user };
 

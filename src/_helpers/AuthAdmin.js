@@ -24,7 +24,6 @@ const AuthAdmin = ({children}) => {
             }
         })
             .then(function (response) {
-            console.log("is Admin dsqdsqdsqd? : " );
             if (response.data.adminAcces) {
                 setIsAuthenticated(true);
 
@@ -34,7 +33,8 @@ const AuthAdmin = ({children}) => {
 
             })
             .catch(function (error) {
-                console.log("no okkkkkkkkkkkkkkkkkk")
+                console.log(error);
+
                 setIsAuthenticated(false);
             })
 

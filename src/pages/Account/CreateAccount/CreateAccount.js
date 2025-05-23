@@ -30,7 +30,6 @@ function CreateAccount() {
 
     useEffect(() => {
         if (submit) {
-            console.log(credentials);
 
             axios({
                 method: 'post',

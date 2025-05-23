@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-import { startPage } from '../../../../_helpers/annim/startPage';
 import styles from './Presentation.module.scss';
 
 function Presentation( {setRefPage} ) {
@@ -9,7 +8,6 @@ function Presentation( {setRefPage} ) {
     useEffect(() => {
         
         if (refPage.current) {
-            startPage(refPage.current);
             setRefPage(refPage.current);
         }
     }, []);

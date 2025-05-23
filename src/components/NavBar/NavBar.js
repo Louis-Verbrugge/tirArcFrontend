@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export function NavBar( {refPage} ) {
+export function NavBar( { refPage, annimChangePage, setAnnimChangePage} ) {
 
   const navBarRef = useRef(null);
   const navigate = useNavigate();
@@ -29,6 +29,8 @@ export function NavBar( {refPage} ) {
   let annimOpenId = null;
   let annimCloseId = null;
   let blockNavBarHeight;
+
+  const [changeMemPage, setChangeMemPage] = useState(false);
 
 
   useEffect(() => {
@@ -157,27 +159,31 @@ export function NavBar( {refPage} ) {
   // }, []);
 
   useEffect(() => {
-    startPage(refPage);
-    console.log("refPageçççççççç______________________________________ : ");
-  }, [refPage]);
+    if (changeMemPage) {
+      setChangeMemPage(false);
+      
+    } else {
+      startPage(refPage, annimChangePage, setAnnimChangePage);
+    }
+  }, [refPage, changeMemPage]);
 
 
   return (
     <div className={styles.blockNavBar}>
       <nav className={styles.navBar}>
         <div className={styles.content} ref={navBarRef} id="navBar">
-          <p onClick={() => endPage(navigate, refPage, '/')}>Tir à l'arc Cysoing</p>
+          <p onClick={() => endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemPage)}>Tir à l'arc Cysoing</p>
           <div className={styles.nav_icon}>
 
             
 
-            <p onClick={() => endPage(navigate, refPage, '/news')} >News</p>
+            <p onClick={() => endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemPage)} >News</p>
 
-            <p onClick={() => endPage(navigate, refPage, '/Qui-sommes-nous')}>Qui sommes-nous ?</p>
+            <p onClick={() => endPage(navigate, refPage, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemPage)}>Qui sommes-nous ?</p>
             
-            <p onClick={() => endPage(navigate, refPage, '/')}>Photos</p>
+            <p onClick={() => endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemPage)}>Photos</p>
             
-            <p onClick={() => endPage(navigate, refPage, '/inscription')}>inscription</p> 
+            <p onClick={() => endPage(navigate, refPage, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemPage)}>inscription</p> 
 
           </div>
         </div>

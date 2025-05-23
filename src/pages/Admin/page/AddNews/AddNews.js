@@ -18,7 +18,6 @@ function AddNews() {
             url: pathApiAxios('api/database'),
         })
             .then(function (response) {
-                console.log(response.data);
                 setGetData(response.data.map((item, index) => {
                     return <p key={index}>{item.name}</p>
                 }));

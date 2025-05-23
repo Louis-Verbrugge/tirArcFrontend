@@ -29,9 +29,6 @@ function Login() {
 
 
     useEffect(() => {
-        if (submit) {
-            console.log("crednedhsqgydhqsygdygqsudqshgdqsuuydqsovfyqçs :: "+credentials);
-        }
 
         axios({
             method: 'post',

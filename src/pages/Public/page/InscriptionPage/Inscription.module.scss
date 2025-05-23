@@ -1,0 +1,198 @@
+
+
+.inscription{
+    width: 100vw;
+    height: 100vh;
+    color: rgb(0, 0, 0);
+    display: flex;
+}
+
+
+.blockInscription{
+    
+    width: 50%;
+    height: 100%;
+    
+}
+
+
+.form{
+    background-color: rgb(16, 95, 155);
+    width: 70%;
+    height: 80%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+    border: solid 1px rgb(0, 0, 0);
+    padding: 0 40px;
+    border-radius: 10px;
+   
+
+    h1{
+        color: var(--blueClub);
+    }
+}
+
+
+
+.iconTarget{
+    width: 15%;
+    height: 15%;
+    justify-content: start;
+
+}
+
+.inputName{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputName input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputName .labelInput{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    
+}
+
+
+
+input{
+    background-color: var(--colorBackGround);
+    margin-bottom: 40px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding-bottom: 10px;
+    outline: none; 
+}
+
+.btnSubmit{
+    width: 20%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: white;
+    color: rgb(215, 98, 98);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+.blockMoreInfo{
+    
+    // background: linear-gradient(275deg, var(--orangeClub), 20% , var(--blueClub));
+    border-left: solid 1px rgb(0, 0, 0);
+
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.moreInfo{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moreInfo:last-child{
+
+    border-top: solid 1px rgb(0, 0, 0);
+    padding-top: 60px;
+
+}
+
+
+.moreInfo h3{
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  flex-direction: row; // Horizontal par défaut
+  gap: 20px;
+  width: 100%;
+
+
+    .card:hover > h3 {
+        color: var(--orangeClub);
+        transition: color .2s ease;
+
+    }
+
+    .card {
+        background-color: white;
+        color: var(--blueClub);
+        border-radius: 12px;
+        padding: 20px;
+        width: 280px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+   
+
+        h3 {
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+            // souligner le texte
+            text-decoration: underline;
+            transition: color .2s ease;
+            
+        }
+
+        .detailHoraire {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p {
+                margin: 0;
+                color: #333;
+                position: relative;
+                padding-left: 20px; // espace pour le point
+
+                &::before {
+                    content: "•";
+                    color: #333;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    line-height: 1;
+                    margin-right: 8px; // optionnel, pour l'espace entre le point et le texte
+                }
+            }
+        }
+
+
+    }
+
+}

@@ -3,15 +3,16 @@
 
 .actualitesDetails {
     width: 90%;
+    max-width: var(--maxWidth);
     margin: 0 auto;
     background-color: var(--colorWhite);
     border-radius: var(--borderRadius);
 
 
     .container{
-        width: 95%;
-        margin: 30px;
-        padding: 30px;
+        width: var(--containerWidth);
+        margin: auto;
+        padding: 30px 0;
 
         .returnToNews {
 
@@ -37,7 +38,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 20px 0;
+            padding: var(--paddingText);
         }
 
         .lineSplit{
@@ -46,10 +47,11 @@
 
         .blockDescription{
             display: flex;
+            text-align: justify;
             
             flex-direction: column;
             justify-content: center;
-            padding: 20px 0;
+            padding: var(--paddingText);
         }
 
         h1{
@@ -66,7 +68,7 @@
         .blockImage{
 
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(var(--blockImageGrid), 1fr);
             gap: 35px;
             justify-items: center;
             padding-top: 30px;
@@ -80,4 +82,61 @@
         }
     }
     
+}
+
+
+@media screen and (min-width: 2500px)  {
+    :root{
+        --blockImageGrid: 4;
+        --containerWidth: 95%;
+        --paddingText: 20px 0;
+    }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2499px) {
+    :root{
+        --blockImageGrid: 4;
+        --containerWidth: 95%;
+        --paddingText: 20px 0;
+    }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 1999px) {
+    :root{
+        --blockImageGrid: 4;
+        --containerWidth: 95%;
+        --paddingText: 20px 0;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1499px) {
+    :root{
+        --blockImageGrid: 4;
+        --containerWidth: 95%;
+        --paddingText: 20px 0;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+    :root{
+        --blockImageGrid: 3;
+        --containerWidth: 90%;
+        --paddingText: 30px 0;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    :root{
+        --blockImageGrid: 2;
+        --containerWidth: 90%;
+        --paddingText: 40px 0;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    :root{
+        --blockImageGrid: 1;
+        --containerWidth: 90%;
+        --paddingText: 40px 0;
+    }
 }

@@ -2,7 +2,11 @@
 
 
 .actualites{
-    width: 100%;
+
+    width: 90%;
+    max-width: var(--maxWidth);
+    margin: auto;
+
     margin-top: var(--padding_top_new_page);
     margin-bottom: var(--padding_top_new_page);
 

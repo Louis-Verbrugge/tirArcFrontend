@@ -20,15 +20,17 @@ import { BrowserRouter as BrowserRouter, Route, Routes } from "react-router-dom"
 import { Footer } from './components/Footer/Footer';
 
 import { useEffect, useState } from 'react';
+import Photos from './pages/Public/page/Photos/Photos';
 
 function App() {
 
   
   const [refPage, setRefPage] = useState(null);
+  const [annimChangePage, setAnnimChangePage] = useState(false);
 
   return (
     <BrowserRouter>
-      <NavBar refPage={refPage} />
+      <NavBar refPage={refPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} />
 
       <Routes>
         <Route path='/admin/*' element={
@@ -48,6 +50,8 @@ function App() {
 
         <Route path='/news' element={<Actualite setRefPage={setRefPage} />} />
         <Route path='/news/:titleActualites' element={<ActualitesDetails />} />
+
+        <Route path='/photos' element={<Photos />} />
 
 
       </Routes>

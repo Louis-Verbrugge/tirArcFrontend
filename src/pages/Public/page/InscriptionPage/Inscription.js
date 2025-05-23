@@ -1,5 +1,5 @@
 
-import styles from "./Inscription.module.css"
+import styles from "./Inscription.module.scss"
 import logoTirArcCysoing from "../../../../image/logoTirArcCysoing.jpg"
 
 import React, { useEffect, useRef } from "react"
@@ -48,9 +48,9 @@ function Inscription( {setRefPage} ) {
 
       <div className={styles.blockInscription}>
         <div className={styles.form}>
-          <img className={styles.iconTarget} src={iconTarget} alt="picture for return to lobby"></img>
+          
         
-          <h1>Registration</h1>
+          <h1>INSCRIPTION</h1>
 
           <div className={styles.inputName}>
           <div className={styles.labelInput}>
@@ -123,16 +123,32 @@ function Inscription( {setRefPage} ) {
           </h3> 
 
 
-          <div>
-            <ul>
+          <div className={styles.container}>
+            <div className={styles.card}>
+              <h5 className={styles.jour}>Lundi</h5>
+              <div className={styles.detailHoraire}>
+                <p>18h-19h30 pour les tireurs débutants</p>
+                <p>19h30-21h pour les tireurs confirmés</p>
+              </div>
+            </div>
 
-              <li>Lundi 18H-19h30 pour les tireurs confirmé</li>
-              <li>Mercredi 17h00-18h00 pour les tireurs debutants</li>
-              <li>Mercredi 18h00-19h00 pour les tireurs confirmé</li>
-              <li>Vendredi 19h00-22h00 pour les tireurs confirmé</li>
+            <div className={styles.card}>
+              <h5 className={styles.jour}>Mercredi</h5>
+              <div className={styles.detailHoraire}>
+                <p>18h-19h00 pour les tireurs débutants</p>
+                <p>19h-20h pour les tireurs confirmés</p>
+              </div>
+            </div>
 
-            </ul>
-          </div>     
+            <div className={styles.card}>
+              <h5 className={styles.jour}>Vendredi</h5>
+              <div className={styles.detailHoraire}>
+                
+                <p>19h-20h pour les tireurs débutants</p>
+                <p>20h-22h pour les tireurs confirmés</p>
+              </div>
+            </div>
+          </div>    
 
         </div>
 

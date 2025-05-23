@@ -49,7 +49,7 @@ function ActualitesDetails( { pathImage }) {
 
       <div className={styles.container}> 
         
-        <div className={styles.returnToNews}><a href='/news'>← Retour aux annonces</a></div>
+        <div className={styles.returnToNews}><a href='/news'><p>← Retour aux annonces</p></a></div>
 
         <div className={styles.blockTitle}>
           <h1>{convertUrlToTitle(props.titleActualites)}</h1>
