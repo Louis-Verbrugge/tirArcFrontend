@@ -3,7 +3,7 @@
     --orangeClub: #f1870f;
     --blueClub: #0f82d7;
     --secondBlueClub: #afdcff;
-    --colorBackGround: #e8e8e8;
+    --colorBackGround: rgb(232, 232, 232);
     --colorWhite: rgb(255, 255, 255);
     --colotBlack: rgb(0, 0, 0);
 
@@ -22,7 +22,7 @@ html, body {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p, li, span {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-top: 0px;
@@ -64,6 +64,11 @@ li{
 
 }
 
+.textLarge{
+    font-size: var(--size_span_textLarge);
+
+}
+
 
 
 
@@ -86,6 +91,8 @@ li{
         --size_h5: 27px;
 
         --size_p: 25px;
+        --size_span_textLarge: 27px;
+        --size_h2_large: 60px;
 
         --widthPage: 90%;
 
@@ -105,7 +112,10 @@ li{
         --size_h4: 35px;
         --size_h5: 24px;
 
-        --size_p: 20px;
+        --size_p: 23px;
+
+        --size_span_textLarge: 25px;
+        --size_h2_large: 80px;
 
         --widthPage: 90%;
 
@@ -127,6 +137,9 @@ li{
 
         --size_p: 20px;
 
+        --size_span_textLarge: 22px;
+        --size_h2_large: 80px;
+
         --widthPage: 85%;
 
         --padding_top_new_page: 140px;
@@ -147,6 +160,9 @@ li{
 
         --size_p: 18px;
 
+        --size_span_textLarge: 20px;
+        --size_h2_large: 75px;
+
         --widthPage: 85%;
 
         --padding_top_new_page: 140px;
@@ -165,6 +181,9 @@ li{
         --size_h5: 18px;
 
         --size_p: 18px;
+
+        --size_span_textLarge: 20px;
+        --size_h2_large: 70px;
 
         --widthPage: 90%;
 
@@ -187,6 +206,9 @@ li{
 
         --size_p: 17px;
 
+        --size_span_textLarge: 19px;
+        --size_h2_large: 65px;
+
         --widthPage: 95%;
         --padding_top_new_page: 50px;
 
@@ -206,6 +228,9 @@ li{
         --size_h5: 18px;
 
         --size_p: 17px;
+
+        --size_span_textLarge: 19px;
+        --size_h2_large: 65px;
 
         --widthPage: 95%;
 

@@ -42,46 +42,43 @@ function Inscription( {setRefPage} ) {
   return (
     <div className={styles.inscription} ref={refPage}>
 
-      <a href="../" >
-        <img id="returnLobby" src={logoTirArcCysoing}></img>
-      </a>  
-
       <div className={styles.blockInscription}>
-        <div className={styles.form}>
+        <div className={styles.blockForm}>
+
           
-        
           <h1>INSCRIPTION</h1>
+          <div className={styles.form}>
+            
+            <div className={styles.inputName}>
+              <div className={styles.labelInput}>
+                <label>Nom</label>
+                <input id="firstName" type="text"></input>
+              </div>
 
-          <div className={styles.inputName}>
-          <div className={styles.labelInput}>
-            <label>First Name</label>
-            <input id="firstName" type="text"></input>
+              <div className={styles.labelInput}>
+                <label>Prenom</label>
+                <input id="lastName" type="text"></input>
+              </div>
+            </div>
+
+            <div className={styles.labelInput}>
+              <label>Age</label>
+              <input id="age" type="number"></input>
+            </div>
+
+            <div className={styles.labelInput}>
+              <label>Email</label>
+              <input id="email" type="text"></input>
+            </div>
+
+            <div className={styles.labelInput}>
+              <label>numéro de téléphone *</label>
+              <input type="text"></input>
+            </div>
+
+            <button className={styles.btnSubmit} onClick={() => sendMail()}>VALIDER</button>
+
           </div>
-
-          <div className={styles.labelInput}>
-            <label>Last Name</label>
-            <input id="lastName" type="text"></input>
-          </div>
-
-          </div>
-
-          <div className={styles.labelInput}>
-            <label>Age</label>
-            <input id="age" type="number"></input>
-          </div>
-
-          <div className={styles.labelInput}>
-            <label>Email</label>
-            <input id="email" type="text"></input>
-          </div>
-
-          <div className={styles.labelInput}>
-            <label>Phone number *</label>
-            <input type="text"></input>
-          </div>
-
-          <button className={styles.btnSubmit} onClick={() => sendMail()}>Valid</button>
-
         </div>
 
       </div>
@@ -90,11 +87,11 @@ function Inscription( {setRefPage} ) {
 
 
 
-        <div className={styles.moreInfo}>
+        <div className={styles.moreInfoTarif}>
 
 
           <h3>
-            Inscription à partir du Mardi 11 septembre 2024
+            TARIFS D'ADHESION
           </h3>
           
 
@@ -116,7 +113,7 @@ function Inscription( {setRefPage} ) {
         
         </div>
 
-        <div className={styles.moreInfo}>
+        <div className={styles.moreInfoHoraire}>
 
           <h3>
             Nos horraires: 

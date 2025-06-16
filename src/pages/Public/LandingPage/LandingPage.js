@@ -2,20 +2,8 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useRef } from 'react';
 
-import {NavBar} from "../../../components/NavBar/NavBar.js";
-
-
-import logoTirArcCysoing from "../../../image/logoTirArcCysoing.jpg"
-import Cookies from 'js-cookie';
-
-import "./LandingPage.css"
 
 import image1 from '../../../image/Plan.png'
-import image2 from '../../../image/Plan.png'
-import image3 from '../../../image/Plan.png'
-import image4 from '../../../image/Plan.png'
-import image5 from '../../../image/Plan.png'
-import { ButtonToolbar } from "react-bootstrap"
 
 import UseIsAdmin from "../../../_helpers/UseIsAdmin";
 
@@ -23,9 +11,12 @@ import GetDataUser from '../../../_helpers/GetDataUser';
 
 import { NumberCount } from '../../../components/NumberCount/NumberCount';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
+
 import styles from "./LandingPage.module.scss"
 
-import { Footer } from '../../../components/Footer/Footer.js';
+
 
 function LandingPage( {setRefPage}) {
 
@@ -42,7 +33,6 @@ function LandingPage( {setRefPage}) {
   const { isAdmin, login } = UseIsAdmin();
 
 
-  const { user } = GetDataUser();
 
 
 
@@ -109,76 +99,174 @@ function LandingPage( {setRefPage}) {
     )
   }
 
-  function checkStatus() {
-
-    if (login && isAdmin) {
-      navigate('/admin');
-    } else if (login && !isAdmin) {
-      //alert("monCompte");
-      navigate('/account/myAccount');
-    } else {
-      navigate('/account/login');
-    }
-    
-  }
-
-  function blockSite() {
-
-    const listeblockSite = InfoLandingPage.map((item, index) =>
-
-      <div id={item.titleInscription} className="blockSite" style={{ flexDirection: index%2 == 0? "row": "row-reverse", background: item.background }} >
-        <div className="blockTexte">
-          <h2><a href="/inscription">{item.titleInscription}</a></h2>
-          <p>
-            {item.description}
-          </p>
-        </div>
-        <img onClick={() => handleClick(item.href)} src={image1} />
-
-      </div>
-    )
-
-    return(listeblockSite)
-
-  }
-
-
 
   return (
-    <div className="landingPage" ref={refPage}>
 
-
-      {blockSite()}
-
-      <NumberCount />
-
-      <div className={styles.infoNumberCount}>
-
-        <h2>Quelques chiffres</h2>
-
-        <div className={styles.content}>
-
-
-          <div className={styles.block}>
-            <h1>Nombre de licenciés</h1>
-            <p>100</p>
-          </div>
-
-          <div className={styles.block}>
-            <h1>Nombre de competiteurs</h1>
-            <p>100</p>
-          </div>
-
-          <div className={styles.block}>
-            <h1>Age du Club</h1>
-            <p>100 ans</p>
-          </div>
-  
-        </div>
+    <>
+      <div className={styles.pagePresentation}
+        style={{ backgroundImage: `url(/image/landingPage.jpg)` }}>
+        <img className={styles.presentationImage} src="/morphoz.png" alt="" />
       </div>
+        
+      <div className={styles.landingPage} ref={refPage}> 
 
 
-    </div>
+
+
+
+        <h1>Qui sommes-nous ?</h1>
+
+        <div className={styles.blockPresentation}>
+          <div>
+            <span className={styles.textLarge}>Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, vvMot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de b</span>
+          </div>
+          <div>
+            <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+          </div>
+        </div>
+
+        <h1>LES NEWS</h1>
+
+        <div className={styles.blockNews}>
+
+              <Swiper
+                slidesPerView={3}
+                spaceBetween={20}
+                loop={true}
+                speed={14000}
+                autoplay={{
+                  delay: 0, 
+                  disableOnInteraction: false,
+                }}
+                freeMode={{
+                  enabled: true,
+                  momentum: false,
+                  sticky: false,
+                }}
+
+                pagination={{
+                  clickable: true,
+                }}
+                breakpoints={{
+                  1500: {
+                    slidesPerView: 3,
+                    spaceBetween: 5
+                  },
+                  900: {
+                    slidesPerView: 2,
+                    spaceBetween: 0
+                  },
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 0
+                  },
+                }}
+                modules={[FreeMode, Pagination, Autoplay]}
+                className={styles.swiper}
+              >
+        
+                <SwiperSlide className={styles.swiperSlide}>
+                  <a>
+                    <img src={"/image/landingPage.jpg"} alt="img" />  
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className={styles.swiperSlide}>
+                  <a>
+                    <img src={"/image/landingPage.jpg"} alt="img" />  
+                  </a>
+                </SwiperSlide>
+                      
+                <SwiperSlide className={styles.swiperSlide}>
+                  <a>
+                    <img src={"/image/landingPage.jpg"} alt="img" />  
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className={styles.swiperSlide}>
+                  <a>
+                    <img src={"/image/landingPage.jpg"} alt="img" />  
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className={styles.swiperSlide}>
+                  <a>
+                    <img src={"/image/landingPage.jpg"} alt="img" />  
+                  </a>
+                </SwiperSlide>
+                      
+                <SwiperSlide className={styles.swiperSlide}>
+                  <a>
+                    <img src={"/image/landingPage.jpg"} alt="img" />  
+                  </a>
+                </SwiperSlide>
+              
+              
+              </Swiper>
+
+
+        </div>
+
+        <div className={styles.blockEntrainement}>
+
+          <div className={styles.terrain}>
+            <div>
+              <div className={styles.title}>
+                <h1>Terrain 1</h1>
+              </div>
+              <span className={styles.textLarge}>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
+              </span>
+            </div>
+            <div className={styles.images}>
+              <img className={styles.firstImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+              <img className={styles.secondImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+              <img className={styles.thirdImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+            </div>
+          </div>
+
+          <div className={styles.secondTerrain}>
+            <div>
+              <div className={styles.title}>
+                <h1>Terrain 1</h1>
+              </div>   
+              <span className={styles.textLarge}>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
+              </span>
+            </div>
+            <div className={styles.images}>
+              <img className={styles.firstImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+              <img className={styles.secondImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+              <img className={styles.thirdImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div className={styles.infoNumberCount}>
+
+          <h2>Quelques chiffres</h2>
+
+          <div className={styles.content}>
+
+
+            <div className={styles.block}>
+              <h1>Nombre de licenciés</h1>
+              <p>100</p>
+            </div>
+
+            <div className={styles.block}>
+              <h1>Nombre de competiteurs</h1>
+              <p>100</p>
+            </div>
+
+            <div className={styles.block}>
+              <h1>Age du Club</h1>
+              <p>100 ans</p>
+            </div>
+    
+          </div>
+        </div>
+
+
+      </div>
+    </>
   );
 }
 

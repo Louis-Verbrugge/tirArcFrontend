@@ -1,7 +1,7 @@
 
 .blockNavBar{
 
-    margin-bottom: var(--paddingNewPageTop);
+    //margin-bottom: var(--paddingNewPageTop);
 
 
     .navBar{
@@ -25,12 +25,13 @@
             margin: 20px 30px;
             height: 40px;
 
+            
+
 
             p{
                 color: var(--blueClub);
                 margin: auto 10px;
                 transition: color 0.3s ease-in-out;
-                transition: transform 0.3s ease-in-out;
                 
             }
 
