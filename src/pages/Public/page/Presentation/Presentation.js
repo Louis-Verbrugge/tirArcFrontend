@@ -20,12 +20,12 @@ function Presentation( {setRefPage} ) {
         <h1>Qui sommes-nous ?</h1>
 
         <div className={styles.blockPresentation}>
-            <div>
+            <div className={styles.text}>
                 <span className={styles.textLarge}>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire.
 
                 </span>
             </div>
-            <div>
+            <div className={styles.image}>
                 <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
             </div>
         </div>
@@ -67,6 +67,7 @@ function Presentation( {setRefPage} ) {
             <div className={styles.chiffres}>
 
                 <div className={styles.contentChiffre}> 
+
                     
                     <div className={styles.chiffre}>
                         <h2>56</h2>

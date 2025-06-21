@@ -11,7 +11,7 @@
     --paddingNewPageTop: 200px;
 
     --maxWidth: 2000px;
-  }
+}
 
 html, body {
     background-color: var(--colorBackGround);
@@ -97,7 +97,6 @@ li{
         --widthPage: 90%;
 
         --padding_top_new_page: 140px;
-
 
 
     }  
