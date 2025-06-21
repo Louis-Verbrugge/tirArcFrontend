@@ -162,7 +162,7 @@
                 
 
                 & > div:not(:last-child) {
-                    border-bottom: 2px solid var(--blueClub);
+                    border-bottom: var(--contentChiffre);
                 }
         
 
@@ -333,8 +333,6 @@
             }
         }
     }
-
-
 }
 
 
@@ -439,7 +437,6 @@
         --blockPresentationTextWidth: 55%;
         --blockPresentationImageWidth: 45%;
         --blockPresentationDirection: row;
-        --heightBlock: 500px;
         --presentationImageHeight: 100%;
         --teamWidth: 220px;
         --teamHeightImage: 100%;
@@ -462,7 +459,6 @@
         --blockPresentationTextWidth: 55%;
         --blockPresentationImageWidth: 45%;
         --blockPresentationDirection: row;
-        --heightBlock: 500px;
         --presentationImageHeight: 100%;
         --teamWidth: 220px;
         --teamHeightImage: 100%;
@@ -485,7 +481,6 @@
         --blockPresentationTextWidth: 100%;
         --blockPresentationImageWidth: 100%;   
         --blockPresentationDirection: row;  
-        --heightBlock: 500px; 
         --presentationImageHeight: 300px;
         --teamWidth: 40%;
         --teamHeightImage: 300px;
@@ -511,7 +506,6 @@
         --blockPresentationTextWidth: 100%;
         --blockPresentationImageWidth: 100%;   
         --blockPresentationDirection: column;  
-        --heightBlock: 500px; 
         --presentationImageHeight: 300px;
         --teamWidth: 85%;
         --teamHeightImage: 300px;
@@ -525,7 +519,6 @@
         --firstTerrainDirection: column;
         --terrainImagesWidth: 100%; 
         --chiffresWidth: calc(80% - 40px);
-
     }  
 
 }
@@ -549,6 +542,7 @@
         --firstTerrainDirection: column;
         --terrainImagesWidth: 100%; 
         --chiffresWidth: calc(80% - 40px);
+        --contentChiffre: 2px solid var(--blueClub);
         
     } 
 }
