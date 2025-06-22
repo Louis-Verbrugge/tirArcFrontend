@@ -8,7 +8,7 @@
     --colotBlack: rgb(0, 0, 0);
 
     --borderRadius: 15px;
-    --paddingNewPageTop: 200px;
+    
 
     --maxWidth: 2000px;
 }
@@ -17,18 +17,17 @@ html, body {
     background-color: var(--colorBackGround);
     padding: 0;
     margin: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 
-h1, h2, h3, h4, h5, h6, p, li, span {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, table, caption, thead, tbody, tfoot, tr, th, td, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -75,12 +74,6 @@ li{
 
 
 
-
-
-
-
-
-
 @media screen and (min-width: 2500px)  {
 
     :root{
@@ -96,7 +89,7 @@ li{
 
         --widthPage: 90%;
 
-        --padding_top_new_page: 140px;
+        --paddingNewPageTop: 150px;
 
 
     }  
@@ -110,17 +103,11 @@ li{
         --size_h3: 40px;
         --size_h4: 35px;
         --size_h5: 24px;
-
         --size_p: 23px;
-
         --size_span_textLarge: 25px;
         --size_h2_large: 80px;
-
         --widthPage: 90%;
-
-        --padding_top_new_page: 140px;
-
-
+        --paddingNewPageTop: 150px;
 
     }  
 }
@@ -133,16 +120,11 @@ li{
         --size_h3: 35px;
         --size_h4: 30px;
         --size_h5: 22px;
-
         --size_p: 20px;
-
         --size_span_textLarge: 22px;
         --size_h2_large: 80px;
-
         --widthPage: 85%;
-
-        --padding_top_new_page: 140px;
-
+        --paddingNewPageTop: 150px;
 
     }  
 }
@@ -153,18 +135,13 @@ li{
         --size_h1: 45px;
         --size_h2: 40px;
         --size_h3: 30px;
-
         --size_h4: 24px;
         --size_h5: 21px;
-
         --size_p: 18px;
-
         --size_span_textLarge: 20px;
         --size_h2_large: 75px;
-
         --widthPage: 85%;
-
-        --padding_top_new_page: 140px;
+        --paddingNewPageTop: 150px;
 
     }  
 }
@@ -175,18 +152,13 @@ li{
         --size_h1: 45px;
         --size_h2: 40px;
         --size_h3: 35px;
-
         --size_h4: 24px;
         --size_h5: 18px;
-
         --size_p: 18px;
-
         --size_span_textLarge: 20px;
         --size_h2_large: 70px;
-
         --widthPage: 90%;
-
-        --padding_top_new_page: 100px;
+        --paddingNewPageTop: 150px;
 
 
     }  
@@ -209,7 +181,7 @@ li{
         --size_h2_large: 65px;
 
         --widthPage: 95%;
-        --padding_top_new_page: 50px;
+        --paddingNewPageTop: 50px;
 
 
     }  
@@ -233,7 +205,7 @@ li{
 
         --widthPage: 95%;
 
-        --padding_top_new_page: 50px;
+        --paddingNewPageTop: 50px;
 
 
     }  

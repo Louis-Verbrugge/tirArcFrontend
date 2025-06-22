@@ -9,135 +9,159 @@
 
     .top{
 
-        
         background-color: var(--blueClub);
-
-        border-radius: 50% 50% 0 0; /* Arrondi en bas */
+        border-radius: 50% 50% 0 0;
         position: absolute;
-
         top:-80px;
         width: calc(100% + 100px);    
         height: 80px;
         left: -50px;
-        z-index: 1;
+        z-index: var(--topZIndex);
     }
 
-    .main{
-        display: flex;
-        justify-content: space-around;
-        padding: 20px;
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
+    .content{
 
-        .left{
-
-            button{
-                background-color: rgb(255, 255, 255);
-                
-                color: black;
-                font-size: 20px;
-                font-weight: bold;
-                padding: 10px 20px;
-                border-radius: 20px;
-                border: none;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-                transition: transform .5s ease;
-
-                &:hover{
-                    background-color: var(--orangeClub);
-                    color: white;
-                    transform: rotate(-5deg) scale(1.1);  
-                    transition: transform .5s ease;
-                }
-            }
-        }
-
-
-        .right{
-
-            position: relative;
-
-            .imageFirstCircle {
-                background: linear-gradient(to bottom,#F2F8FF 50%, rgba(255, 0, 0, 0) 50%);
-                position: relative;
-                width: 430px;
-                height: 430px;
-                border-radius: 50%;
-                top: -70%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
         
-            .imageSecondCircle {
-                background: linear-gradient(to bottom,#E6F1FF 50%, rgba(255, 0, 0, 0) 50%);
-                width: 90%;
-                height: 90%;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        
-            img {
-                position: absolute;
-                top: -20%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: calc(430px - 19%);
-                height: calc(430px - 19%);
-                border-radius: 50%;
-                transition: transform .5s ease;
-                z-index: 5;
 
 
-            }
 
-            img:hover{
-                // agrandir l'image
-
-                transform: translate(-50%, -50%) rotate(-10deg) scale(1.1);
-                transition: transform .5s ease;
-
-                
-            }
-        }
-
-    }
-
-    .bottom{
-        display: flex;
-        justify-content: space-around;
-        margin-top: -200px;
-        padding-bottom: 150px;
-
-        .contact{ 
+        .main{
             display: flex;
+            justify-content: space-around;
+            padding: var(--mainPadding); 
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
 
-            p{
-                color: white;
-            }
+            .left{
 
-            .socialMedia{
-                margin: auto;
-                padding-left: 20px;
+                margin-top: var(--mainLeftMarginTop); 
 
-                img{
-                    width: 50px;
+                display: var(--leftDisplay);
+                flex-direction: column;
+                align-items: center;
+
+                h2{
+                    margin-bottom: 10px;
+                }
+
+                button{
+                    background-color: rgb(255, 255, 255);
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    border: none;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    transition: transform .5s ease;
+
+                    &:hover{
+                        background-color: var(--orangeClub);
+                        color: white;
+                        transform: rotate(-5deg) scale(1.1);  
+                        transition: transform .5s ease;
+                    }
                 }
             }
-        
+
+
+            .right{
+
+                display: var(--rightCircleDisplay); 
+
+                position: relative;
+
+                .imageFirstCircle {
+                    background: linear-gradient(to bottom,#F2F8FF 50%, rgba(255, 0, 0, 0) 50%);
+                    position: relative;
+                    width: var(--rightSizeCircle);
+                    height: var(--rightSizeCircle);
+                    border-radius: 50%;
+                    top: -70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+            
+                .imageSecondCircle {
+                    background: linear-gradient(to bottom,#E6F1FF 50%, rgba(255, 0, 0, 0) 50%);
+                    width: 90%;
+                    height: 90%;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            
+                img {
+                    position: absolute;
+                    top: -20%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: calc(var(--rightSizeCircle) - 19%);
+                    height: calc(var(--rightSizeCircle) - 19%);
+                    border-radius: 50%;
+                    transition: transform .5s ease;
+                    z-index: 5;
+
+
+                }
+
+                img:hover{
+                    // agrandir l'image
+
+                    transform: translate(-50%, -50%) rotate(-10deg) scale(1.1);
+                    transition: transform .5s ease;
+
+                    
+                }
+            }
+
         }
 
-        img{
-            height: 100px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+        .bottom{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: var(--bottomMarginTop); 
+            padding-bottom: var(--bottomPaddingBottom); 
 
+            img{
+                height: 100px;
+                margin-bottom: 10px;
+                
+            }
+
+            .contact{ 
+                display: flex;
+                flex-direction: column;
+
+                p{
+                    color: white;
+                    text-align: justify;
+                }
+
+                .socialMedia{
+                    margin: auto;
+                    padding-left: 20px;
+
+                    img{
+                        width: 50px;
+                    }
+                }
             
+            }
+
+            img{
+                height: 100px;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+
+                
+            }
         }
     }
 }
@@ -151,4 +175,126 @@
     to {
       transform: rotate(360deg);
     }
+}
+
+
+
+@media screen and (min-width: 2500px)  {
+    :root{
+        --rightSizeCircle: 430px;
+        --rightCircleDisplay: flex;
+        --bottomMarginTop: -150px;
+        --bottomPaddingBottom: 150px;
+        --mainPadding: 20px;
+        --mainLeftMarginTop: 0px;
+        --topZIndex: 1;
+        --leftDisplay: block;
+
+    }
+
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2500px) {
+    :root{
+        --rightSizeCircle: 430px;
+        --rightCircleDisplay: flex;
+        --bottomMarginTop: -150px;
+        --bottomPaddingBottom: 150px;
+        --mainPadding: 20px;
+        --mainLeftMarginTop: 0px;
+        --topZIndex: 1;
+        --leftDisplay: block;
+
+    }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 2000px) {
+    :root{
+        --rightSizeCircle: 430px;
+        --rightCircleDisplay: flex;
+        --bottomMarginTop: -150px;
+        --bottomPaddingBottom: 150px;
+        --mainPadding: 20px;
+        --mainLeftMarginTop: 0px;
+        --topZIndex: 1;
+        --leftDisplay: block;
+
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+    :root{
+        --rightSizeCircle: 350px;
+        --rightCircleDisplay: flex;
+        --bottomMarginTop: -150px;
+        --bottomPaddingBottom: 150px;
+        --mainPadding: 20px;
+        --mainLeftMarginTop: 0px;
+        --topZIndex: 1;
+        --leftDisplay: block;
+
+    }
+}
+
+@media screen and (min-width: 761px) and (max-width: 1000px) {
+    :root{
+        --rightSizeCircle: 300px;
+        --rightCircleDisplay: flex;
+        --bottomMarginTop: -150px;
+        --bottomPaddingBottom: 150px;
+        --mainPadding: 20px;
+        --mainLeftMarginTop: 0px;
+        --topZIndex: 1;
+        --leftDisplay: block;
+
+    }
+}
+
+
+
+@media screen and (min-width: 550px) and (max-width: 761px) {
+
+    :root{
+        --rightSizeCircle: 430px;      
+        --rightCircleDisplay: none;  
+        --bottomMarginTop: 0;
+        --bottomPaddingBottom: 0;
+        --mainPadding: 0 0 50px 0;
+        --mainLeftMarginTop: -50px;
+        --topZIndex: -1;
+        --leftDisplay: flex;
+        
+    }  
+
+}
+
+@media screen and (min-width: 450px) and (max-width: 550px) {
+
+    :root{
+        --rightSizeCircle: 430px;
+        --rightCircleDisplay: none;
+        --bottomMarginTop: 0;
+        --bottomPaddingBottom: 0;
+        --mainPadding: 0 0 50px 0;
+        --mainLeftMarginTop: -50px;
+        --topZIndex: -1;
+        --leftDisplay: flex;
+
+    }  
+
+}
+
+@media screen and (max-width: 450px) {
+
+    :root{
+        --rightSizeCircle: 430px;
+        --rightCircleDisplay: none;
+        --bottomMarginTop: 0;
+        --bottomPaddingBottom: 0;
+        --mainPadding: 0 0 50px 0;
+        --mainLeftMarginTop: -50px;
+        --topZIndex: -1;
+        --leftDisplay: flex;
+    
+    } 
 }

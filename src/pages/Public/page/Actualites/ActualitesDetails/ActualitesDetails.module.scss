@@ -5,7 +5,8 @@
     width: 90%;
     max-width: var(--maxWidth);
     
-    margin: 0 auto;
+    margin: auto;
+    margin-top: var(--paddingNewPageTop);
     background-color: var(--colorWhite);
     border-radius: var(--borderRadius);
 

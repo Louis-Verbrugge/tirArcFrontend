@@ -10,13 +10,21 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
 export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMemePage, setChangeMemePage} ) {
 
   const navBarRef = useRef(null);
   const navigate = useNavigate();
-  
-  
-  //const [annimNavBar, annimNavBar] = useState(null);
+
+  const burgerNavRef = useRef(null);
+  const iconeBurgerRef = useRef(null);
+  let menuClose = false;
+  const timeAnnimation = 0.5;
+
+  let isClickInside;
+  let isCLickBurgerMenu;
+
+
 
   const timeFirstPartAnnim = .5;
   const timeSecondPartAnnim = .5;
@@ -30,7 +38,6 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
   let annimCloseId = null;
   let blockNavBarHeight;
 
-  
 
 
   useEffect(() => {
@@ -67,6 +74,77 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
+  document.addEventListener('click', (event) => {
+      if (burgerNavRef.current && iconeBurgerRef.current) {
+          isClickInside = burgerNavRef.current.contains(event.target);
+          isCLickBurgerMenu = iconeBurgerRef.current.contains(event.target);
+
+          if (!isClickInside && burgerNavRef.current.style.display === 'flex' && !isCLickBurgerMenu) {
+              closeMenuBurger();
+          }
+      }
+  });
+
+
+  const handleScroll = () => {
+    if (burgerNavRef.current.style.display === 'flex') {
+        closeMenuBurger();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
+
+
+  function toggleMenu() {
+    if (burgerNavRef.current && burgerNavRef.current.style.display !== 'none') {
+      if (burgerNavRef.current.style.display === 'flex') {
+        closeMenuBurger();
+      } else {
+        openMenuBurger();
+      }
+    } else {
+      openMenuBurger();
+    }
+  }
+
+  function closeMenuBurger() {
+    if (!menuClose && burgerNavRef.current) {
+      gsap.fromTo(
+          burgerNavRef.current,
+          { x: '0%' },
+          {
+              x: '-100%',
+              duration: timeAnnimation,
+              onStart: () => (menuClose = true),
+              onComplete: () => {
+                  burgerNavRef.current.style.display = 'none';
+                  menuClose = false;
+              },
+          }
+      );
+    }
+  }
+
+  function openMenuBurger() {
+    if (burgerNavRef.current) {
+        burgerNavRef.current.style.display = 'flex';
+        gsap.fromTo(
+            burgerNavRef.current,
+            { x: '-100%' },
+            { x: '0%', duration: timeAnnimation }
+        );
+    } else {
+        console.warn('GSAP target not found.');
+    }
+  }
 
 
 
@@ -164,8 +242,13 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
   }, [refPage, changeMemePage]);
 
 
+  window.toggleMenu = toggleMenu;
+  window.closeMenu = closeMenuBurger;
+
   return (
     <div className={styles.blockNavBar}>
+
+    
       <nav className={styles.navBar}>
         <div className={styles.content} ref={navBarRef} id="navBar">
           <p onClick={() => endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Tir à l'arc Cysoing</p>
@@ -173,7 +256,7 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
 
             
 
-            <p onClick={() => endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage)} >News</p>
+            <p onClick={() => endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage)}>News</p>
 
             <p onClick={() => endPage(navigate, refPage, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Qui sommes-nous ?</p>
             
@@ -184,6 +267,49 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
           </div>
         </div>
       </nav>
+
+      <nav className={styles.burgerNav}>
+          <img
+              onClick={() => toggleMenu()}
+              src={'/icons/burgerMenu.svg'}
+              alt='logo burger'
+              id='iconeBurger'
+              ref={iconeBurgerRef}
+          />
+          <div className={styles.containt} id='burgerNav' ref={burgerNavRef}>
+              <a onClick={() => {
+                  closeMenuBurger();
+                  endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemePage);
+              }}>
+                Tir à l'arc Cysoing
+              </a>
+              <a onClick={() => {
+                  closeMenuBurger();
+                  endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage);
+              }}>
+                News
+              </a>
+              <a onClick={() => {
+                  closeMenuBurger();
+                  endPage(navigate, refPage, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemePage);
+              }}>
+                Qui sommes-nous ?
+              </a>
+              <a onClick={() => {
+                  closeMenuBurger();
+                  endPage(navigate, refPage, '/photos', annimChangePage, setAnnimChangePage, setChangeMemePage);
+              }}>
+                Photos
+              </a>
+              <a onClick={() => {
+                  closeMenuBurger();
+                  endPage(navigate, refPage, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemePage);
+              }}>
+                inscription
+              </a>
+          </div>
+      </nav>
+
     </div>
     
   );

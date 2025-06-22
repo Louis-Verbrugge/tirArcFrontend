@@ -60,7 +60,7 @@ function Actualites( {setRefPage, annimChangePage, setAnnimChangePage, setChange
   return (
     <div className={styles.actualites} ref={refPage}> 
 
-      <h1 className={styles.title}>{structData.titre_de_la_page} <span>{structData.mot_bleu_titre_de_la_page}</span></h1>
+      <h1 className={styles.title}>les NEWS</h1>
           
 
       <div className={styles.blockActualites}>

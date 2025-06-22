@@ -1,7 +1,13 @@
 
+
+
+
 .blockNavBar{
 
+    
+
     .navBar{
+        display: var(--navBarVisible);
         position: fixed;
         top: 0;
         left: 0;
@@ -57,4 +63,60 @@
 
     }
 
+    .burgerNav{
+        display: flex;
+        
+
+        img{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        
+            width: 30px;
+            height: 30px;
+            z-index: 100000000;
+            cursor: pointer;
+        }
+
+        .containt{
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 48%;
+            height: 100%;
+            background-color: var(--blueClub);
+            z-index: 1000;
+
+            a{
+                color: rgb(255, 255, 255);
+                text-align: center;
+                margin: 20px 0px;
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+
+
+@media screen and (min-width: 761px) {
+
+    :root{
+        --navBarVisible: block;
+        --burgerNavVisible: none;
+        
+    }  
+}
+
+@media screen and (max-width: 761px) {
+
+    :root{
+        --navBarVisible: none;
+        --burgerNavVisible: block;
+
+    }  
 }
