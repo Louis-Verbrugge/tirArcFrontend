@@ -1,12 +1,20 @@
 
 
+import { useEffect, useRef } from 'react';
 import styles from './Footer.module.scss';
 
-export function Footer() {
+export function Footer( { setRefFooter }) {
+
+    const refPage = useRef(null);
+    useEffect(() => {
+        if (refPage.current) {
+            setRefFooter(refPage.current);
+        }
+    }, []);
 
 
 return (
-    <div className={styles.footer}>
+    <div className={styles.footer} ref={refPage}>
         <div className={styles.top}/>
         <div className={styles.content}>
             <div className={styles.main}>

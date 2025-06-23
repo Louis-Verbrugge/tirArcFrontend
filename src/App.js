@@ -26,13 +26,14 @@ function App() {
 
   
   const [refPage, setRefPage] = useState(null);
+  const [refFooter, setRefFooter] = useState(null);
   const [annimChangePage, setAnnimChangePage] = useState(false);
 
   const [changeMemePage, setChangeMemePage] = useState(false);
 
   return (
     <BrowserRouter>
-      <NavBar refPage={refPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} changeMemePage={changeMemePage} setChangeMemePage={setChangeMemePage} />
+      <NavBar refPage={refPage} refFooter={refFooter} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} changeMemePage={changeMemePage} setChangeMemePage={setChangeMemePage} />
 
       <Routes>
         <Route path='/admin/*' element={
@@ -58,7 +59,7 @@ function App() {
 
       </Routes>
 
-      <Footer />
+      <Footer setRefFooter={setRefFooter}/>
     </BrowserRouter>
   );
 }

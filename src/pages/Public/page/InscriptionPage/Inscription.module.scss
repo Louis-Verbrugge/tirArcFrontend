@@ -1,28 +1,26 @@
 
 
 .inscription{
-    width: 100%;
+    width: var(--widthPage);
+    margin: 0 auto;
+    padding-top: var(--paddingNewPageTop);
     color: rgb(0, 0, 0);
     display: flex;
-    flex-direction: row;
+    flex-direction: var(--inscriptionDirection); 
     justify-content: center;
-    
 }
-
 
 .blockInscription{
     
-    width: 40%;
-    margin: auto;
+    width: var(--blockInscriptionWidth);
+    margin: 0 auto;
     height: 100%;
     
-    
-    .blockForm{
 
+    .blockForm{
         width: 100%;
         height: 80%;
         margin: auto;
-
 
         h1{
             color: var(--blueClub);
@@ -32,30 +30,12 @@
         }
 
         .form{
-
-
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-
-
-            
-            
+            justify-content: space-around; 
         }
-
-    }
-
-
-
-
-    
+    } 
 }
-
-
-
-
-
-
 
 .iconTarget{
     width: 15%;
@@ -80,10 +60,7 @@
     display: flex;
     flex-direction: column;
     width: 45%;
-    
 }
-
-
 
 input{
     background-color: var(--colorBackGround);
@@ -96,7 +73,7 @@ input{
 }
 
 .btnSubmit{
-    width: 20%;
+    width: var(--btnSumitWidth); 
     height: 40px;
     margin: 0 auto;
     border: none;
@@ -104,10 +81,8 @@ input{
     cursor: pointer;
     background-color: var(--blueClub);
     color: white;
-    border: solid 1px white;
-
     transition: all .2s ease;
-
+    margin-bottom: 40px;
 
     &:hover{
         background-color: var(--orangeClub);
@@ -115,32 +90,28 @@ input{
         transform: scale(1.1);
         transition: all .2s ease;
     }
-    
 }
 
 
 
 .blockMoreInfo{
-    
-    // background: linear-gradient(275deg, var(--orangeClub), 20% , var(--blueClub));
 
-    width: 40%;
-    margin: auto;
-
+    width: var(--blockInscriptionWidth);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
 
     .moreInfoTarif {
-        max-width: 450px;
-        margin: 2rem auto;
-        padding: 1.5rem 2rem;
+        width: 100%;
         background: #ffffff;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         font-family: 'Segoe UI', sans-serif;
+
+        .containerInfoTarif{
+            margin: 30px;
+        }
 
         h3 {
             color: var(--blueClub);
@@ -156,6 +127,7 @@ input{
             list-style: none;
             padding: 0;
             margin: 0;
+            text-align: justify;
 
             > li {
             font-size: 0.95rem;
@@ -188,61 +160,6 @@ input{
 
 
 
-//  .moreInfoTarif {
-//   max-width: 700px;
-//   margin: 3rem auto;
-//   padding: 2rem;
-//   background: white;
-//   border-left: 6px solid var(--blueClub);
-//   border-radius: 12px;
-//   font-family: 'Segoe UI', sans-serif;
-
-//   h3 {
-//     color: var(--blueClub);
-//     font-size: 1.6rem;
-//     text-align: left;
-//     margin-bottom: 1.5rem;
-//     font-weight: 600;
-//   }
-
-//   ul {
-//     padding: 0;
-//     list-style: none;
-
-//     > li {
-//       margin: 0.8rem 0;
-//       font-size: 1.05rem;
-//       color: #333;
-
-//       &:first-child {
-//         font-weight: bold;
-//         margin-top: 0;
-//       }
-
-//       ul {
-//         margin-top: 0.5rem;
-//         padding-left: 1.2rem;
-//         border-left: 2px solid #eee;
-//         margin-left: 0.5rem;
-
-//         li {
-//           font-size: 1rem;
-//           color: #555;
-//           margin: 0.4rem 0;
-//           position: relative;
-//           padding-left: 1rem;
-
-//           &::before {
-//             content: "•";
-//             color: var(--blueClub);
-//             position: absolute;
-//             left: 0;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
 
     
 
@@ -251,7 +168,6 @@ input{
     .moreInfoHoraire{
 
         width: 100%;
-        height: 100%;
         margin: auto;
 
         display: flex;
@@ -261,7 +177,7 @@ input{
         h3{
             color: var(--blueClub);
             text-decoration: underline;
-            padding-bottom: 20px;
+            padding: 20px;
         }
     }
 
@@ -283,80 +199,148 @@ input{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.containerWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
 
 .container {
+
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: var(--containerMarginBottom); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: min-content;
+}
+
+
+.detailHoraire {
   display: flex;
-  flex-direction: row; // Horizontal par défaut
-  gap: 20px;
-  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px 20px;
+  border-radius: 10px;  
+  margin-top: 10px;
+  border: 2px solid #f9f9f9; // bordure bleu léger
+
+  p {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 20px;
+    position: relative;
+
+    &::before {
+      content: "•";
+      color: #3498db; // bleu léger pour les puces
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 1.5;
+      font-size: 18px;
+    }
+  }
+}
+
+/* Optionnel : hover sur les panels */
+.accordion-panel:hover {
+  background-color: #eef5ff;
+  transition: background-color 0.3s ease;
+}
 
 
-    .card:hover > h3 {
-        color: var(--orangeClub);
-        transition: color .2s ease;
 
+@media screen and (min-width: 2500px)  {
+    :root{
+        --inscriptionDirection: row;
+        --blockInscriptionWidth: 40%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 50px;
     }
 
-    .card {
-        background-color: white;
-        color: var(--blueClub);
-        border-radius: 12px;
-        padding: 20px;
-        width: 280px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+@media screen and (min-width: 2000px) and (max-width: 2500px) {
+    :root{
+        --inscriptionDirection: row;
+        --blockInscriptionWidth: 40%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 50px;
+    }
+}
 
-   
+@media screen and (min-width: 1500px) and (max-width: 2000px) {
+    :root{
+        --inscriptionDirection: row;
+        --blockInscriptionWidth: 40%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 75px;
+        
+    }
+}
 
-        h3 {
-            margin: 0;
-            font-weight: bold;
-            text-align: center;
-            // souligner le texte
-            text-decoration: underline;
-            transition: color .2s ease;
-            
-        }
-
-        .detailHoraire {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-            p {
-                margin: 0;
-                color: #333;
-                position: relative;
-                padding-left: 20px; // espace pour le point
-
-                &::before {
-                    content: "•";
-                    color: #333;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    line-height: 1;
-                    margin-right: 8px; // optionnel, pour l'espace entre le point et le texte
-                }
-            }
-        }
-
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+    :root{
+        --inscriptionDirection: row;
+        --blockInscriptionWidth: 40%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 100px;
 
     }
+}
 
+@media screen and (min-width: 761px) and (max-width: 1000px) {
+    :root{
+        --inscriptionDirection: column;
+        --blockInscriptionWidth: 80%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 100px;
+        
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 761px) {
+
+    :root{
+        --inscriptionDirection: column;
+        --blockInscriptionWidth: 80%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 100px;
+        
+    }  
+
+}
+
+
+@media screen and (min-width: 450px) and (max-width: 550px) {
+
+    :root{
+        --inscriptionDirection: column;
+        --blockInscriptionWidth: 80%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 100px;
+
+    }  
+
+}
+
+@media screen and (max-width: 450px) {
+
+    :root{
+        --inscriptionDirection: column;
+        --blockInscriptionWidth: 90%;
+        --btnSumitWidth: 150px;
+        --containerMarginBottom: 100px;
+
+    } 
 }

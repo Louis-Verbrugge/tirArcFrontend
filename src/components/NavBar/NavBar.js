@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMemePage, setChangeMemePage} ) {
+export function NavBar( { refPage, refFooter, annimChangePage, setAnnimChangePage, changeMemePage, setChangeMemePage} ) {
 
   const navBarRef = useRef(null);
   const navigate = useNavigate();
@@ -237,7 +237,7 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
       setChangeMemePage(false);
       
     } else {
-      startPage(refPage, annimChangePage, setAnnimChangePage);
+      startPage(refPage, refFooter, annimChangePage, setAnnimChangePage);
     }
   }, [refPage, changeMemePage]);
 
@@ -251,18 +251,18 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
     
       <nav className={styles.navBar}>
         <div className={styles.content} ref={navBarRef} id="navBar">
-          <p onClick={() => endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Tir à l'arc Cysoing</p>
+          <p onClick={() => endPage(navigate, refPage, refFooter, '/', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Tir à l'arc Cysoing</p>
           <div className={styles.nav_icon}>
 
             
 
-            <p onClick={() => endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage)}>News</p>
+            <p onClick={() => endPage(navigate, refPage, refFooter, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage)}>News</p>
 
-            <p onClick={() => endPage(navigate, refPage, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Qui sommes-nous ?</p>
+            <p onClick={() => endPage(navigate, refPage, refFooter, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Qui sommes-nous ?</p>
             
-            <p onClick={() => endPage(navigate, refPage, '/photos', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Photos</p>
+            <p onClick={() => endPage(navigate, refPage, refFooter, '/photos', annimChangePage, setAnnimChangePage, setChangeMemePage)}>Photos</p>
             
-            <p onClick={() => endPage(navigate, refPage, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemePage)}>inscription</p> 
+            <p onClick={() => endPage(navigate, refPage, refFooter, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemePage)}>inscription</p> 
 
           </div>
         </div>
@@ -279,31 +279,31 @@ export function NavBar( { refPage, annimChangePage, setAnnimChangePage, changeMe
           <div className={styles.containt} id='burgerNav' ref={burgerNavRef}>
               <a onClick={() => {
                   closeMenuBurger();
-                  endPage(navigate, refPage, '/', annimChangePage, setAnnimChangePage, setChangeMemePage);
+                  endPage(navigate, refPage, refFooter,'/', annimChangePage, setAnnimChangePage, setChangeMemePage);
               }}>
                 Tir à l'arc Cysoing
               </a>
               <a onClick={() => {
                   closeMenuBurger();
-                  endPage(navigate, refPage, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage);
+                  endPage(navigate, refPage, refFooter, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage);
               }}>
                 News
               </a>
               <a onClick={() => {
                   closeMenuBurger();
-                  endPage(navigate, refPage, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemePage);
+                  endPage(navigate, refPage, refFooter, '/Qui-sommes-nous', annimChangePage, setAnnimChangePage, setChangeMemePage);
               }}>
                 Qui sommes-nous ?
               </a>
               <a onClick={() => {
                   closeMenuBurger();
-                  endPage(navigate, refPage, '/photos', annimChangePage, setAnnimChangePage, setChangeMemePage);
+                  endPage(navigate, refPage, refFooter, '/photos', annimChangePage, setAnnimChangePage, setChangeMemePage);
               }}>
                 Photos
               </a>
               <a onClick={() => {
                   closeMenuBurger();
-                  endPage(navigate, refPage, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemePage);
+                  endPage(navigate, refPage, refFooter, '/inscription', annimChangePage, setAnnimChangePage, setChangeMemePage);
               }}>
                 inscription
               </a>

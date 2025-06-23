@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 
-export function endPage(navigate, pageRef, newPathPage, annimChangePage, setAnnimChangePage, setChangeMemPage) {   
+export function endPage(navigate, pageRef, refFooter, newPathPage, annimChangePage, setAnnimChangePage, setChangeMemPage) {   
     
     // recupe le path de la page
     const path = window.location.pathname;
@@ -23,7 +23,7 @@ export function endPage(navigate, pageRef, newPathPage, annimChangePage, setAnni
                 
                 if (pathPage === newPathPage.slice(1)) {
                     setChangeMemPage(true);
-                } 
+                }   
                 else{
                     navigate(newPathPage);
                     
@@ -32,6 +32,12 @@ export function endPage(navigate, pageRef, newPathPage, annimChangePage, setAnni
             }
         });
         setAnnimChangePage(annim);
+
+        gsap.to(refFooter, {
+            opacity: 0,
+            y: "+100px",
+            duration: 1
+        });
     }
     
 }

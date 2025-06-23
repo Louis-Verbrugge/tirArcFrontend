@@ -13,7 +13,6 @@ function Presentation( {setRefPage} ) {
     }, []);
 
 
-
     return (    
     <div className={styles.presentation} ref={refPage}>
 

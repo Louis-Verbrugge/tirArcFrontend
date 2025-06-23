@@ -102,13 +102,13 @@ function LandingPage( {setRefPage}) {
 
   return (
 
-    <>
+    <div ref={refPage}>
       <div className={styles.pagePresentation}
         style={{ backgroundImage: `url(/image/landingPage.jpg)` }}>
         <img className={styles.presentationImage} src="/morphoz.png" alt="" />
       </div>
         
-      <div className={styles.landingPage} ref={refPage}> 
+      <div className={styles.landingPage}> 
 
 
 
@@ -266,7 +266,7 @@ function LandingPage( {setRefPage}) {
 
 
       </div>
-    </>
+    </div>
   );
 }
 

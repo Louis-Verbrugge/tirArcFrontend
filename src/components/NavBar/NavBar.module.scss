@@ -4,8 +4,6 @@
 
 .blockNavBar{
 
-    
-
     .navBar{
         display: var(--navBarVisible);
         position: fixed;
@@ -34,7 +32,7 @@
             p{
                 color: var(--blueClub);
                 margin: auto 10px;
-                transition: color 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
                 
             }
 
@@ -64,7 +62,7 @@
     }
 
     .burgerNav{
-        display: flex;
+        display: var(--burgerNavVisible);
         
 
         img{
