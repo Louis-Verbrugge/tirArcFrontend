@@ -42,6 +42,7 @@ function Inscription( {setRefPage} ) {
       .then(
         () => {
           console.log('SUCCESS!');
+          alert("Votre inscription a bien été prise en compte, nous vous contacterons prochainement pour finaliser votre adhésion.");
         },
         (error) => {
           console.log('FAILED...', error.text);
