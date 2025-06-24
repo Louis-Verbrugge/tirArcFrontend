@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@coreui/react": "^5.1.0",
+    "@emailjs/browser": "^4.4.1",
     "@getbrevo/brevo": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@material-tailwind/react": "^2.1.10",
