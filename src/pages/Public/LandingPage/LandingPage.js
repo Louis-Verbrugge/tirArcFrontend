@@ -10,11 +10,14 @@ import UseIsAdmin from "../../../_helpers/UseIsAdmin";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 
+import { listeActualite } from '../../../data/news/news.js';
+import { endPage } from '../../../_helpers/annim/endPage';
+
 import styles from "./LandingPage.module.scss"
 
 
 
-function LandingPage( {setRefPage}) {
+function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePage, setChangeMemePage}) {
 
   const refPage = useRef(null);
   useEffect(() => {
@@ -23,74 +26,15 @@ function LandingPage( {setRefPage}) {
       }
   }, []);
   
-
   const navigate = useNavigate();
 
-  const { isAdmin, login } = UseIsAdmin();
+  function goToActualite(title) {
+    title = title.replace(/-/g, '_')
+                  .replace(/ /g, '-')
+    
+    endPage(navigate, refPage.current, refFooter, '/news/' + title, annimChangePage, setAnnimChangePage, setChangeMemePage);
+    //navigate('/news/' + title);
 
-
-
-
-  let InfoLandingPage = [
-    {
-      titleInscription: "inscription",
-      description: " Inscription pour l'année 2024-2025, test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
-      image: image1,
-      background: "white",
-      href: "inscription"
-    },
-    {
-      titleInscription: "Compétitions",
-      description: "test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
-      image: image1,
-      background: "black",
-      href: "competition"
-    },
-    {
-      titleInscription: "Blog",
-      description: "test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
-      image: image1,
-      background: "blue",
-      href: "inscription"
-    },
-    {
-      titleInscription: "Qui sommes nous ?",
-      description: "test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
-      image: image1,
-      background: "red",
-      href: "inscription"
-
-    },
-    {
-      titleInscription: "inscription 5",
-      description: "test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
-      image: image1,
-      background: "yellow",
-      href: "inscription"
-
-
-    },
-  ]
-
-  function handleClick(annee) {
-    navigate(`/${annee}/`);
-  }
-
-
-  function blockNavigation() {
-
-    const listeBlockNavigation = InfoLandingPage.map((item, index) =>
-     
-     <a href={"#"+item.titleInscription}>{item.titleInscription}</a>
-
-    )
-
-    return (
-      <div className="navigation">
-        {listeBlockNavigation}
-      </div>
-
-    )
   }
 
 
@@ -158,41 +102,14 @@ function LandingPage( {setRefPage}) {
                 modules={[FreeMode, Pagination, Autoplay]}
                 className={styles.swiper}
               >
-        
-                <SwiperSlide className={styles.swiperSlide}>
-                  <a>
-                    <img src={"/image/landingPage.jpg"} alt="img" />  
-                  </a>
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
-                  <a>
-                    <img src={"/image/landingPage.jpg"} alt="img" />  
-                  </a>
-                </SwiperSlide>
-                      
-                <SwiperSlide className={styles.swiperSlide}>
-                  <a>
-                    <img src={"/image/landingPage.jpg"} alt="img" />  
-                  </a>
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
-                  <a>
-                    <img src={"/image/landingPage.jpg"} alt="img" />  
-                  </a>
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
-                  <a>
-                    <img src={"/image/landingPage.jpg"} alt="img" />  
-                  </a>
-                </SwiperSlide>
-                      
-                <SwiperSlide className={styles.swiperSlide}>
-                  <a>
-                    <img src={"/image/landingPage.jpg"} alt="img" />  
-                  </a>
-                </SwiperSlide>
-              
-              
+                {listeActualite.map((item, index) => (
+                  <SwiperSlide key={index} className={styles.swiperSlide}>
+                    <a onClick={() => goToActualite(item.title)}>
+                      <img src={item.picture} alt={item.title} />
+                    </a>
+                  </SwiperSlide>
+                ))}
+                            
               </Swiper>
 
 

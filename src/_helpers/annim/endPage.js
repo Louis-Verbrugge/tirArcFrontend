@@ -8,6 +8,10 @@ export function endPage(navigate, pageRef, refFooter, newPathPage, annimChangePa
     const pathPage = pathArray[pathArray.length - 1];
 
 
+    console.log("-------------------------------------")
+    console.log(pageRef)
+    console.log(refFooter)
+
 
 
     
