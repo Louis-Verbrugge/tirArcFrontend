@@ -6,13 +6,9 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import Actualite from './Actualite/Actualite';
 
-import axios from 'axios';
-
 import { listeActualite } from '../../../../data/news/news.js'
 
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -28,10 +24,8 @@ function Actualites( {setRefPage, refFooter, annimChangePage, setAnnimChangePage
       if (refPage.current) {
           setRefPage(refPage.current);
       }
-  }, []);
+  });
 
-  const [structData, setStructData] = useState({});
-  const [loadingStructData, setLoadingStructData] = useState(true);
 
   function displayActualites() {
 

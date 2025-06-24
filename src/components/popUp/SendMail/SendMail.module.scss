@@ -1,0 +1,25 @@
+
+.sendMail {
+
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    z-index: 1000;
+
+    padding: 10px 20px 10px 20px;
+
+    transform: translate(-50%, -50%);
+    width: max-content;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h5 {
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+
+    }
+
+}

@@ -10,7 +10,7 @@ function Presentation( {setRefPage} ) {
         if (refPage.current) {
             setRefPage(refPage.current);
         }
-    }, []);
+    });
 
 
     return (    

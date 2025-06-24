@@ -1,21 +1,26 @@
 
 import styles from "./Inscription.module.scss"
-import { useEffect, useRef } from "react"
-import pathApiAxios from "../../../../_helpers/PathApiAxios";
+import { useEffect, useRef, useState } from "react"
 import emailjs from '@emailjs/browser';
 
-import { Accordion, Placeholder } from 'rsuite';
+import SendMail from "../../../../components/popUp/SendMail/SendMail";
+
+import { Accordion } from 'rsuite';
+import 'rsuite/Accordion/styles/index.css';
+
+
+
 
 function Inscription( {setRefPage} ) {
 
-  const form = useRef();
+  const [sendMailPopUp, setSendMailPopUp] = useState();
 
-    const refPage = useRef(null);
-    useEffect(() => {
-        if (refPage.current) {
-            setRefPage(refPage.current);
-        }
-    }, []);
+  const refPage = useRef(null);
+  useEffect(() => {
+      if (refPage.current) {
+          setRefPage(refPage.current);
+      }
+  }, []);
 
 
   function sendMail() {
@@ -39,13 +44,11 @@ function Inscription( {setRefPage} ) {
           publicKey: 'jbaU54yy7tj35utNZ',
         }
       )
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          alert("Votre inscription a bien été prise en compte, nous vous contacterons prochainement pour finaliser votre adhésion.");
+      .then(() => {
+          setSendMailPopUp(false);
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          setSendMailPopUp(true);
         },
       );
   }
@@ -53,6 +56,8 @@ function Inscription( {setRefPage} ) {
 
   return (
     <div className={styles.inscription} ref={refPage}>
+
+      { sendMailPopUp !== undefined ? <SendMail anError={sendMailPopUp} /> : null }
 
       <div className={styles.blockInscription}>
         <div className={styles.blockForm}>

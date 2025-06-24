@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import styles from "./Photos.module.scss";
 
@@ -11,7 +11,7 @@ function Photos( { setRefPage } ) {
       if (refPage.current) {
           setRefPage(refPage.current);
       }
-  }, []);
+  });
 
 
   const photos = Array.from({ length: 150 }, () => "/image/landingPage.jpg");

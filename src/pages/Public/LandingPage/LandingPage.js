@@ -1,11 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
-import React, { useEffect, useRef } from 'react';
-
-
-import image1 from '../../../image/Plan.png'
-
-import UseIsAdmin from "../../../_helpers/UseIsAdmin";
+import { useEffect, useRef } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
@@ -24,7 +19,7 @@ function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePag
       if (refPage.current) {
           setRefPage(refPage.current);
       }
-  }, []);
+  });
   
   const navigate = useNavigate();
 

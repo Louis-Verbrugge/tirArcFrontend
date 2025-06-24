@@ -3,25 +3,22 @@
 import styles from './ActualitesDetails.module.scss'
 
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
-import { FreeMode, Pagination } from 'swiper/modules';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { listeActualite } from '../../../../../data/news/news.js'
 
 
 import { endPage } from '../../../../../_helpers/annim/endPage';
 
-function ActualitesDetails( { setRefPage, annimChangePage, setAnnimChangePage, setChangeMemePage }) {
+function ActualitesDetails( { setRefPage, refFooter, annimChangePage, setAnnimChangePage, setChangeMemePage }) {
 
   const navigate = useNavigate();
 
@@ -30,13 +27,13 @@ function ActualitesDetails( { setRefPage, annimChangePage, setAnnimChangePage, s
       if (refPage.current) {
           setRefPage(refPage.current);
       }
-  }, []);
+  });
 
   const props = useParams();
 
   function convertUrlToTitle(url) {
     return url
-        .replace(/-/g, ' ')                // Remplace les tirets par des espaces
+        .replace(/-/g, ' ');
   }
 
 
@@ -49,7 +46,7 @@ function ActualitesDetails( { setRefPage, annimChangePage, setAnnimChangePage, s
       <div className={styles.container}> 
         
         <div className={styles.returnToNews}><p onClick={() => {
-          endPage(navigate, refPage.current, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage);
+          endPage(navigate, refPage.current, refFooter, '/news', annimChangePage, setAnnimChangePage, setChangeMemePage);
         }}>← Retour aux annonces</p></div>
 
         <div className={styles.blockTitle}>
