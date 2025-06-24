@@ -17,22 +17,26 @@ function Photos( { setRefPage } ) {
   const photos = Array.from({ length: 150 }, () => "/image/landingPage.jpg");
 
   return (
-    <div className={styles.gallery} ref={refPage}>
-      {photos.map((src, index) => {
-        let cardClass = styles.photoCard;
+    <div className={styles.pagePhotos} ref={refPage}> 
+      <h1>PHOTOS / VIDEOS !!!</h1>
 
-        if (index % 7 === 0) {
-          cardClass += ` ${styles.star}`; // large + haut
-        } else if (index % 5 === 0) {
-          cardClass += ` ${styles.wide}`; // large uniquement
-        } 
+      <div className={styles.gallery} >
+        {photos.map((src, index) => {
+          let cardClass = styles.photoCard;
 
-        return (
-          <div key={index} className={cardClass}>
-            <a href={src}><img src={src} alt={`photo-${index + 1}`} loading="lazy" /></a>
-          </div>
-        );
-      })}
+          if (index % 7 === 0) {
+            cardClass += ` ${styles.star}`; // large + haut
+          } else if (index % 5 === 0) {
+            cardClass += ` ${styles.wide}`; // large uniquement
+          } 
+
+          return (
+            <div key={index} className={cardClass}>
+              <a href={src}><img src={src} alt={`photo-${index + 1}`} loading="lazy" /></a>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

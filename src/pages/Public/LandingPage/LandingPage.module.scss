@@ -17,13 +17,14 @@
 
     margin-bottom: var(--tailleEntreBloc); /* Espace pour le contenu en bas */
 
+
 }
 
 
 
 .landingPage{
 
-    width: 80%;
+    width: var(--widthPage);
     margin: 0 auto;
 
 
@@ -33,41 +34,47 @@
 
     h1{
         color: var(--blueClub);
+        text-align: var(--h1TextAlign);
     }
-
-
 
 
     .blockPresentation{
         display: flex;
-        flex-direction: row;
+        flex-direction: var(--blockPresentationDirection);
         justify-content: center;
         align-items: center;
-        padding: 0 20px var(--tailleEntreBloc) 20px;
-        width: 100%;
+        padding-top: 20px; 
+        
         padding-bottom: 80px;
         height: var(--heightBlock);
+        gap: var(--blockPresentationGap);
 
-        & div:first-child{
-            width: 70%;
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        
+
+        .text{
+            width: var(--blockPresentationTextWidth); 
         }
 
-        & div:last-child{
-            width: 30%;
+        .image{
+            width: var(--blockPresentationImageWidth); 
         }
         
 
         & > div{
             height: 100%;
-            padding: 20px;
+            padding: 20px 0 0px 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
+            text-align: justify;
+
             img{
                 width: 100%;
-                height: 100%;
+                height: var(--presentationImageHeight);
                 object-fit: cover;
                 border-radius: var(--borderRadius);
             }
@@ -123,125 +130,92 @@
 
     }
 
+
+    // terrainsImagesHeight
+    // firstTerrainDirection
+    // terrainDirection
+    // terrainImagesWidth
+
     
     .blockEntrainement{
-
         display: flex;
         flex-direction: column;
-        
-
-        .title{
-            border-bottom: solid 3px var(--blueClub);
-            color: var(--blueClub);
-            width: 40%;
-
-            
-            
-        }
+        justify-content: center;
+        width: 100%;
 
         h1{
-
-            text-align: center;
-
+            color: var(--blueClub);
         }
-        
-        
+
+            
+        .secondTerrain{
+            display: flex;
+            flex-direction: var(--firstTerrainDirection);
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-bottom: var(--blockEntrainementPaddingBottom);
+        }
 
         .terrain{
 
             display: flex;
-            flex-direction: row;
+            flex-direction: var(--terrainDirection); 
             justify-content: center;
             align-items: center;
-            padding: 10px 20px 40px 20px;
             width: 100%;
             padding-bottom: 80px;
-            height: var(--heightBlock);
-
-            .firstImage {
-                grid-column: 1 / 2; // prend toute la ligne du haut
-                grid-row: 1 / 3;
-            }
-
-            .secondImage {
-                grid-column: 2 / 3; // bas gauche
-                grid-row: 1 / 2;
-            }
-
-            .thirdImage {
-                grid-column: 2 / 3; // bas droite
-                grid-row: 2 / 3;
-            }
         }
-
-        .secondTerrain{
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: center;
-            align-items: center;
-            padding: 0 20px calc(var(--tailleEntreBloc) + 30px) 20px;
-            width: 100%;
-            height: var(--heightBlock);
-
-            .firstImage {
-                grid-column: 1 / 3; // prend toute la ligne du haut
-                grid-row: 1 / 2;
-            }
-
-            .secondImage {
-                grid-column: 1 / 2; // bas gauche
-                grid-row: 2 / 3;
-            }
-
-            .thirdImage {
-                grid-column: 2 / 3; // bas droite
-                grid-row: 2 / 3;
-            }
-        }
-
 
         .secondTerrain, .terrain{
 
+            gap: 20px;
+
 
             & > div{
-                width: 50%;
+                width: 100%;
                 height: 100%;
-                padding: 30px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 30px;
 
-                text-align: justify;
-                
-
-                h2{
-                    padding-top: -30px;
-                    margin-bottom: 30px;
-                    border-bottom : solid 3px black;
-                    width: 40%;
+                h3{
+                    width: 90%;
+                    margin: auto;
                     text-align: center;
                     transition: all .1s ease;
+                    margin-bottom: 30px;
+                    color: var(--blueClub);
+                    border-bottom: solid 3px var(--blueClub);
 
                     &:hover{
                         color: var(--blueClub);
                         border-bottom: solid 3px var(--blueClub);
                         scale: 1.05;
                         transition: all .1s ease;
+
                     }
+
                 }
+
+                span{
+                    text-align: justify;
+                }
+
             }
 
             .images {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 50% 50%;
+                grid-template-rows: 60% 40%;
                 gap: 10px;
-                width: 50%;
-                height: var(--heightBlock); // ajuste selon ton besoin
-
+                width: var(--terrainImagesWidth); 
+                height: var(--terrainsImagesHeight); 
+                
                 .firstImage {
+                    grid-column: 1 / 3; // prend toute la ligne du haut
+                    grid-row: 1 / 2;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -249,6 +223,8 @@
                 }
 
                 .secondImage {
+                    grid-column: 1 / 2; // bas gauche
+                    grid-row: 2 / 3;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -256,6 +232,8 @@
                 }
 
                 .thirdImage {
+                    grid-column: 2 / 3; // bas droite
+                    grid-row: 2 / 3;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -266,79 +244,93 @@
 
 
 
+        
+
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--borderRadius);
         }
 
     }
 
 
+    
+    // chiffresWidth
+    // contentChiffreWidth
+    // contentChiffre
+    // tailleChiffre
+    // size_h2_large
 
     .infoNumberCount{
+        display: flex;
+        flex-direction: column;
+        
+        padding-bottom: 80px;
 
-
-        h2{
-            text-align: center;
+        h1{
+            color: var(--blueClub);
         }
 
-        .content{
-            width: 100%;    
 
-            display: flex;
-            justify-content: center;
+        .chiffres {
 
-            .block {
+            background: #fff;
+            border-radius: 50px;
+            width: var(--chiffresWidth);     
+            margin: 40px auto;
+            padding: 20px 0;
 
+            
 
-                text-align: center;
-                background-color: #E6E6E6; /* Gris très clair et doux */
-                padding: 20px;  
-                margin: 20px;
-                border-radius: 20px; /* Arrondi plus soft */
-                height: 250px;
-                width: 300px;
-                position: relative;
-                border: 2px solid #b4b4b4; /* Gris légèrement plus foncé */
-                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2), 
-                            -3px -3px 3px rgba(255, 255, 255, 0.2); /* Ombres plus subtiles */
+            .contentChiffre{
+                width: var(--contentChiffreWidth);
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                
 
-
-                transform: translateY(0) rotateZ(0deg); /* Position et rotation par défaut */
-                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Transition douce */
-
-
-
-                h1{
-
-                    position: absolute;
-                    top: 20%;
-                    width: 90%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    font-size: 35px;
-                    color: var(--blueClub);
-                }       
-
-                p {
-                    position: absolute;
-                    top: 65%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    font-size: 50px;
-                    color: var(--orangeClub);
-                    font-weight: bold;
+                & > div:not(:last-child) {
+                    border-bottom: var(--contentChiffre);
                 }
+        
+
+                .chiffre {
+                    
+                    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: var(--tailleChiffre);
+                    height: var(--tailleChiffre);
+                    padding: 24px 0px;
+                    transition: transform 0.3s, box-shadow 0.3s;
 
 
+                    &:hover  {
+                        transform: scale(1.05);
+                        color: var(--blueClub);
+                    }
+
+                    
+
+                    h2 {
+                        font-size: var(--size_h2_large);
+                        // color: var(--blueClub, #007bff);
+                        margin: 0;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    
+                }
             }
-            .block:hover {
-                background-color: #D1D1D1; /* Gris plus foncé au survol */
-                transform: translateY(-5px) rotateZ(-5deg); /* Effet de levée et rotation sur l'axe Z */
-                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4), 
-                            -5px -5px 10px rgba(255, 255, 255, 0.3); /* Effet d'ombre plus marqué */
-                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Transition douce */
-            }
-            
-
-            
         }
     }
 }
@@ -353,6 +345,20 @@
         --actualitesDetailsWidth: 90%;
         --pictureActualitesMarginTop: 200px;
         --pagePresentationHeight: 100vh;
+        --blockPresentationDirection: row;
+        --paddingBlockPage: 40px 0px; 
+        --heightBlock: 500px;
+        --blockPresentationGap: 40px;
+        --blockPresentationTextWidth: 50%;
+        --blockPresentationImageWidth: 50%;
+        --terrainsImagesHeight: 700px;
+        --firstTerrainDirection: row-reverse;
+        --terrainDirection: row;
+        --terrainImagesWidth: 50%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 80%;
+        --tailleChiffre: 150px;
+        --blockEntrainementPaddingBottom: 80px;
     }
 
     .presentationImage {
@@ -368,6 +374,20 @@
         --actualitesDetailsWidth: 90%;
         --pictureActualitesMarginTop: 100px;
         --pagePresentationHeight: 100vh;
+        --blockPresentationDirection: row;
+        --paddingBlockPage: 40px 0px; 
+        --heightBlock: 500px;
+        --blockPresentationGap: 40px;
+        --blockPresentationTextWidth: 50%;
+        --blockPresentationImageWidth: 50%;
+        --terrainsImagesHeight: 600px;
+        --firstTerrainDirection: row-reverse;
+        --terrainDirection: row;
+        --terrainImagesWidth: 50%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 80%;
+        --tailleChiffre: 150px;
+        --blockEntrainementPaddingBottom: 80px;
 
 
 
@@ -386,6 +406,20 @@
         --actualitesDetailsWidth: 95%;
         --pictureActualitesMarginTop: 100px;
         --pagePresentationHeight: 100vh;
+        --blockPresentationDirection: row;
+        --paddingBlockPage: 40px 0px; 
+        --heightBlock: 500px;
+        --blockPresentationGap: 40px;
+        --blockPresentationTextWidth: 55%;
+        --blockPresentationImageWidth: 45%;
+        --terrainsImagesHeight: 500px;
+        --firstTerrainDirection: row-reverse;
+        --terrainDirection: row;
+        --terrainImagesWidth: 50%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 80%;
+        --tailleChiffre: 150px;
+        --blockEntrainementPaddingBottom: 80px;
 
     }
 
@@ -402,6 +436,20 @@
         --actualitesDetailsWidth: 95%;
         --pictureActualitesMarginTop: 80px;
         --pagePresentationHeight: 100vh;
+        --blockPresentationDirection: row;
+        --paddingBlockPage: 40px 0px; 
+        --heightBlock: 500px;
+        --blockPresentationGap: 40px;
+        --blockPresentationTextWidth: 60%;
+        --blockPresentationImageWidth: 40%;
+        --terrainsImagesHeight: 400px;
+        --firstTerrainDirection: row-reverse;
+        --terrainDirection: row;
+        --terrainImagesWidth: 50%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 80%;
+        --tailleChiffre: 135px;
+        --blockEntrainementPaddingBottom: 80px;
 
     }
 
@@ -418,6 +466,19 @@
         --actualitesDetailsWidth: 95%;
         --pictureActualitesMarginTop: 100px;
         --pagePresentationHeight: 550px;
+        --blockPresentationDirection: row;
+        --paddingBlockPage: 40px 0px; 
+        --blockPresentationGap: 30px;
+        --blockPresentationTextWidth: 55%;
+        --blockPresentationImageWidth: 45%;
+        --terrainsImagesHeight: 400px;
+        --firstTerrainDirection: row-reverse;
+        --terrainDirection: row;
+        --terrainImagesWidth: 50%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 80%;
+        --tailleChiffre: 130px;
+        --blockEntrainementPaddingBottom: 80px;
     }
 
     .presentationImage {
@@ -436,6 +497,20 @@
         --actualitesDetailsWidth: 95%;
         --pictureActualitesMarginTop: 100px;
         --pagePresentationHeight: 550px;
+        --blockPresentationDirection: row;
+        --paddingBlockPage: 40px 0px; 
+        --blockPresentationGap: 20px;
+        --blockPresentationTextWidth: 55%;
+        --blockPresentationImageWidth: 45%;
+        --terrainsImagesHeight: 350px;
+        --firstTerrainDirection: row-reverse;
+        --terrainDirection: row;
+        --terrainImagesWidth: 50%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 95%;
+        --tailleChiffre: 45%;
+        --blockEntrainementPaddingBottom: 60px;
+        
 
     }  
 
@@ -448,12 +523,57 @@
     }
 }
 
-@media screen and (min-width: 450px) and (max-width: 761px) {
+@media screen and (min-width: 550px) and (max-width: 761px) {
 
     :root{
         --actualitesDetailsWidth: 95%;
         --pictureActualitesMarginTop: 100px;
         --pagePresentationHeight: 450px;
+        --blockPresentationDirection: column;
+        --paddingBlockPage: 40px 0px; 
+        --blockPresentationGap: 20px;
+        --blockPresentationTextWidth: 100%;
+        --blockPresentationImageWidth: 100%;
+        --terrainsImagesHeight: 450px;
+        --firstTerrainDirection: column;
+        --terrainDirection: column;
+        --terrainImagesWidth: 100%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 100%;
+        --tailleChiffre: 45%;
+        --blockEntrainementPaddingBottom: 40px;
+
+    }  
+
+    .presentationImage {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 550px) {
+
+    :root{
+        --actualitesDetailsWidth: 95%;
+        --pictureActualitesMarginTop: 100px;
+        --pagePresentationHeight: 450px;
+        --blockPresentationDirection: column;
+        --paddingBlockPage: 40px 0px; 
+        --blockPresentationGap: 0px;
+        --blockPresentationTextWidth: 100%;
+        --blockPresentationImageWidth: 100%;
+        --terrainsImagesHeight: 500px;
+        --firstTerrainDirection: column;
+        --terrainDirection: column;
+        --terrainImagesWidth: 100%; 
+        --chiffresWidth: calc(90% - 40px);
+        --contentChiffreWidth: 100%;
+        --tailleChiffre: 45%;
+        --blockEntrainementPaddingBottom: 30px;
     }  
 
     .presentationImage {
@@ -472,6 +592,20 @@
         --actualitesDetailsWidth: 95%;
         --pictureActualitesMarginTop: 100px;
         --pagePresentationHeight: 350px;
+        --blockPresentationDirection: column;
+        --paddingBlockPage: 40px 0px; 
+        --blockPresentationGap: 0px;
+        --blockPresentationTextWidth: 100%;
+        --blockPresentationImageWidth: 100%;
+        --terrainsImagesHeight: 450px;
+        --firstTerrainDirection: column;
+        --terrainDirection: column;
+        --terrainImagesWidth: 100%; 
+        --chiffresWidth: calc(100% - 40px);
+        --contentChiffreWidth: 70%;
+        --contentChiffre: 2px solid var(--blueClub);
+        --tailleChiffre: 100%;
+        --blockEntrainementPaddingBottom: 30px;
 
     }  
 

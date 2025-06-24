@@ -7,10 +7,6 @@ import image1 from '../../../image/Plan.png'
 
 import UseIsAdmin from "../../../_helpers/UseIsAdmin";
 
-import GetDataUser from '../../../_helpers/GetDataUser';
-
-import { NumberCount } from '../../../components/NumberCount/NumberCount';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 
@@ -31,8 +27,6 @@ function LandingPage( {setRefPage}) {
   const navigate = useNavigate();
 
   const { isAdmin, login } = UseIsAdmin();
-
-
 
 
 
@@ -117,10 +111,10 @@ function LandingPage( {setRefPage}) {
         <h1>Qui sommes-nous ?</h1>
 
         <div className={styles.blockPresentation}>
-          <div>
+          <div className={styles.text}>
             <span className={styles.textLarge}>Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, vvMot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de bienvenue, Mot de b</span>
           </div>
-          <div>
+          <div className={styles.image}>
             <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
           </div>
         </div>
@@ -209,7 +203,7 @@ function LandingPage( {setRefPage}) {
           <div className={styles.terrain}>
             <div>
               <div className={styles.title}>
-                <h1>Terrain 1</h1>
+                <h3>LE DEROULEMENT D’UN ENTRAINEMENT</h3>
               </div>
               <span className={styles.textLarge}>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
               </span>
@@ -224,7 +218,7 @@ function LandingPage( {setRefPage}) {
           <div className={styles.secondTerrain}>
             <div>
               <div className={styles.title}>
-                <h1>Terrain 1</h1>
+                <h3>LES COMPETITIONS</h3>
               </div>   
               <span className={styles.textLarge}>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
               </span>
@@ -241,27 +235,30 @@ function LandingPage( {setRefPage}) {
 
         <div className={styles.infoNumberCount}>
 
-          <h2>Quelques chiffres</h2>
+            <h1>Quelques chiffres</h1>
+            <div className={styles.chiffres}>
 
-          <div className={styles.content}>
+                <div className={styles.contentChiffre}> 
 
-
-            <div className={styles.block}>
-              <h1>Nombre de licenciés</h1>
-              <p>100</p>
+                    
+                    <div className={styles.chiffre}>
+                        <h2>56</h2>
+                        <span className={styles.textLarge}>Adhérents</span>
+                    </div>
+                    <div className={styles.chiffre}>
+                        <h2>23</h2>
+                        <span className={styles.textLarge}>Comptéiteurs</span>
+                    </div>
+                    <div className={styles.chiffre}>
+                        <h2>13</h2>
+                        <span className={styles.textLarge}>Cible extlérieur</span>
+                    </div>
+                    <div className={styles.chiffre}>
+                        <h2>17</h2>
+                        <span className={styles.textLarge}>Cible intérieur</span>
+                    </div>
+                </div>
             </div>
-
-            <div className={styles.block}>
-              <h1>Nombre de competiteurs</h1>
-              <p>100</p>
-            </div>
-
-            <div className={styles.block}>
-              <h1>Age du Club</h1>
-              <p>100 ans</p>
-            </div>
-    
-          </div>
         </div>
 
 

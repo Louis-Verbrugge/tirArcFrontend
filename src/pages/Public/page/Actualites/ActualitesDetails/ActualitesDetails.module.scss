@@ -9,6 +9,7 @@
     margin-top: var(--paddingNewPageTop);
     background-color: var(--colorWhite);
     border-radius: var(--borderRadius);
+    margin-bottom: var(--containerMarginBottom); 
 
 
     .container{
@@ -95,6 +96,7 @@
         --containerWidth: 95%;
         --paddingText: 20px 0;
         --startTexte: start;
+        --containerMarginBottom: 300px;
     }
 }
 
@@ -104,6 +106,7 @@
         --containerWidth: 95%;
         --paddingText: 20px 0;
         --startTexte: start;
+        --containerMarginBottom: 300px;
     }
 }
 
@@ -113,6 +116,7 @@
         --containerWidth: 95%;
         --paddingText: 20px 0;
         --startTexte: start;
+        --containerMarginBottom: 300px;
     }
 }
 
@@ -122,6 +126,7 @@
         --containerWidth: 95%;
         --paddingText: 20px 0;
         --startTexte: start;
+        --containerMarginBottom: 300px;
     }
 }
 
@@ -131,23 +136,26 @@
         --containerWidth: 90%;
         --paddingText: 30px 0;
         --startTexte: center;
+        --containerMarginBottom: 300px;
     }
 }
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
+@media screen and (min-width: 761px) and (max-width: 900px) {
     :root{
         --blockImageGrid: 2;
         --containerWidth: 90%;
         --paddingText: 40px 0;
         --startTexte: center;
+        --containerMarginBottom: 300px;
     }
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 761px) {
     :root{
         --blockImageGrid: 1;
         --containerWidth: 90%;
         --paddingText: 40px 0;
         --startTexte: center;
+        --containerMarginBottom: 200px;
     }
 }

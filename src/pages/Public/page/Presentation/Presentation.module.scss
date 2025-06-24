@@ -204,9 +204,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 40px 0px;
         width: 100%;
-        padding-bottom: 80px;
 
         h1{
             color: var(--blueClub);
@@ -220,7 +218,7 @@
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                padding-bottom: 80px;
+                padding-bottom: var(--blockTerrainPaddingBottom);
             }
 
             .terrain{
@@ -317,6 +315,7 @@
     }
 
     .blockContact{
+        padding-bottom: 80px;
         .contact{
             padding: 20px 20px;
 
@@ -358,6 +357,7 @@
         --firstTerrainDirection: row-reverse;
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
+        --blockTerrainPaddingBottom: 80px;
 
     }
 
@@ -382,6 +382,7 @@
         --firstTerrainDirection: row-reverse;
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
+        --blockTerrainPaddingBottom: 80px;
 
     }
 }
@@ -405,6 +406,7 @@
         --firstTerrainDirection: row-reverse;
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
+        --blockTerrainPaddingBottom: 80px;
 
     }
 }
@@ -428,6 +430,7 @@
         --firstTerrainDirection: row-reverse;
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
+        --blockTerrainPaddingBottom: 80px;
 
     }
 }
@@ -450,6 +453,7 @@
         --firstTerrainDirection: row-reverse;
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
+        --blockTerrainPaddingBottom: 80px;
 
     }
 }
@@ -472,6 +476,7 @@
         --firstTerrainDirection: row-reverse;
         --terrainImagesWidth: 50%;
         --chiffresWidth: calc(100% - 40px);
+        --blockTerrainPaddingBottom: 60px;
     }
 }
 
@@ -494,6 +499,7 @@
         --firstTerrainDirection: column;
         --terrainImagesWidth: 100%; 
         --chiffresWidth: calc(100% - 40px);
+        --blockTerrainPaddingBottom: 40px;
 
     }  
 
@@ -518,7 +524,8 @@
         --terrainDirection: column;
         --firstTerrainDirection: column;
         --terrainImagesWidth: 100%; 
-        --chiffresWidth: calc(80% - 40px);
+        --chiffresWidth: calc(90% - 40px);
+        --blockTerrainPaddingBottom: 30px;
     }  
 
 }
@@ -541,8 +548,9 @@
         --terrainDirection: column;
         --firstTerrainDirection: column;
         --terrainImagesWidth: 100%; 
-        --chiffresWidth: calc(80% - 40px);
+        --chiffresWidth: calc(100% - 40px);
         --contentChiffre: 2px solid var(--blueClub);
+        --blockTerrainPaddingBottom: 30px;
         
     } 
 }

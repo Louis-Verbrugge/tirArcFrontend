@@ -21,7 +21,7 @@ import 'swiper/css/pagination';
 
 
 
-function Actualites( {setRefPage, annimChangePage, setAnnimChangePage, setChangeMemePage} ) {
+function Actualites( {setRefPage, refFooter, annimChangePage, setAnnimChangePage, setChangeMemePage} ) {
 
   const refPage = useRef(null);
   useEffect(() => {
@@ -42,6 +42,7 @@ function Actualites( {setRefPage, annimChangePage, setAnnimChangePage, setChange
        return (
               <Actualite 
                   key={index} 
+                  refFooter={refFooter}
                   picture={item.picture} 
                   title={item.title} 
                   pageRef={refPage.current}

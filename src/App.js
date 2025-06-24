@@ -51,7 +51,7 @@ function App() {
         <Route path='/competition/:annee' element={<ResultatCompetition />} />
         <Route path='/inscription' element={<Inscription setRefPage={setRefPage} />} />
 
-        <Route path='/news' element={<Actualite setRefPage={setRefPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} setChangeMemePage={setChangeMemePage} />} />
+        <Route path='/news' element={<Actualite setRefPage={setRefPage} refFooter={refFooter} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} setChangeMemePage={setChangeMemePage} />} />
         <Route path='/news/:titleActualites' element={<ActualitesDetails setRefPage={setRefPage} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} setChangeMemePage={setChangeMemePage} />} />
 
         <Route path='/photos' element={<Photos setRefPage={setRefPage} />} />
