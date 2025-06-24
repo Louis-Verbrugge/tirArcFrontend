@@ -9,11 +9,11 @@ import ActualitesDetails from './pages/Public/page/Actualites/ActualitesDetails/
 
 import Prensetation from './pages/Public/page/Presentation/Presentation';
 
-import { BrowserRouter as BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Footer } from './components/Footer/Footer';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Photos from './pages/Public/page/Photos/Photos';
 
 function App() {

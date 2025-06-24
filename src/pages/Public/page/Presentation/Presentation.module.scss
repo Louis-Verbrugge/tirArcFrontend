@@ -1,10 +1,5 @@
 
 
-.textLarge{
-    font-size: var(--size_span_textLarge);
-
-}
-
 
 .presentation{
     width: var(--widthPage);
@@ -28,8 +23,8 @@
         height: var(--heightBlock);
         gap: var(--blockPresentationGap);
 
-        width: calc(100% - 40px);
-        margin: 0 20px;
+        width: var(--blockPresentationWidth); 
+        margin: var(--blockPresentationMargin); 
         
 
         .text{
@@ -83,7 +78,7 @@
             align-items: center;
             flex-direction: row;
             flex-wrap: wrap;
-            padding: 40px 20px;
+            padding: var(--teamPadding);
             
 
             .team {
@@ -93,7 +88,7 @@
                 align-items: center;
                 width: var(--teamWidth);
                 height: auto;
-                margin: 10px;
+                margin-bottom: 10px;
                 padding: 10px;
                 border: 4px solid var(--blueClub);
                 transition : border .5s ease;
@@ -243,6 +238,8 @@
                     justify-content: center;
                     align-items: center;
 
+                    
+
                     h2{
                         padding-top: -30px;
                         margin-bottom: 30px;
@@ -261,6 +258,14 @@
 
                     }
 
+                    span{
+                        font-size: var(--size_span_textLarge);
+                        text-align: justify;
+                    }
+
+
+
+                    
                 }
 
                 .images {
@@ -316,8 +321,9 @@
 
     .blockContact{
         padding-bottom: 80px;
+
         .contact{
-            padding: 20px 20px;
+            padding: var(--blockContactContactPadding); 
 
             span {
                 a{
@@ -358,6 +364,10 @@
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
         --blockTerrainPaddingBottom: 80px;
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
 
     }
 
@@ -383,6 +393,10 @@
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
         --blockTerrainPaddingBottom: 80px;
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
 
     }
 }
@@ -407,6 +421,10 @@
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
         --blockTerrainPaddingBottom: 80px;
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
 
     }
 }
@@ -431,6 +449,10 @@
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
         --blockTerrainPaddingBottom: 80px;
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
 
     }
 }
@@ -454,7 +476,10 @@
         --terrainImagesWidth: 50%; 
         --chiffresWidth: calc(100% - 40px);
         --blockTerrainPaddingBottom: 80px;
-
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
     }
 }
 
@@ -477,6 +502,10 @@
         --terrainImagesWidth: 50%;
         --chiffresWidth: calc(100% - 40px);
         --blockTerrainPaddingBottom: 60px;
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
     }
 }
 
@@ -500,6 +529,10 @@
         --terrainImagesWidth: 100%; 
         --chiffresWidth: calc(100% - 40px);
         --blockTerrainPaddingBottom: 40px;
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
 
     }  
 
@@ -526,6 +559,10 @@
         --terrainImagesWidth: 100%; 
         --chiffresWidth: calc(90% - 40px);
         --blockTerrainPaddingBottom: 30px;
+        --blockContactContactPadding: 20px 20px;
+        --blockPresentationMargin: 0 20px;
+        --blockPresentationWidth: calc(100% - 40px);
+        --teamPadding: 40px 20px;
     }  
 
 }
@@ -548,9 +585,13 @@
         --terrainDirection: column;
         --firstTerrainDirection: column;
         --terrainImagesWidth: 100%; 
-        --chiffresWidth: calc(100% - 40px);
+        --chiffresWidth: 100%;
         --contentChiffre: 2px solid var(--blueClub);
         --blockTerrainPaddingBottom: 30px;
+        --blockContactContactPadding: 20px 0;
+        --blockPresentationMargin: 0 0;
+        --blockPresentationWidth: 100%;
+        --teamPadding: 40px 0px;
         
     } 
 }

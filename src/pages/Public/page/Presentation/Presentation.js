@@ -98,7 +98,7 @@ function Presentation( {setRefPage} ) {
                 <div className={styles.terrain}>
                     <div>
                         <h2>Terrain 1</h2>
-                        <span className={styles.textLarge}>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
+                        <span>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
                         </span>
                     </div>
                     <div className={styles.images}>
@@ -110,7 +110,7 @@ function Presentation( {setRefPage} ) {
                 <div className={styles.secondTerrain}>
                     <div>
                         <h2>Terrain 1</h2>
-                        <span className={styles.textLarge}>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
+                        <span>Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport Nous sommes une association de passionnés de la course à pied, qui se sont réunis pour partager leur amour de ce sport et organiser des événements pour les coureurs de tous niveaux. Notre objectif est de promouvoir la course à pied en tant qu'activité saine et accessible à tous, tout en créant une communauté dynamique et solidaire. 
                         </span>
                     </div>
                     <div className={styles.images}>
