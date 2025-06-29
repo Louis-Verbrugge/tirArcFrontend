@@ -9,6 +9,8 @@ import ActualitesDetails from './pages/Public/page/Actualites/ActualitesDetails/
 
 import Prensetation from './pages/Public/page/Presentation/Presentation';
 
+import MentionLegales from './pages/Public/page/MentionsLegales/MentionsLegales';
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Footer } from './components/Footer/Footer';
@@ -42,10 +44,12 @@ function App() {
 
         <Route path='/photos' element={<Photos setRefPage={setRefPage} />} />
 
+        <Route path='/mentions-legales' element={<MentionLegales setRefPage={setRefPage} />} />
+
 
       </Routes>
 
-      <Footer setRefFooter={setRefFooter}/>
+      <Footer setRefFooter={setRefFooter} refPage={refPage} refFooter={refFooter} annimChangePage={annimChangePage} setAnnimChangePage={setAnnimChangePage} changeMemePage={changeMemePage}/>
     </BrowserRouter>
   );
 }
