@@ -1,5 +1,5 @@
 :root {
-    --color_green: #247BA0;
+    --color_green: #0f82d7;
     --color_grey: #4D4D4D;
     --color_white: #FFFFFF;
     --color_footer: #222222;    
@@ -13,7 +13,6 @@
 
 .mentionsLegales{
 
-    margin: calc(var(--padding_top_new_page) / 2) auto calc(var(--padding_top_new_page) / 2) auto;
     
     text-align: justify;
 
@@ -28,9 +27,9 @@
     }
 
     header {
-        color: var(--color_white);
+        color: var(--blueClub);
         text-align: center;
-        padding: 20px;
+        padding-top: var(--paddingNewPageTop);
     }
 
     header h1 {
@@ -38,9 +37,17 @@
         font-size: 2.5em;
     }
 
+    .blockSection {
+        padding-top: 50px;
+    }
+
+    section:not(:first-child){
+        margin-top: 20px;
+    }
+
     section {
         background-color: var(--color_background_rect_grey);
-        margin: 20px auto;
+        margin: auto;
         padding: var(--padding_section);
         border-radius: var(--border_radius);
         border: 2px solid var(--color_green);
@@ -99,6 +106,7 @@
         section {
             margin: 10px;
             padding: 15px;
+            text-align: justify;
         }
 
         section h2 {
@@ -122,6 +130,7 @@
         section {
             margin: 5px;
             padding: 10px;
+            text-align: justify;
         }
 
         section h2 {

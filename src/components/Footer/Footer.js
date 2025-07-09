@@ -53,7 +53,7 @@ export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, set
         <div className={styles.content}>
             <div className={styles.main}>
                 <div className={styles.left}>
-                    <h2>Ready to get started ?</h2>
+                    <h2>Tu es prêt pour nous rejoindre ?</h2>
                     <button onClick={() => goToActualite()}>inscris toi dès maintenant !</button>
                 </div>
 

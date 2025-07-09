@@ -8,23 +8,30 @@ const { useRef } = require('react');
 
 gsap.registerPlugin(useGSAP);
 
-function SendMail( { anError } ) {
+function SendMail( { setSendMailPopUp, anError } ) {
 
   const annimationSendMail = useRef();
 
+
   useEffect(() => {
     function playAnnimationPopUp() {
+
+      if (anError === undefined) {
+        return;
+      }
+
       gsap.fromTo(annimationSendMail.current,
-        { y: -300 }, 
-        { y: 0, duration: 2, onComplete: () => {
-            gsap.to(annimationSendMail.current, { y: -300, duration: 2, delay: 2, onComplete: () => {
+        { y: 0 }, 
+        { y: 300, duration: 2, onComplete: () => {
+            gsap.to(annimationSendMail.current, { y: 0, duration: 2, delay: 2, onComplete: () => {
+              setSendMailPopUp(undefined);
               //window.location.reload();
           }});
         }
       });
     }
     playAnnimationPopUp();
-  }, []);
+  }, [anError]);
 
 
   return (

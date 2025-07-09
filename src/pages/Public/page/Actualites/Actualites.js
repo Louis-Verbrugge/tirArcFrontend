@@ -55,7 +55,7 @@ function Actualites( {setRefPage, refFooter, annimChangePage, setAnnimChangePage
   return (
     <div className={styles.actualites} ref={refPage}> 
 
-      <h1 className={styles.title}>les NEWS</h1>
+      <h1 className={styles.title}>LES NEWS</h1>
           
 
       <div className={styles.blockActualites}>

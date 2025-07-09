@@ -29,6 +29,7 @@
 
         .text{
             width: var(--blockPresentationTextWidth); 
+            font-size: var(--size_span_textLarge);
         }
 
         .image{
@@ -326,6 +327,7 @@
             padding: var(--blockContactContactPadding); 
 
             span {
+                font-size: var(--size_span_textLarge);;
                 a{
                     color: var(--blueClub);
                     text-decoration: none;

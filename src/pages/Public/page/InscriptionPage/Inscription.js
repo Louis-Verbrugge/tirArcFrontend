@@ -13,7 +13,7 @@ import 'rsuite/Accordion/styles/index.css';
 
 function Inscription( {setRefPage} ) {
 
-  const [sendMailPopUp, setSendMailPopUp] = useState();
+  const [sendMailPopUp, setSendMailPopUp] = useState(undefined);
 
   const refPage = useRef(null);
   useEffect(() => {
@@ -29,6 +29,11 @@ function Inscription( {setRefPage} ) {
     let lastName = document.getElementById("lastName").value;
     let age = document.getElementById("age").value;
     let email = document.getElementById("email").value;
+    let phoneNumber = document.getElementById("phoneNumber").value;
+
+    if (firstName === "" || lastName === "" || age === "" || email === "") {
+      return;
+    }
 
     emailjs
       .send(
@@ -36,9 +41,10 @@ function Inscription( {setRefPage} ) {
         'template_v0bfzdi',
         {
           firstName: firstName,
-          lastName: lastName,
+          name: lastName,
           age: age,
-          email: email
+          email: email,
+          phoneNumber: phoneNumber,
         },
         {
           publicKey: 'jbaU54yy7tj35utNZ',
@@ -46,6 +52,7 @@ function Inscription( {setRefPage} ) {
       )
       .then(() => {
           setSendMailPopUp(false);
+
         },
         (error) => {
           setSendMailPopUp(true);
@@ -57,7 +64,7 @@ function Inscription( {setRefPage} ) {
   return (
     <div className={styles.inscription} ref={refPage}>
 
-      { sendMailPopUp !== undefined ? <SendMail anError={sendMailPopUp} /> : null }
+      <SendMail setSendMailPopUp={setSendMailPopUp} anError={sendMailPopUp} />
 
       <div className={styles.blockInscription}>
         <div className={styles.blockForm}>
@@ -68,29 +75,29 @@ function Inscription( {setRefPage} ) {
             
             <div className={styles.inputName}>
               <div className={styles.labelInput}>
-                <label>Nom</label>
-                <input id="firstName" type="text"></input>
+                <label>Nom *</label>
+                <input id="firstName" type="text" required></input>
               </div>
 
               <div className={styles.labelInput}>
-                <label>Prenom</label>
-                <input id="lastName" type="text"></input>
+                <label>Prenom *</label>
+                <input id="lastName" type="text" required></input>
               </div>
             </div>
 
             <div className={styles.labelInput}>
-              <label>Age</label>
-              <input id="age" type="number"></input>
+              <label>Age *</label>
+              <input id="age" type="number" required></input>
             </div>
 
             <div className={styles.labelInput}>
-              <label>Email</label>
-              <input id="email" type="text"></input>
+              <label>Email *</label>
+              <input id="email" type="email" required></input>
             </div>
 
             <div className={styles.labelInput}>
               <label>numéro de téléphone *</label>
-              <input type="text"></input>
+              <input id="phoneNumber" type="text"></input>
             </div>
 
             <button className={styles.btnSubmit} onClick={() => sendMail()}>VALIDER</button>

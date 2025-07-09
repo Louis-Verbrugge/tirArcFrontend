@@ -23,11 +23,9 @@ export function endPage(navigate, pageRef, refFooter, newPathPage, annimChangePa
             onComplete: () => {
                 
                 if (pathPage === newPathPage.slice(1)) {
-                    alert("Changement de page 11");
                     setChangeMemPage(true);
                 }   
                 else{
-                    alert("Changement de page 22");
                     navigate(newPathPage);
                     
                 }
