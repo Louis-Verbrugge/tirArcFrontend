@@ -15,6 +15,8 @@ function Inscription( {setRefPage} ) {
 
   const [sendMailPopUp, setSendMailPopUp] = useState(undefined);
 
+  const [hasGuardian, setHasGuardian] = useState(false);
+
   const refPage = useRef(null);
   useEffect(() => {
       if (refPage.current) {
@@ -75,30 +77,91 @@ function Inscription( {setRefPage} ) {
             
             <div className={styles.inputName}>
               <div className={styles.labelInput}>
-                <label>Nom *</label>
+                <label>Nom</label>
                 <input id="firstName" type="text" required></input>
               </div>
 
               <div className={styles.labelInput}>
-                <label>Prenom *</label>
+                <label>Prenom</label>
                 <input id="lastName" type="text" required></input>
               </div>
             </div>
 
             <div className={styles.labelInput}>
-              <label>Age *</label>
-              <input id="age" type="number" required></input>
+              <label>Age</label>
+              <input id="age" type="number" required onChange={() => {
+                let age = document.getElementById("age").value
+                if (10 <= age  && age <  18) {
+                  setHasGuardian(true);
+                }
+                else {
+                  setHasGuardian(false);
+                }
+              }}></input>
             </div>
 
-            <div className={styles.labelInput}>
-              <label>Email *</label>
-              <input id="email" type="email" required></input>
-            </div>
+            {!hasGuardian ?    
+            
+              <div> 
+                <div className={styles.labelInput}>
+                  <label>Email</label>
+                  <input id="email" type="email" required></input>
+                </div>
 
-            <div className={styles.labelInput}>
-              <label>numéro de téléphone *</label>
-              <input id="phoneNumber" type="text"></input>
-            </div>
+                <div className={styles.labelInput}>
+                  <label>numéro de téléphone *</label>
+                  <input id="phoneNumber" type="text"></input>
+                </div>
+
+                <textarea className={styles.subject} id="Commentaire" name="Commentaire" placeholder={'Commentaire'}/>
+
+              </div>
+
+              : null}
+
+
+
+
+
+            { hasGuardian ?             
+              <div className={styles.tuteur}>
+
+                <h2>Tuteur</h2>
+
+                <div className={styles.inputName}>
+                  <div className={styles.labelInput}>
+                    <label>Nom *</label>
+                    <input id="firstName" type="text" required></input>
+                  </div>
+
+                  <div className={styles.labelInput}>
+                    <label>Prenom *</label>
+                    <input id="lastName" type="text" required></input>
+                  </div>
+                </div>
+
+                <div className={styles.labelInput}>
+                  <label>Age *</label>
+                  <input id="age" type="number" required></input>
+                </div>
+
+                <div className={styles.labelInput}>
+                  <label>Email</label>
+                  <input id="email" type="email" required></input>
+                </div>
+
+
+                <div className={styles.labelInput}>
+                  <label>numéro de téléphone *</label>
+                  <input id="phoneNumber" type="text"></input>
+                </div>
+
+                <textarea className={styles.subject} id="Commentaire" name="Commentaire" placeholder={'Commentaire'}/>
+
+
+              </div>
+            : null }
+
 
             <button className={styles.btnSubmit} onClick={() => sendMail()}>VALIDER</button>
 
@@ -129,12 +192,18 @@ function Inscription( {setRefPage} ) {
 
                 <li>non-compétiteurs: 90€</li>
                 <li>compétiteurs: 100€</li>
+
+                <ul>
+                  <li>Complément:</li>
+                </ul>
               
                 <li>Location d'arc: 25€</li>
-                <li>Location d'une palette (dès 18 mètres): 13€</li>
+                <li>Achat d'une palette (dès 18 mètres): 13€</li>
 
               </ul>
             </div>   
+
+            <p>*Possibilité de venir avec son matériel personnel</p>
           </div>  
         
         </div>
@@ -148,24 +217,23 @@ function Inscription( {setRefPage} ) {
           <div className={styles.containerWrapper}>
             <div className={styles.container}>
                 <Accordion >
-                  <Accordion.Panel header="Lundi" eventKey={1}>
+                  <Accordion.Panel header="Lundi (Salle Paul Delécluse)" eventKey={1}>
                     
                     <div className={styles.detailHoraire}>
-                      <p>18h-19h30 pour les tireurs débutants</p>
-                      <p>19h30-21h pour les tireurs confirmés</p>
+                      <p>18h00-19h30 pour les tireurs confirmés (avec matériel personnel)</p>
                     </div>
                   </Accordion.Panel>
-                  <Accordion.Panel header="Mercredi" eventKey={2}>
+                  <Accordion.Panel header="Mercredi (Salle William Penny Brookes)" eventKey={2}>
                     <div className={styles.detailHoraire}>
-                      <p>18h-19h30 pour les tireurs débutants</p>
-                      <p>19h30-21h pour les tireurs confirmés</p>
+                      <p>18h00-19h00 pour les tireurs débutants</p>
+                      <p>19h00-20h00 pour les tireurs confirmés</p>
                     </div>
                   </Accordion.Panel>
-                  <Accordion.Panel header="Vendredi" eventKey={3}>
+                  <Accordion.Panel header="Vendredi (Salle William Penny Brookes)" eventKey={3}>
                     <div className={styles.detailHoraire}>
                       
-                      <p>19h-20h pour les tireurs débutants</p>
-                      <p>20h-22h pour les tireurs confirmés</p>
+                      <p>19h00-20h00 pour les tireurs débutants (Ne pouvant pas venir le mercredi soir)</p>
+                      <p>20h00-22h00 pour les tireurs confirmés</p>
                     </div>
                   </Accordion.Panel>
               </Accordion>

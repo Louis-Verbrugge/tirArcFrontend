@@ -99,8 +99,11 @@
                 h4{
                     border-bottom: 2px solid var(--blueClub);
                     text-align: center;
-                    width: 150px; 
+                    width: 100px; 
+                    height: var(--teamH4Height);
                     transform: border-bottom .5s ease;
+                    display: flex;
+                    justify-content: center;
                 }
 
                 img{
@@ -241,11 +244,11 @@
 
                     
 
-                    h2{
+                    h3{
                         padding-top: -30px;
                         margin-bottom: 30px;
                         border-bottom : solid 3px black;
-                        width: 40%;
+                        width: 70%;
                         text-align: center;
                         transition: all .1s ease;
 
@@ -353,7 +356,7 @@
         --blockPresentationDirection: row;
         --heightBlock: 500px;
         --presentationImageHeight: 100%;
-        --teamWidth: 220px;
+        --teamWidth: 320px;
         --teamHeightImage: 100%;
         --tailleChiffre: 150px;
         --contentChiffreWidth: 80%;
@@ -370,6 +373,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 100px;
 
     }
 
@@ -382,7 +386,7 @@
         --blockPresentationDirection: row;
         --heightBlock: 500px;
         --presentationImageHeight: 100%;
-        --teamWidth: 220px;
+        --teamWidth: 300px;
         --teamHeightImage: 100%;
         --tailleChiffre: 150px;
         --contentChiffreWidth: 80%;
@@ -399,6 +403,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 100px;
 
     }
 }
@@ -410,7 +415,7 @@
         --blockPresentationDirection: row;
         --heightBlock: 500px;
         --presentationImageHeight: 100%;
-        --teamWidth: 220px;
+        --teamWidth: 240px;
         --teamHeightImage: 100%;
         --tailleChiffre: 150px;
         --contentChiffreWidth: 80%;
@@ -427,6 +432,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 80px;
 
     }
 }
@@ -455,6 +461,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 70px;
 
     }
 }
@@ -482,6 +489,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 60px;
     }
 }
 
@@ -508,6 +516,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 60px;
     }
 }
 
@@ -535,6 +544,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 60px;
 
     }  
 
@@ -565,6 +575,7 @@
         --blockPresentationMargin: 0 20px;
         --blockPresentationWidth: calc(100% - 40px);
         --teamPadding: 40px 20px;
+        --teamH4Height: 60px;
     }  
 
 }
@@ -594,6 +605,7 @@
         --blockPresentationMargin: 0 0;
         --blockPresentationWidth: 100%;
         --teamPadding: 40px 0px;
+        --teamH4Height: 60px;
         
     } 
 }
