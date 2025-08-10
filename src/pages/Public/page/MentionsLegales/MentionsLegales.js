@@ -1,16 +1,14 @@
 import { useEffect, useRef } from 'react';
-import styles from './MentionsLegales.module.scss'
+import styles from './MentionsLegales.module.scss';
 
-function MentionLegales( { setRefPage } ) {
-
+function MentionLegales({ setRefPage }) {
   const refPage = useRef(null);
   useEffect(() => {
-      if (refPage.current) {
-          setRefPage(refPage.current);
-      }
+    if (refPage.current) {
+      setRefPage(refPage.current);
+    }
   });
 
-  
   return (
     <div className={styles.mentionsLegales} ref={refPage}>
       <header>
@@ -20,56 +18,53 @@ function MentionLegales( { setRefPage } ) {
         <section>
           <h2>1. Informations Éditeur</h2>
           <p>
-            <strong>Nom de l'entreprise :</strong> Morphoz 2.0
+            <strong>Nom du club :</strong> Club de Tir à l’Arc de Cysoing
           </p>
           <p>
-            <strong>Forme juridique :</strong> Société par Actions Simplifiée
-            (SAS)
+            <strong>Forme juridique :</strong> Association loi 1901
           </p>
           <p>
-            <strong>Capital social :</strong> 20 000,00 €
-          </p>
-          <p>
-            <strong>Siège social :</strong> 50 rue de Paris, 59300 Valenciennes
+            <strong>Siège social :</strong> Cysoing, France
           </p>
           <p>
             <strong>Adresse e-mail :</strong>{" "}
-            <a href="mailto:contact@morphoz.fr">contact@morphoz.fr</a>
+            <a href="mailto:cysoing.arc@gmail.com">cysoing.arc@gmail.com</a>
           </p>
           <p>
-            <strong>Numéro SIRET :</strong> 814 551 909 00025
-          </p>
-          <p>
-            <strong>Numéro de TVA intracommunautaire :</strong> FR20814551909
+            <strong>Créateur du site :</strong>{" "}
+            <a href="https://github.com/Louis-Verbrugge" target="_blank" rel="noopener noreferrer">
+              Louis Verbrugge
+            </a>
           </p>
         </section>
+
         <section>
           <h2>2. Directeur de la publication</h2>
           <p>Le directeur de la publication est : Louis Verbrugge.</p>
         </section>
+
         <section>
           <h2>3. Hébergement du site</h2>
           <p>
             <strong>Nom de l’hébergeur :</strong> OVH
           </p>
           <p>
-            <strong>Adresse de l’hébergeur :</strong> 2 rue Kellermann, 59100
-            Roubaix, France
+            <strong>Adresse de l’hébergeur :</strong> 2 rue Kellermann, 59100 Roubaix, France
           </p>
           <p>
             <strong>Numéro de téléphone :</strong> +33 (0)9 72 10 10 07
           </p>
         </section>
+
         <section>
           <h2>4. Propriété intellectuelle</h2>
           <p>
-            Tous les éléments du site Morphoz Architecte (textes, images,
-            graphismes, logo, etc.) sont protégés par des droits de propriété
-            intellectuelle. Toute reproduction ou représentation totale ou
-            partielle de ce site ou de l'un de ces éléments sans autorisation
-            expresse de Morphoz Architecte est interdite.
+            Tous les éléments du site du Club de Tir à l’Arc de Cysoing (textes, images, graphismes, logo, etc.)
+            sont protégés par des droits de propriété intellectuelle. Toute reproduction ou représentation
+            totale ou partielle de ce site ou de l'un de ses éléments sans autorisation expresse du Club est interdite.
           </p>
         </section>
+
         <section>
           <h2>5. Données personnelles</h2>
           <p>
@@ -80,31 +75,33 @@ function MentionLegales( { setRefPage } ) {
             pouvez nous contacter à l’adresse e-mail mentionnée ci-dessus.
           </p>
         </section>
+
         <section>
           <h2>6. Cookies</h2>
           <p>
-            Le site Morphoz Architecte utilise des cookies pour améliorer
+            Le site du Club de Tir à l’Arc de Cysoing utilise des cookies pour améliorer
             l'expérience utilisateur. Les utilisateurs peuvent configurer leur
             navigateur pour refuser les cookies, mais cela peut limiter certaines
             fonctionnalités du site.
           </p>
         </section>
+
         <section>
           <h2>7. Liens hypertextes</h2>
           <p>
-            Le site peut contenir des liens vers d'autres sites. Morphoz
-            Architecte n'assume aucune responsabilité quant au contenu de ces
-            sites externes.
+            Le site peut contenir des liens vers d'autres sites. Le Club de Tir à l’Arc de Cysoing
+            n'assume aucune responsabilité quant au contenu de ces sites externes.
           </p>
         </section>
+
         <section>
           <h2>8. Droit applicable et attribution de juridiction</h2>
           <p>
             Les présentes mentions légales sont soumises au droit français. En
-            cas de litige, les tribunaux compétents seront ceux de Valenciennes,
-            France.
+            cas de litige, les tribunaux compétents seront ceux du ressort de Lille, France.
           </p>
         </section>
+
         <section>
           <h2>9. Contact</h2>
           <p>
