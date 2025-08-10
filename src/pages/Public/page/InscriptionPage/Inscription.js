@@ -73,8 +73,6 @@ function Inscription( {setRefPage} ) {
 
     }
 
-
-
     if (age >= 18) {
       if (firstName === "" || lastName === "" || age === "" || email === "") {
         alert("Il manque des infos !")
