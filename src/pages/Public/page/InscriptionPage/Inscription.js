@@ -45,6 +45,10 @@ function Inscription( {setRefPage} ) {
     let emailGuardian;
     let phoneNumberGuardian;
 
+    if (age < 10) {
+      alert("Les inscriptions sont disponibles à partir de 10 ans")
+    }
+
     if (age >= 18) {
       email = document.getElementById("email").value;
       phoneNumber = document.getElementById("phoneNumber").value;
