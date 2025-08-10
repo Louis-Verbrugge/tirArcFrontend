@@ -29,12 +29,56 @@ function Inscription( {setRefPage} ) {
 
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
-    let age = document.getElementById("age").value;
-    let email = document.getElementById("email").value;
-    let phoneNumber = document.getElementById("phoneNumber").value;
+    let age = Number(document.getElementById("age").value);
+    let commentaire = document.getElementById("commentaire").value;
 
-    if (firstName === "" || lastName === "" || age === "" || email === "") {
-      return;
+    if (commentaire == "") {
+      commentaire = "(pas de commentaire)"
+    }
+
+    
+    let email;
+    let phoneNumber;
+    let lastNameGuardian;
+    let nameGuardian;
+    let ageGuardian;
+    let emailGuardian;
+    let phoneNumberGuardian;
+
+    if (age >= 18) {
+      email = document.getElementById("email").value;
+      phoneNumber = document.getElementById("phoneNumber").value;
+
+      lastNameGuardian = "(il n'a pas de tuteur)"
+      nameGuardian = "(il n'a pas de tuteur)"
+      ageGuardian = "(il n'a pas de tuteur)"
+      emailGuardian = "(il n'a pas de tuteur)"
+      phoneNumberGuardian = "(il n'a pas de tuteur)"
+
+    } else {
+      email = "(pas de mail car il est mineur)"
+      phoneNumber = "(pas de numéro car il est mineur)"
+
+      lastNameGuardian = document.getElementById("lastNameGuardian").value;
+      nameGuardian = document.getElementById("nameGuardian").value;
+      ageGuardian = document.getElementById("ageGuardian").value;
+      emailGuardian = document.getElementById("emailGuardian").value;
+      phoneNumberGuardian = document.getElementById("phoneNumberGuardian").value;
+
+    }
+
+
+
+    if (age >= 18) {
+      if (firstName === "" || lastName === "" || age === "" || email === "") {
+        alert("Il manque des infos !")
+        return;
+      }
+    } else {
+      if (firstName === "" || lastName === "" || lastNameGuardian === "" || nameGuardian === "" || ageGuardian == "" ||emailGuardian == "") {
+        alert("Il manque des infos !")
+        return;
+      }
     }
 
     emailjs
@@ -47,6 +91,12 @@ function Inscription( {setRefPage} ) {
           age: age,
           email: email,
           phoneNumber: phoneNumber,
+          lastNameGuardian: lastNameGuardian,
+          nameGuardian: nameGuardian,
+          ageGuardian: ageGuardian,
+          emailGuardian: emailGuardian,
+          phoneNumberGuardian: phoneNumberGuardian,
+          commentaire: commentaire
         },
         {
           publicKey: 'jbaU54yy7tj35utNZ',
@@ -113,7 +163,7 @@ function Inscription( {setRefPage} ) {
                   <input id="phoneNumber" type="text"></input>
                 </div>
 
-                <textarea className={styles.subject} id="Commentaire" name="Commentaire" placeholder={'Commentaire'}/>
+                <textarea className={styles.subject} id="commentaire" name="Commentaire" placeholder={'Commentaire'}/>
 
               </div>
 
@@ -130,39 +180,39 @@ function Inscription( {setRefPage} ) {
 
                 <div className={styles.inputName}>
                   <div className={styles.labelInput}>
-                    <label>Nom *</label>
-                    <input id="firstName" type="text" required></input>
+                    <label>Nom</label>
+                    <input id="lastNameGuardian" type="text" required></input>
                   </div>
 
                   <div className={styles.labelInput}>
-                    <label>Prenom *</label>
-                    <input id="lastName" type="text" required></input>
+                    <label>Prenom</label>
+                    <input id="nameGuardian" type="text" required></input>
                   </div>
                 </div>
 
                 <div className={styles.labelInput}>
-                  <label>Age *</label>
-                  <input id="age" type="number" required></input>
+                  <label>Age</label>
+                  <input id="ageGuardian" type="number" required></input>
                 </div>
 
                 <div className={styles.labelInput}>
                   <label>Email</label>
-                  <input id="email" type="email" required></input>
+                  <input id="emailGuardian" type="email" required></input>
                 </div>
 
 
                 <div className={styles.labelInput}>
                   <label>numéro de téléphone *</label>
-                  <input id="phoneNumber" type="text"></input>
+                  <input id="phoneNumberGuardian" type="text"></input>
                 </div>
 
-                <textarea className={styles.subject} id="Commentaire" name="Commentaire" placeholder={'Commentaire'}/>
+                <textarea className={styles.subject} id="commentaire" name="Commentaire" placeholder={'Commentaire'}/>
 
 
               </div>
             : null }
 
-
+            <p>*Retrouvez-nous au forum des associations de Cysoing le samedi 6 septembre de 14h à 18h.</p>
             <button className={styles.btnSubmit} onClick={() => sendMail()}>VALIDER</button>
 
           </div>
