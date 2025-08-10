@@ -11,6 +11,7 @@ import 'rsuite/Accordion/styles/index.css';
 
 
 
+
 function Inscription( {setRefPage} ) {
 
   const [sendMailPopUp, setSendMailPopUp] = useState(undefined);
@@ -22,7 +23,7 @@ function Inscription( {setRefPage} ) {
       if (refPage.current) {
           setRefPage(refPage.current);
       }
-  }, []);
+  }, [setRefPage]);
 
 
   function sendMail() {
@@ -32,7 +33,7 @@ function Inscription( {setRefPage} ) {
     let age = Number(document.getElementById("age").value);
     let commentaire = document.getElementById("commentaire").value;
 
-    if (commentaire == "") {
+    if (commentaire === "") {
       commentaire = "(pas de commentaire)"
     }
 
@@ -47,6 +48,7 @@ function Inscription( {setRefPage} ) {
 
     if (age < 10) {
       alert("Les inscriptions sont disponibles à partir de 10 ans")
+      return;
     }
 
     if (age >= 18) {
@@ -79,7 +81,7 @@ function Inscription( {setRefPage} ) {
         return;
       }
     } else {
-      if (firstName === "" || lastName === "" || lastNameGuardian === "" || nameGuardian === "" || ageGuardian == "" ||emailGuardian == "") {
+      if (firstName === "" || lastName === "" || lastNameGuardian === "" || nameGuardian === "" || ageGuardian === "" || emailGuardian === "") {
         alert("Il manque des infos !")
         return;
       }
@@ -87,8 +89,8 @@ function Inscription( {setRefPage} ) {
 
     emailjs
       .send(
-        'service_sdhgmo9',
-        'template_v0bfzdi',
+        process.env.REACT_APP_SERVICE_EMAIL_JS,
+        process.env.REACT_APP_TEMPLATE_EMAIL_JS,
         {
           firstName: firstName,
           name: lastName,
@@ -103,10 +105,10 @@ function Inscription( {setRefPage} ) {
           commentaire: commentaire
         },
         {
-          publicKey: 'jbaU54yy7tj35utNZ',
+          publicKey: process.env.REACT_APP_PUBLIC_KEY_EMAIL_JS,
         }
       )
-      .then(() => {
+      .then(() => { 
           setSendMailPopUp(false);
 
         },
