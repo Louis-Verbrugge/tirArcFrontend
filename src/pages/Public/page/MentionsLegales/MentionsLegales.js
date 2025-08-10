@@ -101,7 +101,6 @@ function MentionLegales({ setRefPage }) {
             cas de litige, les tribunaux compétents seront ceux du ressort de Lille, France.
           </p>
         </section>
-
         <section>
           <h2>9. Contact</h2>
           <p>
