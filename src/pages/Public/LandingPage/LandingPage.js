@@ -5,8 +5,10 @@ import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 
-import { listeActualite } from '../../../data/news/news.js';
+import { listeActualite, imagePageHome } from '../../../data/news/news.js';
 import { endPage } from '../../../_helpers/annim/endPage';
+
+
 
 import styles from "./LandingPage.module.scss"
 
@@ -37,7 +39,7 @@ function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePag
 
     <div ref={refPage}>
       <div className={styles.pagePresentation}
-        style={{ backgroundImage: `url(/image/landingPage.jpg)` }}>
+        style={{ backgroundImage: `url('${imagePageHome.fondDecran.replaceAll(' ', '%20')}')` }}>
         <img className={styles.presentationImage} src="/morphoz.png" alt="" />
       </div>
         
@@ -163,9 +165,9 @@ function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePag
               </span>
             </div>
             <div className={styles.images}>
-              <img className={styles.firstImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-              <img className={styles.secondImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-              <img className={styles.thirdImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+              <img className={styles.firstImage} src={imagePageHome.competition.image_1} alt='icon'/>
+              <img className={styles.secondImage} src={imagePageHome.competition.image_2} alt='icon'/>
+              <img className={styles.thirdImage} src={imagePageHome.competition.image_3} alt='icon'/>
             </div>
           </div>
         </div>

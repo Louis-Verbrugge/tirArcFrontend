@@ -1,6 +1,9 @@
 
 import { useEffect, useRef } from "react";
 
+import { allImage } from '../../../../data/news/news.js';
+
+
 import styles from "./Photos.module.scss";
 
 
@@ -14,14 +17,12 @@ function Photos( { setRefPage } ) {
   });
 
 
-  const photos = Array.from({ length: 150 }, () => "/image/landingPage.jpg");
-
   return (
     <div className={styles.pagePhotos} ref={refPage}> 
       <h1>PHOTOS / VIDEOS !!!</h1>
 
       <div className={styles.gallery} >
-        {photos.map((src, index) => {
+        {allImage.map((src, index) => {
           let cardClass = styles.photoCard;
 
           if (index % 7 === 0) {

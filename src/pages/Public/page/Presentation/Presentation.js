@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { imagePageQuiSommesNous } from '../../../../data/news/news.js';
+
+
 import styles from './Presentation.module.scss';
 
 function Presentation( {setRefPage} ) {
@@ -34,7 +37,7 @@ function Presentation( {setRefPage} ) {
                 </span>
             </div>
             <div className={styles.image}>
-                <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                <img src={imagePageQuiSommesNous.fondDecran} alt='icon' className={styles.icon}/>
             </div>
         </div>
        
@@ -44,34 +47,34 @@ function Presentation( {setRefPage} ) {
 
             <div className={styles.teams}>
                 <div className={styles.team}>
-                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <img src={imagePageQuiSommesNous.bureau.image_1} alt='icon' className={styles.icon}/>
                     <h4>Ludovic VERBRUGGE</h4>
                     <p>Président</p>
                 </div>
                 <div className={styles.team}>
-                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <img src={imagePageQuiSommesNous.bureau.image_2} alt='icon' className={styles.icon}/>
                     <h4>Gaëlle CORMAN</h4>
                     <p>Vice-présidente</p>
                 </div>
                 <div className={styles.team}>
-                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <img src={imagePageQuiSommesNous.bureau.image_3} alt='icon' className={styles.icon}/>
                     <h4>Iris LANN</h4>
                     <p>Secrétaire</p>
                 </div>
                 <div className={styles.team}>
-                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <img src={imagePageQuiSommesNous.bureau.image_4} alt='icon' className={styles.icon}/>
                     <h4>Arnaud HENNO</h4>
                     <p>Secrétaire adjoin</p>
                 </div>
                 <div className={styles.team}>
-                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <img src={imagePageQuiSommesNous.bureau.image_5} alt='icon' className={styles.icon}/>
                     <h4>Christian BOURNONVILLE</h4>
                     <p>Trésorier</p>
                 </div>
                 <div className={styles.team}>
-                    <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+                    <img src={imagePageQuiSommesNous.bureau.image_6} alt='icon' className={styles.icon}/>
                     <h4>Bernard COULON</h4>
-                    <p>Trésorier adjoin</p>
+                    <p>Trésorier adjoint</p>
                 </div>
             </div>
         </div>
