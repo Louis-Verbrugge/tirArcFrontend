@@ -151,6 +151,8 @@
                 .socialMedia{
                     margin: auto;
                     padding-left: 20px;
+                    position: relative;
+                    z-index: 1000;
 
                     img{
                         width: 50px;

@@ -71,7 +71,7 @@ export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, set
                 <div className={styles.contact}>
                     <p>© 2025 Tir à l'Arc de Cysoing. Tous droits réservés.</p>                        
                     <div className={styles.socialMedia}>
-                        <a href="https://www.facebook.com/Tir-a-larc-Cysoing-103450531470410/">
+                        <a href="https://www.facebook.com/groups/206488283451834">
                             <img src="/image/icons8-facebook-circled.svg" alt="facebook"></img>
                         </a>
                     </div>

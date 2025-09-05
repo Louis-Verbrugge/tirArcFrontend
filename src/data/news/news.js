@@ -140,11 +140,11 @@ export const imagePageQuiSommesNous = {
 
 export const listeActualite = [
     {
-      picture: "/image/logoTirArcCysoing.jpg",
+      picture: "/image/chocolat/img1.jpg",
       date: "30 avril 2025",
       title: "Un tir très chocolaté",
       description: "Nos jeunes adhérents ont pu participé au tir du chocolat ! Un ballon explosé égale 1 œuf en chocolat remporté! Le vainqueur de ce petit tournoi : Théodène! Suivit de près par Esther à la deuxième place ! Enfin, ex aequo, nous retrouvons Jade et Pauline sur la troisième marche du podium ! Bravo à tous nos jeunes!",
-      allPircure: []
+      allPircure: ["/image/chocolat/img1.jpg"]
     },
     {
       picture: "/image/news/défilé/défilé_2.jpg",
@@ -154,11 +154,11 @@ export const listeActualite = [
       allPircure: ["/image/news/défilé/défilé_1.jpg", "/image/news/défilé/défilé_2.jpg", "/image/news/défilé/défilé_3.jpg", "/image/news/défilé/défilé_4.jpg"]
     },
     {
-      picture: "/image/logoTirArcCysoing.jpg",
+      picture: "/image/cibleExterieur/img3.jpg",
       date: "15 Mai 2025",
       title: "Le pas de tir extérieur est de nouveau ouvert",
       description: "Bonne nouvelle pour les archers adeptes du tir en extérieur ! Le pas de tir extérieur a été remis en état pour la saison estivale. Quelques changements ont été opérés concernant les cibles : Nous avons désormais une cible à 18m, 4 à 30m et enfin, 2 à 50m. Un grand merci à tous les adhérents ayant participé à son entretient durant les jours fériés.",
-      allPircure: []
+      allPircure: ["/image/cibleExterieur/img1.jpg", "/image/cibleExterieur/img2.jpg", "/image/cibleExterieur/img3.jpg", "/image/cibleExterieur/img4.jpg", "/image/cibleExterieur/img5.jpg", "/image/cibleExterieur/img6.jpg", "/image/cibleExterieur/img7.jpg", "/image/cibleExterieur/img8.jpg", "/image/cibleExterieur/img9.jpg"]
     },
     {
       picture: "/image/news/tir au prince 2025/22 mai 2025 Tir au Prince 2.jpg",

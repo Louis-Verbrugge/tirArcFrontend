@@ -95,11 +95,11 @@ function Presentation( {setRefPage} ) {
                     </div>
                     <div className={styles.chiffre}>
                         <h2>8</h2>
-                        <span className={styles.textLarge}>Cible extlérieurs</span>
+                        <span className={styles.textLarge}>Cibles extérieures</span>
                     </div>
                     <div className={styles.chiffre}>
                         <h2>15</h2>
-                        <span className={styles.textLarge}>Cible intérieurs</span>
+                        <span className={styles.textLarge}>Cibles intérieurs</span>
                     </div>
                 </div>
             </div>
