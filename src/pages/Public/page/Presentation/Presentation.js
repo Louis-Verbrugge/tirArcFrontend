@@ -128,9 +128,9 @@ function Presentation( {setRefPage} ) {
                         </span>
                     </div>
                     <div className={styles.images}>
-                        <img className={styles.firstImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-                        <img className={styles.secondImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-                        <img className={styles.thirdImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+                        <img className={styles.firstImage} src={imagePageQuiSommesNous.terrainInterieur.image_1} alt='icon'/>
+                        <img className={styles.secondImage} src={imagePageQuiSommesNous.terrainInterieur.image_2} alt='icon'/>
+                        <img className={styles.thirdImage} src={imagePageQuiSommesNous.terrainInterieur.image_3} alt='icon'/>
                     </div>
                 </div>
                 <div className={styles.secondTerrain}>
@@ -147,9 +147,9 @@ function Presentation( {setRefPage} ) {
                         </span>
                     </div>
                     <div className={styles.images}>
-                        <img className={styles.firstImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-                        <img className={styles.secondImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-                        <img className={styles.thirdImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+                        <img className={styles.firstImage} src={imagePageQuiSommesNous.terrainExterieur.image_1} alt='icon'/>
+                        <img className={styles.secondImage} src={imagePageQuiSommesNous.terrainExterieur.image_2} alt='icon'/>
+                        <img className={styles.thirdImage} src={imagePageQuiSommesNous.terrainExterieur.image_3} alt='icon'/>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { endPage } from '../../_helpers/annim/endPage';
 import styles from './Footer.module.scss';
 
+import { footerImage } from '../../data/news/news.js';
+
+
 export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, setAnnimChangePage, setChangeMemePage }) {
 
     const navigate = useNavigate();
@@ -62,7 +65,7 @@ export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, set
                         <div className={styles.imageSecondCircle}>
                         </div>
                     </div>
-                    <img src="/image/landingPage.jpg" alt="ffta"/>
+                    <img src={footerImage.image_1} alt="ffta"/>
                 </div>
             </div>
 

@@ -40,14 +40,10 @@ function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePag
     <div ref={refPage}>
       <div className={styles.pagePresentation}
         style={{ backgroundImage: `url('${imagePageHome.fondDecran.replaceAll(' ', '%20')}')` }}>
-        <img className={styles.presentationImage} src="/morphoz.png" alt="" />
+        <img className={styles.presentationImage} src="/cysoing_tir.png" alt="" />
       </div>
         
       <div className={styles.landingPage}> 
-
-
-
-
 
         <h1>Qui sommes-nous ?</h1>
 
@@ -66,7 +62,7 @@ function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePag
             </span>
           </div>
           <div className={styles.image}>
-            <img src='/image/membres/personnage1.jpg' alt='icon' className={styles.icon}/>
+            <img src={imagePageHome.quiSommesNous} alt='icon' className={styles.icon}/>
           </div>
         </div>
 
@@ -142,9 +138,9 @@ function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePag
               </span>
             </div>
             <div className={styles.images}>
-              <img className={styles.firstImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-              <img className={styles.secondImage} src='/image/membres/personnage1.jpg' alt='icon'/>
-              <img className={styles.thirdImage} src='/image/membres/personnage1.jpg' alt='icon'/>
+              <img className={styles.firstImage} src={imagePageHome.deroulementEntrainement.image_1} alt='icon'/>
+              <img className={styles.secondImage} src={imagePageHome.deroulementEntrainement.image_2} alt='icon'/>
+              <img className={styles.thirdImage} src={imagePageHome.deroulementEntrainement.image_3} alt='icon'/>
             </div>
           </div>
 

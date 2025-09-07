@@ -112,14 +112,28 @@ export const allImage = ["/image/galerie photo/01 juil 2023 Forum des associatio
 
 export const imagePageHome = {
 
-  fondDecran: "/image/qui sommes nous/5.jpg",
+  fondDecran: "/background.jpg",
+
+  quiSommesNous: "/image/qui sommes nous/6.jpg",
 
   competition: {
     image_1: "/image/news/Compétition villeneuve d'ascq 2023/22 janv 2023 Villeneuve d'Ascq 4.jpg",
     image_2: "/image/news/compétition leers 2023/22 oct 2023 Leers.jpg",
     image_3: "/image/news/championnat du nord jeunes 2024/28 janv 2024 Championnat du Nord Jeunes 2.jpg",
-  }
+  },
 
+  deroulementEntrainement: {
+    image_1: "/image/entrainement/3.jpg",
+    image_2: "/image/entrainement/4.jpg",
+    image_3: "/image/entrainement/5.jpg"
+  },
+
+
+
+}
+
+export const footerImage = {
+  image_1: "image/footer/img1.jpg",
 }
 
 export const imagePageQuiSommesNous = {
@@ -133,6 +147,18 @@ export const imagePageQuiSommesNous = {
     image_4: "/image/bureau/arnaud.jpg",
     image_5: "/image/bureau/christian.jpg",
     image_6: "/image/bureau/bernard.jpg",
+  },
+
+  terrainInterieur: {
+    image_1: "/image/cibleInterieur/img1.jpg",
+    image_2: "/image/cibleInterieur/img3.jpg",
+    image_3: "/image/cibleInterieur/img2.jpg",
+  },
+
+  terrainExterieur: {
+    image_1: "/image/cibleExterieur/img10.jpg",
+    image_2: "/image/cibleExterieur/img11.jpg",
+    image_3: "/image/cibleExterieur/img13.jpg",
   }
 
 }
@@ -158,7 +184,7 @@ export const listeActualite = [
       date: "15 Mai 2025",
       title: "Le pas de tir extérieur est de nouveau ouvert",
       description: "Bonne nouvelle pour les archers adeptes du tir en extérieur ! Le pas de tir extérieur a été remis en état pour la saison estivale. Quelques changements ont été opérés concernant les cibles : Nous avons désormais une cible à 18m, 4 à 30m et enfin, 2 à 50m. Un grand merci à tous les adhérents ayant participé à son entretient durant les jours fériés.",
-      allPircure: ["/image/cibleExterieur/img1.jpg", "/image/cibleExterieur/img2.jpg", "/image/cibleExterieur/img3.jpg", "/image/cibleExterieur/img4.jpg", "/image/cibleExterieur/img5.jpg", "/image/cibleExterieur/img6.jpg", "/image/cibleExterieur/img7.jpg", "/image/cibleExterieur/img8.jpg", "/image/cibleExterieur/img9.jpg"]
+      allPircure: ["/image/cibleExterieur/img1.jpg", "/image/cibleExterieur/img2.jpg", "/image/cibleExterieur/img3.jpg", "/image/cibleExterieur/img4.jpg", "/image/cibleExterieur/img5.jpg", "/image/cibleExterieur/img6.jpg", "/image/cibleExterieur/img7.jpg", "/image/cibleExterieur/img8.jpg", "/image/cibleExterieur/img9.jpg", "/image/cibleExterieur/img10.jpg", "/image/cibleExterieur/img11.jpg", "/image/cibleExterieur/img12.jpg", "/image/cibleExterieur/img13.jpg"]
     },
     {
       picture: "/image/news/tir au prince 2025/22 mai 2025 Tir au Prince 2.jpg",
