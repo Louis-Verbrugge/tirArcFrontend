@@ -24,16 +24,13 @@ export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, set
     }, []);
 
 
-  function goToActualite() {
+  function goToActualite(newPath) {
     
     // recup le path de la page
     const path = window.location.pathname;
     const pathArray = path.split("/");
     const pathPage = pathArray[pathArray.length - 2];
     
-    console.log("Changement de page: " + pathPage + " -> /inscription/");
-    console.log(pathArray)
-    console.log(pathArray[pathArray.length - 2], pathArray.length - 2);
     
     if (pathPage === 'inscription') {
         // Si on est déjà sur la page d'inscription, on recharge la page
@@ -42,7 +39,7 @@ export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, set
         return;
     }
     else {
-        endPage(navigate, pageRef, refFooter, '/inscription/', annimChangePage, setAnnimChangePage, setChangeMemePage);
+        endPage(navigate, pageRef, refFooter, newPath, annimChangePage, setAnnimChangePage, setChangeMemePage);
 
     }
 
@@ -57,7 +54,7 @@ export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, set
             <div className={styles.main}>
                 <div className={styles.left}>
                     <h2>Tu es prêt pour nous rejoindre ?</h2>
-                    <button onClick={() => goToActualite()}>inscris toi dès maintenant !</button>
+                    <button onClick={() => goToActualite('/inscription/')}>inscris toi dès maintenant !</button>
                 </div>
 
                 <div className={styles.right}>
@@ -72,7 +69,7 @@ export function Footer( { setRefFooter, pageRef, refFooter, annimChangePage, set
             <div className={styles.bottom}>
                 <img src="/image/logoTirArcCysoing.jpg" alt="ffta"/>
                 <div className={styles.contact}>
-                    <p>© 2025 Tir à l'Arc de Cysoing. Tous droits réservés.</p>                        
+                    <p onClick={() => goToActualite('mentions-legales')}>© 2025 Tir à l'Arc de Cysoing. Tous droits réservés.</p>                        
                     <div className={styles.socialMedia}>
                         <a href="https://www.facebook.com/groups/206488283451834">
                             <img src="/image/icons8-facebook-circled.svg" alt="facebook"></img>
