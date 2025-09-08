@@ -103,7 +103,7 @@ function Inscription( {setRefPage} ) {
           commentaire: commentaire
         },
         {
-          publicKey: process.env.REACT_APP_PUBLIC_KEY_EMAIL_JS,
+          publicKey: process.env.REACT_APP_PUBLIC_KE_EMAIL_JS,
         }
       )
       .then(() => { 
