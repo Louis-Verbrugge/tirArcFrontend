@@ -188,11 +188,11 @@ function LandingPage( {setRefPage, refFooter, annimChangePage, setAnnimChangePag
                     </div>
                     <div className={styles.chiffre}>
                         <h2>8</h2>
-                        <span className={styles.textLarge}>Cibles extèrieur</span>
+                        <span className={styles.textLarge}>Cibles extérieures</span>
                     </div>
                     <div className={styles.chiffre}>
                         <h2>15</h2>
-                        <span className={styles.textLarge}>Cibles intérieur</span>
+                        <span className={styles.textLarge}>Cibles intérieures</span>
                     </div>
                 </div>
             </div>

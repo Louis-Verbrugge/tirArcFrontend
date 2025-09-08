@@ -91,7 +91,7 @@ function Presentation( {setRefPage} ) {
                     </div>
                     <div className={styles.chiffre}>
                         <h2>14</h2>
-                        <span className={styles.textLarge}>Comptéiteurs</span>
+                        <span className={styles.textLarge}>Compétiteurs</span>
                     </div>
                     <div className={styles.chiffre}>
                         <h2>8</h2>
@@ -99,7 +99,7 @@ function Presentation( {setRefPage} ) {
                     </div>
                     <div className={styles.chiffre}>
                         <h2>15</h2>
-                        <span className={styles.textLarge}>Cibles intérieurs</span>
+                        <span className={styles.textLarge}>Cibles intérieures</span>
                     </div>
                 </div>
             </div>
