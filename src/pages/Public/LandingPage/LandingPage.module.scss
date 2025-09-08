@@ -35,6 +35,7 @@
 
     .textLarge{
         font-size: var(--size_span_textLarge);
+    
     }
 
     h1{
@@ -298,6 +299,11 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
                 align-items: center;
+
+                .textLarge {
+                    width: 120%;
+                    text-align: center;
+                }
                 
 
                 & > div:not(:last-child) {
