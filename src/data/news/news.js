@@ -18,9 +18,9 @@ export const allImage = ["/image/galerie photo/01 juil 2023 Forum des associatio
    "/image/galerie photo/5 fev 2023 Seclin Championnat du Nord Jeunes 4.jpg",
    "/image/galerie photo/5 fev 2023 Seclin Championnat du Nord Jeunes 5.jpg",
    "/image/galerie photo/5 fev 2023 Seclin Championnat du Nord Jeunes.jpg",
-   "/image/galerie photo/07 sept 2024 Repas convivial 1.jpg",
+   "/image/galerie photo/07 sept 2024 Repas convivial .jpg",
    "/image/galerie photo/07 sept 2024 Repas convivial 2.jpg",
-   "/image/galerie photo/09 juin 2024 Comines 1.jpg",
+   "/image/galerie photo/09 juin 2024 Comines.jpg",
    "/image/galerie photo/9 juin 2024 Comines 2.jpg",
    "/image/galerie photo/12 mai 2023 Tir au Roy.jpg",
    "/image/galerie photo/13 dec 2023 entraînement .jpg",
@@ -123,13 +123,10 @@ export const imagePageHome = {
   },
 
   deroulementEntrainement: {
-    image_1: "/image/entrainement/3.jpg",
+    image_1: "/image/entrainement/13 dec 2023 entraînement .jpg",
     image_2: "/image/entrainement/4.jpg",
     image_3: "/image/entrainement/5.jpg"
   },
-
-
-
 }
 
 export const footerImage = {

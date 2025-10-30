@@ -1,5 +1,9 @@
 
 .actualite{
+
+    &:hover {
+        cursor: pointer;
+    }
     
     position: relative;
     width: var(--width_projet);

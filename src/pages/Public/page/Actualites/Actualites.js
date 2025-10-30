@@ -29,9 +29,6 @@ function Actualites( {setRefPage, refFooter, annimChangePage, setAnnimChangePage
 
   function displayActualites() {
 
-    console.log("displayActualites");
-    console.log(refPage);
-
     return listeActualite.map((item, index) => {
        return (
               <Actualite 
