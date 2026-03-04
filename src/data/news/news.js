@@ -138,12 +138,12 @@ export const imagePageQuiSommesNous = {
   fondDecran: "/image/qui sommes nous/4.jpg",
 
   bureau: {
-    image_1: "/image/bureau/ludo.jpg",
-    image_2: "/image/bureau/gaelle.jpg",
-    image_3: "/image/bureau/iris.jpg",
-    image_4: "/image/bureau/arnaud.jpg",
-    image_5: "/image/bureau/christian.jpg",
-    image_6: "/image/bureau/bernard.jpg",
+    image_1: "/image/bureau/gaelle.jpg",
+    image_2: "/image/bureau/arnaud.jpg",
+    image_3: "/image/bureau/Aymeric.jpeg",
+    image_4: "/image/bureau/iris.jpg",
+    image_5: "/image/bureau/bernard.jpg",
+    image_6: "/image/bureau/christian.jpg",
   },
 
   terrainInterieur: {

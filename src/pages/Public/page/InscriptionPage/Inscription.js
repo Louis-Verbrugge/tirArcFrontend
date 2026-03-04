@@ -239,13 +239,13 @@ function Inscription( {setRefPage} ) {
               <ul>
                 <li>Montant des licences</li>
 
-                <li>A partir de 10 ans: 70€</li>
+                <li>A partir de 10 ans: 80€</li>
                 <ul>
                   <li>Pour les adultes:</li>
                 </ul>
 
-                <li>non-compétiteurs: 90€</li>
-                <li>compétiteurs: 100€</li>
+                <li>non-compétiteurs: 100€</li>
+                <li>compétiteurs: 110€</li>
 
                 <ul>
                   <li>Complément:</li>
